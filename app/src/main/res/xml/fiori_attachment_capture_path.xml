@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path
+        name="fiori_attachment_capture_file_path"
+        path="Android/data/com.sap.cloud.mobile.fiori.demo/files/Pictures" />
+    <external-path
+        name="downloads"
+        path="Download/" />
+</paths>

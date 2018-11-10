@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sap.cloud.mobile.fiori.object.ObjectCell xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:asyncRendering="true"
+    app:descriptionWidthPercent=".60"
+    app:lines="3"
+    app:statusWidth="@dimen/demo_object_cell_status_width"
+    tools:detailImage="@drawable/ic_android_color_24dp"
+    tools:headline="Headline"
+    tools:secondaryActionIcon="@drawable/ic_cloud_download_black_24dp"
+    tools:subheadline="Sub Headline">
+
+</com.sap.cloud.mobile.fiori.object.ObjectCell>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".DataBindingTestActivity">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.sap.cloud.mobile.fiori.demo.formcell.DataBindingTestActivity" />
+
+        <variable
+            name="filterData"
+            type="com.sap.cloud.mobile.fiori.demo.formcell.FilterDataClass" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.sap.cloud.mobile.fiori.formcell.SwitchFormCell
+                android:id="@+id/testSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:key="@{filterData.switchKeyName}"
+                app:value="@{filterData.switchValue}" />
+
+            <com.sap.cloud.mobile.fiori.formcell.SliderFormCell
+                android:id="@+id/testSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:key="@{filterData.sliderKeyName}"
+                app:maximumValue="@{filterData.sliderMaxValue}"
+                app:minimumValue="@{filterData.sliderMinValue}"
+                app:value="@{filterData.sliderValue}"
+                app:setDisplayValue="@{filterData.sliderDisplayText}" />
+
+            <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+                android:id="@+id/testGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@{filterData.gridValueOptions}"
+                app:key="@{filterData.gridKeyName}"
+                app:value="@{filterData.filterFormCellSelectedValue}" />
+
+            <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
+                android:id="@+id/genericTextPickerIntIdDemo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:activityTitle="@{filterData.listPickerActivityTitle}"
+                app:key="@{filterData.listPickerKeyName}"
+                app:displayValue="@{filterData.listPickerDisplayText}" />
+
+            <com.sap.cloud.mobile.fiori.formcell.DateTimePickerFormCell
+                android:id="@+id/datetimeCell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dateTimeFormatter="@{filterData.datetimeFormatter}"
+                app:dateTimePickerMode="@{filterData.dateTimePickerMode}"
+                app:isEditable="@{filterData.datetimeIsEditable}"
+                app:key="@{filterData.datetimeCellKeyName}"
+                value="@{filterData.dateTimeValue}">
+            </com.sap.cloud.mobile.fiori.formcell.DateTimePickerFormCell>
+
+            <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
+                android:id="@+id/noteCell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@{filterData.noteHint}"
+                android:maxLines="@{filterData.noteMaxLines}"
+                android:minLines="@{filterData.noteMinLines}"
+                android:textIsSelectable="@{filterData.noteIsSelectable}">
+
+            </com.sap.cloud.mobile.fiori.formcell.NoteFormCell>
+
+            <com.sap.cloud.mobile.fiori.formcell.DurationPickerFormCell
+                android:id="@+id/testDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:key="@{filterData.durationKeyName}"
+                app:minuteInterval="@{filterData.durationMinuteInterval}"
+                app:value="@{filterData.durationValue}" />
+
+            <com.sap.cloud.mobile.fiori.formcell.ButtonFormCell
+                android:id="@+id/buttontest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:text="@{filterData.buttonKeyName}" />
+
+            <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+                android:id="@+id/choiceCell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:isEditable="@{filterData.choiceCellIsEditable}"
+                app:key="@{filterData.choiceCellKeyName}"
+                app:value="@{filterData.choiceCellValue}"
+                android:entries="@{filterData.choiceCellEntries}" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
+

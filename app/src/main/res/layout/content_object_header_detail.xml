@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/analyticsContainter"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/analytics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/kpi_padding_top"
+        android:layout_gravity="top"
+        app:layout_header_group="DETAIL"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="81dp">
+
+        <TextView
+            android:id="@+id/object_header_detail_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            style="@style/FioriTextStyle.H3L"
+            app:layout_constraintBottom_toTopOf="@+id/object_header_detail_time_desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="@string/object_header_detail_time" />
+
+        <TextView
+            android:id="@+id/object_header_detail_time_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="4dp"
+            android:lineSpacingExtra="6sp"
+            android:text="@string/object_header_detail_time_desc"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            style="@style/FioriTextStyle.Body2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/object_header_detail_time"
+            app:layout_constraintTop_toBottomOf="@+id/object_header_detail_time" />
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
+

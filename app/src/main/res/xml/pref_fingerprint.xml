@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+    android:defaultValue="false"
+    android:key="create_random_passcode"
+    android:title="@string/pref_default_fingerprint_generate_random_passcode"/>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="confirm_try_password_button_enabled"
+        android:title="@string/pref_title_fingerprint_is_fallback_enabled"/>
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="error_reset_enabled"
+        android:title="@string/pref_title_fingerprint_is_reset_enabled"/>
+
+</PreferenceScreen>

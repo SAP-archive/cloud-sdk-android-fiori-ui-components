@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/SimplePropertyFormCellValue"
+        style="@style/FioriTextStyle.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/simple_formcell_value_margin_top"
+        android:background="@drawable/formcell_edittext_background"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:minHeight="@dimen/simple_formcell_value_height_min"
+        android:saveEnabled="false"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/sap_ui_base_text"
+        android:textColorHint="@color/sap_ui_formcell_hint_color"
+        android:windowSoftInputMode="stateHidden"
+        tools:hint="@string/simple_property_form_cell_value_place_holder"
+        tools:text="@string/simple_property_form_cell_value_place_holder" />
+</LinearLayout>

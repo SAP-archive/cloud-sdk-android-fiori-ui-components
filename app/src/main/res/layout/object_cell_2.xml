@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sap.cloud.mobile.fiori.object.ObjectCell xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/object_cell_height_3_copy"
+    app:lines="3"
+    app:descriptionWidthPercent=".60"
+    app:statusWidth="@dimen/demo_object_cell_status_width"
+    app:preserveDetailImageSpacing="false">
+
+</com.sap.cloud.mobile.fiori.object.ObjectCell>

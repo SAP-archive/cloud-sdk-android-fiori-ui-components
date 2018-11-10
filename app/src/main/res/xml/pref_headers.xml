@@ -1,0 +1,70 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!-- These settings headers are only used on tablets. -->
+
+  <header
+    android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$GeneralPreferenceFragment"
+    android:icon="@drawable/ic_info_black_24dp"
+    android:title="@string/pref_header_general" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$PasscodePreferenceFragment"
+      android:icon="@drawable/ic_android_black_24dp"
+      android:title="@string/pref_header_passcode_process" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$PasscodePolicyPreferenceFragment"
+      android:icon="@drawable/ic_android_black_24dp"
+      android:title="@string/pref_header_passcode_policy" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$QRCodeReadPreferenceFragment"
+      android:icon="@drawable/ic_scan"
+      android:title="@string/pref_header_qrcode_read" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$QRCodeConfirmPreferenceFragment"
+      android:icon="@drawable/ic_scan"
+      android:title="@string/pref_header_qrcode_confirm" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$EULAScreenPreferenceFragment"
+      android:icon="@drawable/ic_android_black_24dp"
+      android:title="@string/pref_header_eula_screen" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$LaunchScreenPreferenceFragment"
+      android:icon="@drawable/ic_android_black_24dp"
+      android:title="@string/pref_header_launchscreen" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$ActivationEmailLinkPreferenceFragment"
+      android:icon="@drawable/ic_notifications_black_24dp"
+      android:title="@string/pref_header_activation_email" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$ActivationChooseAnOptionPreferenceFragment"
+      android:icon="@drawable/ic_notifications_black_24dp"
+      android:title="@string/pref_header_activation_choose" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$ActivationDiscoveryServicePreferenceFragment"
+      android:icon="@drawable/ic_notifications_black_24dp"
+      android:title="@string/pref_header_activation_discovery" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$ActivationBarcodePreferenceFragment"
+      android:icon="@drawable/ic_notifications_black_24dp"
+      android:title="@string/pref_header_activation_barcode" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$FingerprintUIPreferenceFragment"
+      android:icon="@drawable/ic_android_black_24dp"
+      android:title="@string/pref_header_fingerprint_ui" />
+
+  <header
+      android:fragment="com.sap.cloud.mobile.fiori.demo.onboarding.OnboardingSettingsActivity$FingerprintPreferenceFragment"
+      android:icon="@drawable/ic_android_black_24dp"
+      android:title="@string/pref_header_fingerprint" />
+
+</preference-headers>

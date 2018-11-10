@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+  <ListPreference
+    android:defaultValue="0"
+    android:entries="@array/pref_general_delay_titles"
+    android:entryValues="@array/pref_general_delay_values"
+    android:key="delay"
+    android:negativeButtonText="@null"
+    android:positiveButtonText="@null"
+    android:title="@string/pref_title_delay" />
+  <EditTextPreference
+    android:defaultValue="@string/pref_default_passcode"
+    android:inputType="textCapSentences"
+    android:key="current_passcode"
+    android:selectAllOnFocus="false"
+    android:singleLine="false"
+    android:title="@string/pref_title_passcode"
+    android:minHeight="@dimen/min_touch_size" />
+
+  <EditTextPreference
+      android:defaultValue="@string/pref_general_action_handler_default_value"
+      android:inputType="textCapSentences"
+      android:key="general_action_handler"
+      android:selectAllOnFocus="false"
+      android:singleLine="false"
+      android:title="@string/pref_general_action_handler_title"
+      android:minHeight="@dimen/min_touch_size" />
+
+  <SwitchPreference
+      android:defaultValue="false"
+      android:key="action_handler_external_test_activity_call_flag"
+      android:title="@string/pref_title_external_activity_flag"/>
+
+</PreferenceScreen>

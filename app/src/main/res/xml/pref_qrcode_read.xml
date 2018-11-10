@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_read_failure_title"
+        android:inputType="textCapWords"
+        android:key="qrcode_read_invalidQR_title"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_read_failure_title" />
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_read_failure_message"
+        android:inputType="textCapWords"
+        android:key="qrcode_read_invalidQR_message"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_read_failure_message" />
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_read_failure_continue"
+        android:inputType="textCapWords"
+        android:key="qrcode_read_invalidQR_continue"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_read_failure_continue" />
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_read_action_handler"
+        android:inputType="textCapWords"
+        android:key="qrcode_read_action_handler"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_read_action_handler" />
+
+    <EditTextPreference
+        android:capitalize="none"
+        android:inputType="textNoSuggestions"
+        android:key="qrcode_read_confirm_activity"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_read_confirm_activity" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="qrcode_read_autofocus"
+        android:title="@string/pref_title_qr_read_autofocus" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="qrcode_read_skip_confirm"
+        android:title="@string/pref_title_qr_read_skip_confirm" />
+
+    <ListPreference
+        android:defaultValue="@string/pref_default_reader_barcode_format_list_value"
+        android:dialogTitle="@string/pref_title_reader_barcode_format_list"
+        android:entries="@array/pref_reader_barcode_format_list_titles"
+        android:entryValues="@array/pref_reader_barcode_format_list_values"
+        android:key="barcode_format"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_reader_barcode_format_list" />
+
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_qr_read_wait_for_barcode_detector"
+        android:inputType="numberDecimal"
+        android:key="wait_for_barcode_detector"
+        android:summary="@string/pref_description_qr_read_wait_for_barcode_detector"
+        android:title="@string/pref_title_qr_read_wait_for_barcode_detector"
+        android:minHeight="@dimen/min_touch_size">
+    </EditTextPreference>
+
+
+</PreferenceScreen>

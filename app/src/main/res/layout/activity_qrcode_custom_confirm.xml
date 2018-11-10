@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/onboarding_qr_confirm_background">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/confirm_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/scanner_confirm_margin_vertical"
+            android:layout_marginRight="@dimen/scanner_confirm_margin_vertical"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/qr_confirm_headline_label"
+                style="@style/TextAppearance.Fiori.Onboarding.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center_horizontal"
+                android:scrollHorizontally="false"
+                android:text="TEST"
+                android:textColor="@color/onboarding_qr_confirm_textcolor" />
+
+            <TextView
+                android:id="@+id/qr_confirm_detail_label"
+                style="@style/TextAppearance.Fiori.Onboarding.Body"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/scanner_line_height_small"
+                android:layout_below="@+id/qr_confirm_headline_label"
+                android:layout_marginTop="@dimen/margin_standard"
+                android:gravity="center_horizontal"
+                android:text="@string/qr_confirm_detailed_msg_label"
+                android:textAlignment="center"
+                android:textAppearance="@android:style/TextAppearance.Large"
+                android:textColor="@color/onboarding_qr_confirm_textcolor" />
+
+            <TextView
+                android:id="@+id/qr_confirm_path"
+                style="@style/Onboarding.Default.Light.Theme.QRConfirmPath"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/scanner_line_height_small"
+                android:layout_below="@+id/qr_confirm_detail_label"
+                android:layout_gravity="top|center_horizontal"
+                android:gravity="center_horizontal"
+                android:scrollHorizontally="false"
+                android:singleLine="false"
+                android:text="@string/qr_confirm_redirecturl_label" />
+
+            <RelativeLayout
+                android:id="@+id/checkmark"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/qr_confirm_path"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp">
+
+                <ImageView
+                    android:id="@+id/check_circle_external"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/circle_48dp"
+                    android:tint="@color/onboarding_qr_confirm_checkmark_backgroundcolor" />
+
+                <ImageView
+                    android:id="@+id/check_circle_middle"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:foregroundGravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_circle_white_48px"
+                    android:tint="@color/onboarding_qr_confirm_checkmark_color" />
+
+
+                <ImageView
+                    android:id="@+id/check_circle"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/ic_check_circle_black_48px"
+                    android:tint="@color/onboarding_qr_confirm_checkmark_backgroundcolor" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/confirm_content"
+            android:gravity="bottom"
+            android:minHeight="@dimen/min_touch_size"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/qr_confirm_continue"
+                style="@style/Onboarding.Default.Light.Theme.QRConfirmButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:minHeight="@dimen/min_touch_size"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="92dp"
+                android:layout_marginLeft="@dimen/margin_1.5x"
+                android:layout_marginRight="@dimen/margin_1.5x"
+                android:text="@string/qr_confirm_continue_title" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <include layout="@layout/content_progress_bar" />
+
+</android.support.constraint.ConstraintLayout>

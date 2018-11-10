@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_confirm_headline"
+        android:inputType="textCapWords"
+        android:key="qrcode_confirm_headline"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_confirm_headline" />
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_confirm_detail"
+        android:inputType="textCapWords"
+        android:key="qrcode_confirm_detail"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_confirm_detail" />
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_qr_confirm_continue"
+        android:inputType="textCapWords"
+        android:key="qrcode_confirm_continue"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_qr_confirm_continue" />
+</PreferenceScreen>

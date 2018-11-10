@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".formcell.FilterFormCellDynamicBinding">
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/filterFormCellDynamicBinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:error="This is an error message" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/filterFormCellDynamicBinding2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:key="Multi line"
+            app:outlined="true"
+            app:singleLine="false"
+            app:errorEnabled="false"
+            app:helperText="Nice choices!"
+            app:helperEnabled="true"
+            app:value="@array/filter_for_cell_values_1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/filterFormCellDynamicBindingHelper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:key="Multi line"
+            app:outlined="true"
+            app:singleLine="false"
+            app:helperEnabled="true"
+            app:helperText="Nice choices!"
+            app:value="@array/filter_for_cell_values_1" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/filterFormCellDynamicBinding3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:key="Check boxes"
+            app:outlined="true"
+            app:singleLine="false"
+            app:useChip="false"
+            app:errorEnabled="true"
+            app:helperEnabled="true"
+            app:helperText="Nice choices!"
+            app:value="@array/filter_for_cell_values_2" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/filterFormCellDynamicBinding4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:key="Dynamic"
+            app:outlined="false"
+            app:singleLine="true"
+            app:useChip="true"
+            app:errorEnabled="true"
+            app:helperEnabled="false"
+            app:helperText="Nice choices!"
+            app:value="@array/filter_for_cell_values_2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/key_line_16dp"
+            android:layout_marginRight="@dimen/key_line_16dp">
+            <TextView
+                android:text="Single line:"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text=" Outlined:"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text=" Use Chip:"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text=" Editable:"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/key_line_16dp"
+            android:layout_marginRight="@dimen/key_line_16dp">
+            <ToggleButton
+                android:id="@+id/singleLineToggleButton"
+                android:checked="true"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+            <ToggleButton
+                android:id="@+id/outlinedToggleButton"
+                android:checked="false"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+            <ToggleButton
+                android:id="@+id/useChipToggleButton"
+                android:checked="true"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+            <ToggleButton
+                android:id="@+id/editableToggleButton"
+                android:checked="true"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

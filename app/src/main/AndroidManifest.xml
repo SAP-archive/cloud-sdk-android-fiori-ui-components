@@ -1,0 +1,761 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sap.cloud.mobile.fiori.demo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".DemoApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/demo_app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Provides search suggestions for words and their definitions. -->
+        <provider
+            android:name=".search.dictionary.DictionaryProvider"
+            android:authorities="com.sap.cloud.mobile.fiori.demo.search.dictionary.DictionaryProvider"
+            android:exported="false" />
+
+        <!-- Provides search suggestions for words and their definitions. -->
+        <provider
+            android:name=".search.objectcell.SearchSuggestionProvider"
+            android:authorities="com.sap.cloud.mobile.fiori.demo.search.objectcell.SearchSuggestionProvider"
+            android:exported="false" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.sap.cloud.mobile.fiori.demo.attachment.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/fiori_attachment_capture_path" />
+        </provider>
+
+        <activity
+            android:name=".ApiDemos"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+        *************************************
+              Steps to add the demo test apps
+              Test apps can be added in multiple label, where a label is a level in hierarchy of test apps.
+              For example adding a test app about ToastMessage under Feedback indicators category has 2 level
+              and corresponding two labels are Feedback Indicators and ToastMessage test apps. To know more
+              about labels please see javadoc comments of ApiDemos class. An activity which is just a list
+              of other test apps/activities is recommended to be expressed as as label. Below are the steps
+              to add all your test apps under category of your choice. For explanation assume that you need
+              to add 2 test apps named Test-A, Test-B under category Demo-Test-Apps.
+
+              Step 1:
+                  Create string value about the name and description about the label.
+
+                  <string name="title_demo_test_apps">Demo-Test-Apps</string>
+                  <string name="title_demo_test_apps_desc">Demo Test applications</string>
+
+                  Please notice that android:label is declared with your label name: Demo-Test-Apps. To nest
+                  more label simply add your labels separated with '/' like: 'Demo-Test-Apps/label-1/label-2/app-names'.
+                  Please also note that name of string value containing name and description only differs with "_desc".
+
+              Step 2:
+                  Create string values about the name and description of each test app. In our case
+
+                  <string name="title_activity_test_A">Test A</string>
+                  <string name="title_activity_test_A_desc">Sample Test-A app.</string>
+                  <string name="title_activity_test_B">Test B</string>
+                  <string name="title_activity_test_B_desc">Sample Test-B app.</string>
+
+                  Please note that name of string value containing name and description only differs with "_desc.
+
+
+              Step 3:
+                  Declare your activity in AndroidManifest along with the label.
+                  <activity
+                        android:label="title_demo_test_apps/title_activity_test_A"
+                        android:name="proper activity name along with package information">
+                          <intent-filter>
+                              <action android:name="android.intent.action.MAIN"/>
+                              <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+                          </intent-filter>
+                      </activity>
+                  <activity
+                        android:label="title_demo_test_apps/title_activity_test_B"
+                        android:name="proper activity name along with package information">
+                          <intent-filter>
+                              <action android:name="android.intent.action.MAIN"/>
+                              <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+                          </intent-filter>
+                      </activity>
+
+
+              Step 4:
+                You are all set compile and test your code.
+
+              Optional Step 5:
+                  While running the apps such as Test-A and Test-B ActionBar reads the names
+                  as title_activity_test_A and title_activity_test_B respectively. To fix this issue override
+                  the onCreate method with following code.
+
+                    @Override
+                    protected void onCreate(Bundle savedInstanceState) {
+                        super.onCreate(savedInstanceState);
+
+                        if (getSupportActionBar() != null){
+                            // use title_activity_test_B for Test-B app
+                            getSupportActionBar().setTitle(R.string.title_activity_test_A);
+                        }
+                   }
+        *************************************
+        -->
+
+
+        <!-- ************************************* -->
+        <!-- Fiori indicators start -->
+        <!-- ************************************* -->
+
+        <activity
+            android:name=".basicComponent.IndicatorsDemo"
+            android:label="title_basic_component/title_feedback_indicator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".basicComponent.ButtonsDemo"
+            android:label="title_basic_component/title_buttons">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".basicComponent.SelectionDemo"
+            android:label="title_basic_component/title_selection">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!-- Attachment -->
+        <!-- ************************************* -->
+
+        <activity
+            android:name=".attachments.AttachmentFormCellActivity"
+            android:theme="@style/AppTheme.PaddedButtons"
+            android:label="activity_attachment_test/activity_attachment_formcell_test"
+            android:parentActivityName=".attachments.AttachmentFormCellActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".attachments.ProgrammaticAttachmentsActivity"
+            android:label="activity_attachment_test/activity_attachment_programmatically_test"
+            android:parentActivityName=".attachments.AttachmentFormCellActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ObjectCell Samples -->
+        <activity
+            android:name=".object.BaseObjectCellActivity"
+            android:label="objectcell/title_activity_base_object_cell">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ObjectCell1LineActivity"
+            android:label="objectcell/object_cell_1_line">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ObjectCell1LineTextOnlyActivity"
+            android:label="objectcell/object_cell_1_line_text">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ObjectCell2LineActivity"
+            android:label="objectcell/object_cell_2_lines">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ObjectCellDisplayActivity"
+            android:label="objectcell/object_cell_display">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ChineseObjectCellActivity"
+            android:label="objectcell/object_cell_chinese">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ObjectCellPreviewActivity"
+            android:label="objectcell/object_cell_preview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.GridTableActivity"
+            android:label="objectcell/title_activity_grid_table">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.GridTableXMLActivity"
+            android:label="objectcell/title_activity_grid_table_xml">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.GridObjectCellActivity"
+            android:label="objectcell/title_activity_grid_table_object_cell">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ObjectHeader Samples -->
+        <activity
+            android:name=".object.ObjectHeaderActivity"
+            android:label="object_header"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ContactCell Samples -->
+        <activity
+            android:name=".contact.BaseContactCellActivity"
+            android:label="contact_cell">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".contact.ProfileHeaderActivity"
+            android:label="profile_header"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- KeyValueCell Samples -->
+        <activity
+            android:name=".misc.BaseKeyValueCellActivity"
+            android:label="key_value/key_value_3_lines">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".misc.KeyValueCell0LineActivity"
+            android:label="key_value/key_value_0_lines">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".misc.KeyValueCell2LineActivity"
+            android:label="key_value/key_value_2_lines">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".misc.KeyValueCell1LineActivity"
+            android:label="key_value/key_value_1_line">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".misc.KeyValueCell2ColumnActivity"
+            android:label="key_value/key_value_2_columns">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".misc.KeyValueCellActionActivity"
+            android:label="key_value/key_value_action">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!-- Onboarding -->
+        <!-- ************************************* -->
+
+        <activity
+            android:label="title_onboarding_test/title_activity_fingerprint_test"
+            android:name=".onboarding.FingerprintActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="title_onboarding_test/title_activity_enable_fingerprint_test"
+            android:name=".onboarding.EnableFingerprintActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="title_onboarding_test/title_activity_fingerprint_error_test"
+            android:name=".onboarding.FingerprintErrorActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+            <meta-data
+                android:name="action_handler"
+                android:value="com.sap.cloud.mobile.fiori.demo.onboarding.FingerprintActionHandlerImpl"/>
+        </activity>
+        <activity
+        android:label="title_onboarding_test/title_activity_eula"
+        android:name=".onboarding.EULAActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+        </intent-filter>
+    </activity>
+        <activity
+            android:label="title_onboarding_test/title_activity_qrconfirm"
+            android:name=".onboarding.QRConfirmDemoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+    <activity
+      android:label="title_onboarding_test/title_activity_enter_passcode_test"
+      android:name=".onboarding.EnterPasscodeActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:label="title_onboarding_test/title_activity_set_passcode_test"
+        android:name=".onboarding.SetPasscodeActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+
+        <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+      </intent-filter>
+    </activity>
+    <activity
+        android:label="title_onboarding_test/title_activity_launchscreen"
+        android:theme="@style/Onboarding.Default.Light.Theme"
+        android:name=".onboarding.LaunchScreenActivity">
+        <meta-data
+            android:name="action_handler"
+            android:value="com.sap.cloud.mobile.fiori.demo.onboarding.LaunchScreenActionHandlerImpl"/>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+        </intent-filter>
+    </activity>
+    <activity
+        android:name="com.sap.cloud.mobile.onboarding.passcode.EnterPasscodeActivity"
+        android:label="@string/app_name"
+        android:theme="@style/Onboarding.Default.Light.Theme"
+        tools:replace="android:theme"
+        android:parentActivityName=".ApiDemos">
+      <meta-data
+          android:name="action_handler"
+          android:value="com.sap.cloud.mobile.fiori.demo.onboarding.PasscodeActionHandlerImpl"/>
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".ApiDemos" />
+    </activity>
+    <activity
+        android:name="com.sap.cloud.mobile.onboarding.passcode.ChangePasscodeActivity"
+        android:label="@string/app_name"
+        android:theme="@style/Onboarding.Default.Light.Theme"
+        tools:replace="android:theme"
+        android:parentActivityName=".ApiDemos">
+      <meta-data
+          android:name="action_handler"
+          android:value="com.sap.cloud.mobile.fiori.demo.onboarding.PasscodeActionHandlerImpl"/>
+      <meta-data
+          android:name="android.support.PARENT_ACTIVITY"
+          android:value=".ApiDemos" />
+    </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.eula.EULAScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Onboarding.Default.Light.Theme"
+            tools:replace="android:theme"
+            android:parentActivityName=".ApiDemos">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ApiDemos" />
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.fingerprint.FingerprintErrorActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".ApiDemos">
+            <meta-data
+                android:name="action_handler"
+                android:value="com.sap.cloud.mobile.fiori.demo.onboarding.FingerprintActionHandlerImpl"/>
+        </activity>
+
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.fingerprint.FingerprintActivity"
+            android:label="@string/app_name"
+            android:parentActivityName=".ApiDemos">
+            <meta-data
+                android:name="action_handler"
+                android:value="com.sap.cloud.mobile.fiori.demo.onboarding.FingerprintActionHandlerImpl" />
+        </activity>
+
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.launchscreen.LaunchScreenActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Onboarding.Default.Light.Theme"
+            tools:replace="android:theme"
+            android:parentActivityName=".ApiDemos">
+            <meta-data
+                android:name="action_handler"
+                android:value="com.sap.cloud.mobile.fiori.demo.onboarding.WelcomeScreenActionHandlerImpl" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ApiDemos" />
+        </activity>
+            <activity
+                android:name="com.sap.cloud.mobile.onboarding.activation.ActivationActivity"
+                android:label="@string/app_name"
+                android:theme="@style/Onboarding.Default.Light.Theme"
+                tools:replace="android:theme"
+                android:parentActivityName="com.sap.cloud.mobile.onboarding.launchscreen.LaunchScreenActivity">
+                <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.sap.cloud.mobile.onboarding.launchscreen.LaunchScreenActivity" />
+            </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.passcode.SetPasscodeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Onboarding.Default.Light.Theme"
+            tools:replace="android:theme"
+            android:parentActivityName=".ApiDemos">
+          <meta-data
+              android:name="action_handler"
+              android:value="com.sap.cloud.mobile.fiori.demo.onboarding.PasscodeActionHandlerImpl"/>
+          <meta-data
+              android:name="validation_action_handler"
+              android:value="com.sap.cloud.mobile.fiori.demo.onboarding.PasscodeValidationActionHandlerImpl"/>
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.passcode.ConfirmPasscodeActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Onboarding.Default.Light.Theme"
+            tools:replace="android:theme"
+            android:parentActivityName=".ApiDemos">
+          <meta-data
+              android:name="action_handler"
+              android:value="com.sap.cloud.mobile.fiori.demo.onboarding.PasscodeActionHandlerImpl"/>
+        </activity>
+        <activity
+            android:name=".onboarding.OnboardingSettingsActivity"
+            android:parentActivityName=".ApiDemos">
+          <meta-data
+              android:name="android.support.PARENT_ACTIVITY"
+              android:value=".ApiDemos" />
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.qrcodereader.google.QRCodeReaderActivity"
+            android:label="@string/app_name"
+            tools:replace="android:theme"
+            android:theme="@style/Onboarding.Default.Light.Theme">
+          <meta-data
+              android:name="action_handler"
+              android:value="com.sap.cloud.mobile.fiori.demo.search.DemoSearchBarcodeValidator"/>
+        </activity>
+
+        <activity
+            android:name="com.sap.cloud.mobile.onboarding.qrcodereader.QRCodeConfirmActivity"
+            android:label="@string/app_name"
+            tools:replace="android:theme"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name="com.sap.cloud.mobile.fiori.demo.onboarding.CustomQRCodeConfirmActivity"
+            android:label="@string/app_name"
+            tools:replace="android:theme"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".onboarding.DummyLoginActivity"
+            android:label="@string/title_activity_dummy_login">
+        </activity>
+        <activity
+            android:name=".onboarding.DummyExternalDevelopersActivity"
+            android:label="@string/title_activity_dummy_external">
+        </activity>
+        <activity
+            android:name=".onboarding.AfterOnboardingActivity"
+            android:label="@string/title_activity_after_onboarding">
+        </activity>
+
+
+    <!-- *************************************
+                    Search
+    ************************************* -->
+        <activity
+            android:name=".search.dictionary.SearchableDictionary"
+            android:label="activity_basic_search/activity_serchable_dictionary"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <!-- No category needed, because the Intent will specify this class component -->
+            </intent-filter>
+
+            <!-- Points to searchable meta data. -->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".search.dictionary.WordActivity" />
+        <activity
+            android:name=".search.objectcell.ObjectcellSearchActivity"
+            android:label="activity_basic_search/activity_objectcell_search_test"
+            android:parentActivityName=".search.objectcell.ObjectcellSearchActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <!-- No category needed, because the Intent will specify this class component -->
+            </intent-filter>
+
+            <!-- Points to searchable meta data. -->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/objectcell_searchable" />
+        </activity>
+
+        <activity android:name=".StylesActivity" android:label="title_styles">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <!-- ************************************* -->
+        <!-- form cells -->
+        <!-- ************************************* -->
+        <activity
+            android:name=".formcell.FilterDemoMainActivity"
+            android:label="formcell/activity_filter_fragment"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.SectionedRecyclerDemoActivity"
+            android:label="formcell/title_activity_sectioned_recycler_demo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.XMLBindingTestActivity"
+            android:label="formcell/activity_filter_xml_binding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.DataBindingTestActivity"
+            android:label="formcell/activity_filter_databinding">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.FilterActivityTest"
+            android:parentActivityName=".formcell.FilterDemoMainActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".formcell.MyListFormCellFilterActivity"
+            android:parentActivityName=".formcell.FilterActivityTest"></activity>
+        <activity
+            android:name=".formcell.GenericObjectCellPickerActivity"
+            android:label="Object Cell Picker"
+            android:parentActivityName=".formcell.FilterActivityTest" />
+
+        <activity
+            android:name=".formcell.GenericTextPickerStringIdActivity"
+            android:label="TextPicker with String Id "
+            android:parentActivityName=".formcell.FilterActivityTest" />
+
+        <activity
+            android:name=".formcell.GenericTextPickerLongIdActivity"
+            android:label="TextPicker with Long Id "
+            android:parentActivityName=".formcell.FilterActivityTest" />
+
+        <activity
+            android:name=".formcell.DateTimeAndDurationPickerTestActivity"
+            android:label="formcell/title_activity_date_time_picker_test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.NoteFormCellActivity"
+            android:label="formcell/title_activity_note_form_cell">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.SimplePropertyFormCellActivity"
+            android:label="formcell/title_activity_simple_property_form_cell">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.FilterFormCellDynamicBinding"
+            android:label="formcell/filter_form_cell_dynamically_bounded_with_values">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.ChoiceControlTest"
+            android:label="formcell/activity_choice_control_test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".formcell.SeparatorActivity"
+            android:label="formcell/activity_separator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

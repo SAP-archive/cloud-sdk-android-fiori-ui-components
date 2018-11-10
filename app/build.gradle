@@ -1,0 +1,178 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenLocal()
+    google()
+    jcenter()
+}
+
+/*
+To run layout tests run the following command from terminal(mac):
+./gradlew demo:connectedDemoDebugAndroidTest
+-Pandroid.testInstrumentationRunnerArguments.class=com.sap.cloud.mobile.fiori.demo.test.onboarding.LayoutTestsSuite -PwithLayoutTests=true
+if there is no reference screenshot for the specific device/emulator you can create with the referenceDeviceParams parameter.
+For example(mac):
+./gradlew demo:connectedDemoDebugAndroidTest
+-Pandroid.testInstrumentationRunnerArguments.class=com.sap.cloud.mobile.fiori.demo.test.onboarding.LayoutTestsSuite
+-PreferenceDeviceParams=1440x2960x560
+-PwithLayoutTests=true
+*/
+
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.sap.cloud.mobile.fiori.demo"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.sap.cloud.mobile.fiori.demo.test.AccessibilityChecksTestRunner"
+        //comment out this line to run performance tests
+        testInstrumentationRunnerArgument 'notAnnotation', 'com.sap.cloud.mobile.fiori.demo.test.common.PerfTest'
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        // Turns off checks for the issue IDs you specify.
+        disable 'ProtectedPermissions'
+        warning 'InvalidPackage'
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+dependencies {
+    implementation group: 'com.sap.cloud.android', name: 'fiori', version:sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboarding', version:sdkVersion
+
+    implementation 'com.github.bumptech.glide:glide:4.1.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.1.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:support-fragment:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:preference-v7:28.0.0'
+    implementation 'com.android.support:preference-v14:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.1'
+    implementation 'com.thedeanda:lorem:2.1'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
+    implementation 'com.google.code.findbugs:jsr305:3.0.2'
+    android.packagingOptions {
+        pickFirst 'protobuf.meta'
+    }
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    implementation 'android.arch.lifecycle:common-java8:1.1.1'
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'com.github.tony19:logback-android:1.1.1-11'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    implementation group: 'com.sap.cloud.android', name: 'google-vision', version:sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'common-ui-tools', version:sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'qrcodereader', version:sdkVersion
+}
+String folderName = 'init'
+
+task pullScreenshots() {
+    def screenshotPath = '/storage/emulated/0/screenshots'
+
+    doLast {
+
+        def deviceSize = new ByteArrayOutputStream()
+        def deviceDensity = new ByteArrayOutputStream()
+
+        exec {
+            commandLine 'adb', 'shell', 'wm','size','|' ,'grep Physical'
+            standardOutput = deviceSize
+        }
+
+        exec {
+            commandLine 'adb', 'shell', 'wm','density', '|' ,'grep Physical'
+            standardOutput = deviceDensity
+        }
+
+        def deviceParam = deviceSize.toString()+deviceDensity.toString()
+        deviceParam = deviceParam.findAll( /\d+/ )*.toInteger()
+        folderName = deviceParam[0]+'x'+deviceParam[1]+'x'+deviceParam[2]
+
+
+
+        def referenceScreenShotsPath = System.getProperty("user.dir")+'/demo/'+'referenceScreenshots-'+folderName
+        def screenShotsSavePath = System.getProperty("user.dir")+'/demo/'+ 'screenShots-'+folderName
+
+
+        def folder = new File( referenceScreenShotsPath )
+        if(folder.exists()){
+
+            folderName = 'screenShots-'+folderName
+            exec {
+                workingDir './'
+                commandLine 'adb', 'pull',  screenshotPath,screenShotsSavePath
+            }
+        }
+        else{
+
+            if(project.hasProperty("referenceDeviceParams")){
+                referenceScreenShotsPath = System.getProperty("user.dir")+'/demo/'+'referenceScreenshots-'+ project.getProperty("referenceDeviceParams")
+                exec {
+                    workingDir './'
+                    commandLine 'adb', 'pull',  screenshotPath,referenceScreenShotsPath
+                }
+            }
+            else{
+                throw new GradleException("No reference screenshots for device:" + folderName)
+
+            }
+        }
+    }
+}
+
+
+task removeScreenshotDirectoryFromDevice(type: Exec) {
+    commandLine 'adb', 'shell','rm', '-r', '/storage/emulated/0/screenshots'
+}
+
+
+
+
+task compareImages() {
+    def path = android.getSdkDirectory().getAbsolutePath() + "/tools/bin/monkeyrunner"
+    def pythonScript = "compare.py"
+
+
+    doLast {
+        FileTree ioTree = fileTree(dir: folderName)
+
+        if(!project.hasProperty("referenceDeviceParams")){
+            ioTree.each { f ->
+                exec {
+                    workingDir './'
+                    commandLine path, pythonScript, f.absolutePath
+                }
+            }
+        }
+    }
+}
+
+
+afterEvaluate {
+    if (project.hasProperty("withLayoutTests")) {
+        connectedDemoDebugAndroidTest.finalizedBy(pullScreenshots)
+        pullScreenshots.finalizedBy(compareImages)
+        compareImages.finalizedBy(removeScreenshotDirectoryFromDevice)
+    }
+}
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_profile_header_action_entries">
+        <item>@string/none</item>
+        <item>@string/pref_profile_header_actions_2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>@string/pref_profile_header_actions_5</item>
+    </string-array>
+    <string-array name="pref_profile_header_action_values">
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="pref_profile_header_description_entries">
+        <item>@string/none</item>
+        <item>@string/pref_profile_header_description_short</item>
+        <item>@string/pref_profile_header_description_long</item>
+    </string-array>
+    <string-array name="pref_profile_header_description_values">
+        <item>NONE</item>
+        <item>SHORT</item>
+        <item>LONG</item>
+    </string-array>
+    <string-array name="tabValuesArray">
+        <item>Not started</item>
+        <item>In progress</item>
+        <item>On hold</item>
+        <item>Completed</item>
+        <item>Completed</item>
+        <item>Completed</item>
+        <item>Not started</item>
+        <item>Completed</item>
+        <item>Completed</item>
+        <item>Completed</item>
+    </string-array>
+
+    <integer-array name="filter_for_cell_values_1">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+    <integer-array name="filter_for_cell_values_2">
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
+</resources>

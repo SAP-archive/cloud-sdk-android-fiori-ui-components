@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="nullPolicyEnabled"
+        android:title="@string/pref_title_null_policy_enabled" />
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="skipEnabled"
+        android:title="@string/pref_title_skip_passcode_enabled" />
+    <EditTextPreference
+        android:defaultValue="4"
+        android:inputType="numberDecimal"
+        android:key="minLength"
+        android:summary="@string/pref_description_min_length"
+        android:title="@string/pref_title_min_length"
+        android:minHeight="@dimen/min_touch_size">
+    </EditTextPreference>
+    <EditTextPreference
+        android:defaultValue="-1"
+        android:inputType="numberDecimal"
+        android:key="minUnique"
+        android:summary="@string/pref_description_min_unique"
+        android:title="@string/pref_title_min_unique"
+        android:minHeight="@dimen/min_touch_size">
+    </EditTextPreference>
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="isDigitsOnly"
+        android:disableDependentsState="true"
+        android:summary="@string/pref_description_is_digit_only"
+        android:title="@string/pref_title_is_digit_only" />
+    <EditTextPreference
+        android:defaultValue="3"
+        android:inputType="numberDecimal"
+        android:key="retryLimit"
+        android:summary="@string/pref_description_retry_limit"
+        android:title="@string/pref_title_retry_limit"
+        android:minHeight="@dimen/min_touch_size">
+    </EditTextPreference>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="hasDigit"
+        android:summary="@string/pref_description_has_digit"
+        android:title="@string/pref_title_has_digit"
+        android:dependency="isDigitsOnly"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="hasLower"
+        android:summary="@string/pref_description_has_lower"
+        android:title="@string/pref_title_has_lower"
+        android:dependency="isDigitsOnly"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="hasUpper"
+        android:summary="@string/pref_description_has_upper"
+        android:title="@string/pref_title_has_upper"
+        android:dependency="isDigitsOnly"/>
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="hasSpecial"
+        android:summary="@string/pref_description_has_special"
+        android:title="@string/pref_title_has_special"
+        android:dependency="isDigitsOnly"/>
+
+</PreferenceScreen>

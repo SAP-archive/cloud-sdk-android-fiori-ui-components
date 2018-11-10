@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="ACTIVATION_MAIL_ONBOARDING"
+        android:entries="@array/pref_welcome_type_list_titles"
+        android:entryValues="@array/pref_welcome_type_list_values"
+        android:key="welcome_screen_type"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_welcome_screen_type" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="demo"
+        android:summary="@string/pref_description_enable_demo"
+        android:title="@string/pref_title_enable_demo" />
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_headline_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_headline"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_headline_launchscreen"/>
+
+    <EditTextPreference
+        android:defaultValue="4000"
+        android:inputType="numberDecimal"
+        android:key="launchscreen_animation_interval"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_animation_interval_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_images_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_images"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_images_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_titles_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_titles"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_titles_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_descriptions_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_descriptions"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_descriptions_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_button_primary_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_button_primary"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_button_primary_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_button_demo_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_button_demo"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_button_demo_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_url_termsofservice_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_url_termsofservice"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_url_termsofservice_launchscreen"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_url_privacy_launchscreen"
+        android:inputType="textCapWords"
+        android:key="launchscreen_url_privacy"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_url_privacy_launchscreen"/>
+
+</PreferenceScreen>

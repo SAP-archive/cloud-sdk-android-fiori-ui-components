@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.sap.cloud.mobile.fiori.formcell.DateTimePickerFormCell
+        android:id="@+id/dateCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        app:datePickerTitle="Start Date"
+        app:dateTimePickerMode="date"
+        app:key="Date Only"
+        app:timePickerTitle="Start Time" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <com.sap.cloud.mobile.fiori.formcell.DateTimePickerFormCell
+        android:id="@+id/timeCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:cellChangeListener="listenerForTimeCell"
+        app:datePickerTitle="Start Date"
+        app:dateTimeFormatter="HH:mm"
+        app:timePickerTitle="Start Time" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <com.sap.cloud.mobile.fiori.formcell.DateTimePickerFormCell
+        android:id="@+id/datetimeCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        app:datePickerTitle="Start Date" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+    <com.sap.cloud.mobile.fiori.formcell.DurationPickerFormCell
+        android:id="@+id/durationCell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:theme="@style/FioriTheme.Picker"
+        app:dialogTitle="This is a Title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+</LinearLayout>

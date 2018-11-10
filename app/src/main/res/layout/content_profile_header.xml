@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--appbar_always_elevated makes sure AppBarLayout always has 4dp elevation. By default it's 0dp.-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stateListAnimator="@drawable/appbar_always_elevated"
+        android:background="?attr/colorPrimary">
+
+        <!--Setting titleEnabled and expandedTitleTextAppearance to get rid of title animation-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_scrollFlags="scroll|enterAlways|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <!--layout_marginTop must be the toolbar height. ObjectHeader and Toolbar are both
+            elevated to 4dp so there's no shadow between them.-->
+            <com.sap.cloud.mobile.fiori.contact.ProfileHeader
+                android:id="@+id/profileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:elevation="4dp"
+                app:asyncRendering="false"
+                app:contactActions="CALL,EMAIL,VIDEO_CALL,MESSAGE"
+                app:description="@string/profile_header_description"
+                app:descriptionWidthPercent=".60"
+                app:detailImage="@drawable/ic_account_circle_black_24dp"
+                app:detailImageDescription="@string/profile_header_detail_image_desc"
+                app:preserveDetailImageSpacing="false"
+                app:headline="@string/profile_header_headline"
+                app:lines="2"
+                app:subheadline="@string/profile_header_subheadline"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="4dp"
+                android:background="?attr/colorPrimary"
+                app:layout_collapseMode="pin"
+                app:theme="@style/AppTheme.AppBarOverlay"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <!--layout_behavior must be used together with AppBarLayout to achieve desired scrolling effect.-->
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--Weird bug: don't add the 8dp margin for FrameLayout here, otherwise list won't show -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

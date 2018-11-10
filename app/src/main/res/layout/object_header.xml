@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sap.cloud.mobile.fiori.object.ObjectHeader xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/objectHeader"
+    app:body="@string/object_header_body"
+    app:description="@string/object_header_description"
+    app:detailImage="@drawable/object_placeholder"
+    app:detailImageDescription="@string/object_header_image_desc"
+    app:footnote="@string/object_header_footnote"
+    app:headline="@string/object_header_headline"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:subheadline="@string/object_header_subheadline"
+    tools:layout_editor_absoluteY="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0dp"
+    android:elevation="4dp">
+
+    <com.sap.cloud.mobile.fiori.common.Tag
+        app:layout_header_group="TAG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/object_header_tag1" />
+
+    <com.sap.cloud.mobile.fiori.common.Tag
+        app:layout_header_group="TAG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/object_header_tag2" />
+
+    <com.sap.cloud.mobile.fiori.common.Tag
+        app:layout_header_group="TAG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/object_header_tag3" />
+
+    <ImageView
+        app:layout_header_group="STATUS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/error"
+        android:src="@drawable/ic_warning_black_24dp"
+        android:tint="@color/sap_ui_button_reject_border_color" />
+
+    <TextView
+        app:layout_header_group="STATUS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/object_header_status"
+        android:textColor="@color/sap_ui_button_reject_border_color" />
+
+    <include layout="@layout/content_object_header_detail" />
+
+</com.sap.cloud.mobile.fiori.object.ObjectHeader>

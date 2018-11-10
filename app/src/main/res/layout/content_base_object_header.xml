@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:background="?attr/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/AppTheme.AppBarOverlay"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.sap.cloud.mobile.fiori.object.ObjectHeader
+                android:id="@+id/objectHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:elevation="4dp"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:body="@string/object_header_body"
+                app:description="@string/object_header_description"
+                app:detailImage="@drawable/object_placeholder"
+                app:detailImageDescription="@string/object_header_image_desc"
+                app:footnote="@string/object_header_footnote"
+                app:headline="@string/object_header_headline"
+                app:subheadline="@string/object_header_subheadline"
+                tools:layout_editor_absoluteY="8dp">
+
+                <com.sap.cloud.mobile.fiori.common.Tag
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/object_header_tag1"
+                    app:layout_header_group="TAG" />
+
+                <com.sap.cloud.mobile.fiori.common.Tag
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/object_header_tag2"
+                    app:layout_header_group="TAG" />
+
+                <com.sap.cloud.mobile.fiori.common.Tag
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/object_header_tag3"
+                    app:layout_header_group="TAG" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_warning_black_24dp"
+                    android:tint="@color/red"
+                    android:contentDescription="@string/error"
+                    app:layout_header_group="STATUS" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/object_header_status"
+                    android:textColor="@color/red"
+                    app:layout_header_group="STATUS" />
+
+                <include layout="@layout/content_object_header_detail" />
+
+            </com.sap.cloud.mobile.fiori.object.ObjectHeader>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="0dp"
+                android:text="@string/settings" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textSize="@dimen/caption_text_size"
+                android:paddingLeft="16dp"
+                android:paddingTop="0dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/settings_rotate" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
+

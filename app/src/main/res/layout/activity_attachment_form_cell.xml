@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sap.cloud.mobile.fiori.demo.attachments.AttachmentFormCellActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <!--While using the attachment form cell in constraint layout always use the match_constraint for height-->
+    <com.sap.cloud.mobile.fiori.attachment.AttachmentFormCell
+        android:id="@+id/attachmentFormCell"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        tools:minHeight="100dp"
+        app:isEditable="false"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.sap.cloud.mobile.fiori.attachment.AttachmentFormCell>
+
+</android.support.constraint.ConstraintLayout>

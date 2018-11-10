@@ -1,0 +1,297 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: This preference will be enabled only when the checkbox above is checked. -->
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="passcode_reset"
+        android:title="@string/pref_title_passcode_reset_enabled" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="passcode_final_disabled_pref"
+        android:title="@string/pref_title_passcode_final_disabled" />
+
+    <!-- This preference simply launches an intent when selected. Use this UI sparingly, per
+         design guidelines. -->
+    <Preference
+        android:key="change_passcode"
+        android:title="@string/pref_title_change_passcode">
+        <intent android:action="com.sap.cloud.mobile.onboarding.passcode.change" />
+    </Preference>
+    <EditTextPreference
+        android:defaultValue="@string/pref_action_handler_create_passcode_defaul_value"
+        android:inputType="textCapSentences"
+        android:key="passcode_create_validation_action_handler"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_create_action_handler_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_title"
+        android:inputType="textCapSentences"
+        android:key="passcode_create_title"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_create_headline_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_instruction_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_create_instruction_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_create_instruction_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_done_button_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_done_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_create_button_done_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_use_default"
+        android:inputType="textCapSentences"
+        android:key="passcode_skip_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_create_button_skip_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_lowercase_label"
+        android:inputType="textCapSentences"
+        android:key="passcode_lowercase_label"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_lowercase_label"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_uppercase_label"
+        android:inputType="textCapSentences"
+        android:key="passcode_uppercase_label"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_uppercase_label"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_digits_label"
+        android:inputType="textCapSentences"
+        android:key="passcode_digit_label"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_digit_label"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_create_symbols_label"
+        android:inputType="textCapSentences"
+        android:key="passcode_symbol_label"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_symbol_label"
+        android:minHeight="@dimen/min_touch_size"
+        />
+    <EditTextPreference
+        android:defaultValue="@string/passcode_enter_title"
+        android:inputType="textCapSentences"
+        android:key="passcode_enter_title"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_enter_title"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_reset_button_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_enter_reset_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_enter_reset_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/retry_passcode_message"
+        android:inputType="textCapSentences"
+        android:key="passcode_error_message_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_error_message_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--alert header-->
+    <EditTextPreference
+        android:defaultValue="@string/max_attempts_reached_message"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_header_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_alert_dialog_header_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--alert body-->
+    <EditTextPreference
+        android:defaultValue="@string/enter_credentials_message"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_body_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_alert_dialog_body_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--alert button-->
+    <EditTextPreference
+        android:defaultValue="@string/reset_button_label_alert_dialog"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_alert_dialog_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_enter_button_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_enter_done_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_enter_instruction_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_enter_instruction_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/pref_title_passcode_enter_instruction_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_default_confirm_title"
+        android:inputType="textCapSentences"
+        android:key="passcode_confirm_title"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/passcode_confirm_title"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_default_confirm_done_button_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_confirm_done_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/passcode_confirm_done_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_default_confirm_instruction_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_confirm_instruction_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/passcode_confirm_instruction_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_default_confirm_mismatch_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_confirm_mismatch_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/passcode_confirm_mismatch_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <EditTextPreference
+        android:defaultValue="@string/passcode_default_confirm_button_cancel_text"
+        android:inputType="textCapSentences"
+        android:key="passcode_confirm_button_cancel_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/passcode_confirm_button_cancel_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--change mode's cancel-->
+    <EditTextPreference
+        android:defaultValue="@string/passcode_skip_label"
+        android:inputType="textCapSentences"
+        android:key="passcode_change_skip_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/passcode_change_skip_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--Alert dialog of null policy-->
+    <!--alert header-->
+    <EditTextPreference
+        android:defaultValue="@string/null_policy_header_alert_dialog"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_null_policy_header_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_null_policy_alert_dialog_header_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--alert body-->
+    <EditTextPreference
+        android:defaultValue="@string/null_policy_desc_alert_dialog"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_null_policy_desc_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_null_policy_alert_dialog_desc_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--alert retry button-->
+    <EditTextPreference
+        android:defaultValue="@string/null_policy_retry_button_alert_dialog"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_null_policy_retry_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_null_policy_alert_dialog_retry_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+    <!--alert cancel button-->
+    <EditTextPreference
+        android:defaultValue="@string/null_policy_cancel_button_alert_dialog"
+        android:inputType="textCapSentences"
+        android:key="passcode_alert_dialog_null_policy_cancel_button_text"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:title="@string/title_activity_null_policy_alert_dialog_cancel_button_text"
+        android:minHeight="@dimen/min_touch_size"
+        />
+
+
+
+</PreferenceScreen>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.sap.cloud.mobile.fiori.formcell.SwitchFormCell
+            android:id="@+id/testSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:errorEnabled="true"
+            app:helperEnabled="true"
+            app:helperText="This is helper message"
+            app:key="testSwitch"
+            app:label="This is hint"
+            app:labelEnabled="false"
+            app:value="true" />
+
+        <com.sap.cloud.mobile.fiori.formcell.SwitchFormCell
+            android:id="@+id/testSwitch1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:errorEnabled="false"
+            app:helperEnabled="false"
+            app:helperText="This is helper message"
+            app:key="testSwitch"
+            app:label="This is hint"
+            app:labelEnabled="false"
+            app:value="true" />
+
+        <com.sap.cloud.mobile.fiori.formcell.SliderFormCell
+            android:id="@+id/testSlider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:displayValueEnabled="false"
+            app:endLabelBackground="@android:color/transparent"
+            app:endLabelEditControl="false"
+            app:endLabelIcon="@drawable/ic_volume_up_black_24dp"
+            app:errorEnabled="false"
+            app:key="Volume"
+            app:label="1 miles"
+            app:labelEnabled="true"
+            app:maximumValue="100"
+            app:minimumValue="1"
+            app:startLabelIcon="@drawable/ic_volume_down_black_24dp"
+            app:value="1" />
+
+        <com.sap.cloud.mobile.fiori.formcell.SliderFormCell
+            android:id="@+id/testSlider1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:displayValue="10"
+            app:endLabelEditControl="false"
+            app:endLabelText="100"
+            app:key="Estimated Distance"
+            app:label="10 miles"
+            app:maximumValue="100"
+            app:minimumValue="1"
+            app:startLabelText="1"
+            app:value="10" />
+
+        <android.support.v7.widget.AppCompatTextView
+            style="@style/TextAppearance.Fiori.Formcell.FormCellKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/formcell_margin_std"
+            android:layout_marginStart="@dimen/formcell_margin_std"
+            android:gravity="bottom"
+            android:minHeight="32dp"
+            android:text="Color" />
+
+        <com.sap.cloud.mobile.fiori.formcell.SliderFormCell
+            android:id="@+id/testSlider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:displayValueEnabled="false"
+            app:endLabelEms="2"
+            app:key="Color"
+            app:keyEnabled="false"
+            app:maximumValue="255"
+            app:minimumValue="1"
+            app:startLabelText="R"
+            app:value="201" />
+
+        <com.sap.cloud.mobile.fiori.formcell.SliderFormCell
+            android:id="@+id/testSlider3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            app:displayValueEnabled="false"
+            app:endLabelEms="2"
+            app:key="Slider with text label"
+            app:keyEnabled="false"
+            app:maximumValue="255"
+            app:minimumValue="1"
+            app:startLabelText="G"
+            app:value="101" />
+
+        <com.sap.cloud.mobile.fiori.formcell.SliderFormCell
+            android:id="@+id/testSlider4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            app:displayValueEnabled="false"
+            app:endLabelEms="2"
+            app:key="Slider with text label"
+            app:keyEnabled="false"
+            app:maximumValue="255"
+            app:minimumValue="1"
+            app:startLabelText="B"
+            app:value="90" />
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/testGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:entries="@array/gridSortValueOptions"
+            app:key="testGridLayout" />
+
+        <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
+            android:id="@+id/genericTextPickerLongIdDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:activityTitle="Choose Text"
+            app:key="Pick Text Options"
+            app:bindViewById="true"
+            app:value="@array/selected_values" />
+
+        <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
+            android:id="@+id/genericObjectCellPickerDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:activityTitle="Choose ObjectCell"
+            app:key="Pick ObjectCell Options"
+            app:value="@array/selected_values" />
+
+        <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
+            android:id="@+id/genericTextPickerStringId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:activityTitle="No Selected Section"
+            app:key="No Selected Section"
+            app:value="@array/selected_values" />
+
+        <com.sap.cloud.mobile.fiori.formcell.DurationPickerFormCell
+            android:id="@+id/testDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            app:displayValue="Default"
+            app:durationTextFormat="%d hh:%d mm"
+            app:key="Duration Picker"
+            app:dialogTitle="Yoga Time!"
+            app:minuteInterval="10" />
+
+        <com.sap.cloud.mobile.fiori.formcell.ButtonFormCell
+            android:id="@+id/buttonFormcell"
+            style="@style/FioriButton.Raised"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Test XML Button" />
+
+        <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+            android:id="@+id/choiceCell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:cellChangeListener="ChoiceFormCellChangeHandler"
+            app:key="Test ChoiceFormCell"
+            app:outlined="false"
+            app:singleLine="true"
+            app:value="1" />
+
+        <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+            android:id="@+id/choiceCell2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:cellChangeListener="ChoiceFormCellChangeHandler"
+            app:key="Test ChoiceFormCell"
+            app:outlined="true"
+            app:singleLine="false"
+            app:value="1" />
+
+        <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+            android:id="@+id/choiceCell3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/tabValuesArray"
+            app:cellChangeListener="ChoiceFormCellChangeHandler"
+            app:key="Dynamic"
+            app:outlined="false"
+            app:singleLine="true"
+            app:value="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Single line:" />
+
+            <ToggleButton
+                android:id="@+id/singleLineToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Outlined:" />
+
+            <ToggleButton
+                android:id="@+id/outlinedToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Editable:" />
+
+            <ToggleButton
+                android:id="@+id/editableToggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

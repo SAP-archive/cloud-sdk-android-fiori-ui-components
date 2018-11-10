@@ -1,0 +1,809 @@
+<resources>
+    <string name="demo_app_name">Fiori Demo</string>
+    <string name="demo_app_name_full">Fiori Preview</string>
+    <string name="download">Download</string>
+    <string name="more">More</string>
+    <string name="error">Error</string>
+    <string name="warning">Warning</string>
+    <string name="ok">OK</string>
+    <string name="avatar">Avatar</string>
+    <string name="none">None</string>
+    <string name="app_name">Demo</string>
+
+    <!-- =============================== -->
+    <!--  views examples strings  -->
+    <!-- =============================== -->
+    <string name="views">Views</string>
+    <string name="views_desc">Compound components that consist of a group of existing controls</string>
+    <!-- =============================== -->
+    <!--  views/listcells examples strings  -->
+    <!-- =============================== -->
+    <string name="listcells">List Cells</string>
+    <string name="listcells_desc">Items that can be put into a list</string>
+    <!-- =============================== -->
+    <!--  views/listcells/objectcell examples strings  -->
+    <!-- =============================== -->
+    <string name="objectcell">Object Cell</string>
+    <string name="objectcell_desc">A list item that shows a business object</string>
+
+
+    <string name="title_activity_base_object_cell">Standard Object Cell</string>
+    <string name="title_activity_base_object_cell_desc">3-line height/1 status/with action.</string>
+
+    <string name="title_activity_grid_table">Grid Table</string>
+    <string name="title_activity_grid_table_desc">Grid Table on tablet and Object Cell on phone.</string>
+
+    <string name="title_activity_grid_table_xml">Grid Table(XML) With Sticky Header</string>
+    <string name="title_activity_grid_table_xml_desc">A different flavor of Grid Table with sticky header and columns declared in XML.</string>
+
+    <string name="title_activity_grid_table_object_cell">Grid Table/Object Cell Auto Conversion</string>
+    <string name="title_activity_grid_table_object_cell_desc">Grid Table on tablet and Object Cell on phone using single layout and adapter.</string>
+
+    <string name="object_cell_1_line">1-line Object Cell</string>
+    <string name="object_cell_1_line_desc">1-line height/1 status/no action.</string>
+
+    <string name="object_cell_1_line_text">1-line Object Cell Without Detail Image</string>
+    <string name="object_cell_1_line_text_desc">1-line height/1 status/no action/no detail image.</string>
+
+    <string name="object_cell_2_lines">2-line Object Cell</string>
+    <string name="object_cell_2_lines_desc">2-line height/2 statuses/no action/less data.</string>
+
+    <string name="object_cell_display">Object Cell Display Variant</string>
+    <string name="object_cell_display_desc">3-line headline and description/ONLY makes sense for tablet.</string>
+
+    <string name="object_cell_chinese">Object Cell With Chinese Character</string>
+    <string name="object_cell_chinese_desc">No xml layout/Chinese characters.</string>
+
+    <string name="object_cell_databinding">Object Cell With Data Binding</string>
+    <string name="object_cell_databinding_desc">Databinding/customized text appearance/round avatar.</string>
+
+
+    <string name="demo_app_list_empty_message">No demo apps available at this time</string>
+
+    <string name="grid_objectcell_header">Object Cells</string>
+    <string name="objectcell_header">Key Items</string>
+    <string name="objectcell_footer">See All</string>
+
+    <string name="object_cell_preview">Object Cell Preview List</string>
+    <string name="object_cell_preview_desc">Partial data with header and footer. Use list on phone and grid on tablet.</string>
+
+    <string name="object_cell_icon_attention_desc">Attention</string>
+    <string name="object_cell_icon_protection_desc">Protected</string>
+    <string name="object_cell_icon_not_protection_desc">Not protected</string>
+    <!-- =============================== -->
+
+    <!--  object_placeholder header examples strings  -->
+    <!-- =============================== -->
+    <string name="object_header">Object Header</string>
+    <string name="object_header_desc">A quick view of the most important about an object.</string>
+
+    <string name="title_activity_base_object_header">Standard Object Header</string>
+    <string name="title_activity_base_object_header_desc">Headline/additional info/analytics/status</string>
+
+    <string name="object_header_headline">This is a title on the first line</string>
+    <string name="object_header_subheadline">Job 000001</string>
+    <string name="object_header_body">3475 Deer Creek Rd, Palo Alto</string>
+    <string name="object_header_footnote">Due on 12/31/16</string>
+    <string name="object_header_tag1">Started</string>
+    <string name="object_header_tag2">PM01</string>
+    <string name="object_header_tag3">103-Repair</string>
+    <string name="object_header_description">Temperature sensor predicts overheating failure in 4 days. Urgent and needs attention. Follow standard protocol for inspecting and repairing equipment in critical condition.</string>
+    <string name="object_header_status">High</string>
+    <string name="object_header_image_desc">Object Header Image</string>
+
+    <string name="object_header_setting_image">Image</string>
+    <string name="object_header_setting_image_desc">An image helps the user to visually identify the object.</string>
+    <string name="object_header_setting_character_image">Character Image</string>
+    <string name="object_header_setting_character_image_desc">A character image placeholder in case image is missing.</string>
+    <string name="object_header_setting_sub_headline">Sub Headline</string>
+    <string name="object_header_setting_sub_headline_desc">Optional information about the object under headline.</string>
+    <string name="object_header_setting_analytics">Detail</string>
+    <string name="object_header_setting_analytics_desc">A detail view can be plugged in for user to quickly understand relevant trend.</string>
+    <string name="object_header_setting_description">Description</string>
+    <string name="object_header_setting_description_desc">A description paragraph can be optionally included, which does not exceed four lines, and provides the user with valuable information.</string>
+    <string name="object_header_setting_tags">Tags</string>
+    <string name="object_header_setting_tags_desc">Tags are usually system-generated and may be used to indicate categories, types, or statuses. Max 3.</string>
+    <string name="object_header_setting_body">Body</string>
+    <string name="object_header_setting_body_desc">Additional information below Tags and above footnote.</string>
+    <string name="object_header_setting_footnote">Footnote</string>
+    <string name="object_header_setting_footnote_desc">The footnote provides important information that can be consumed quickly (e.g., location, date, and time details).</string>
+    <string name="object_header_setting_status">Status</string>
+    <string name="object_header_setting_status_desc">A status section displays the current status of the object.</string>
+    <string name="menu1">Menu 1</string>
+    <string name="menu2">Menu 2</string>
+
+    <string name="contact_cell">Contact Cell</string>
+    <string name="contact_cell_desc">Gives quick access to the various methods of communicating with a contact.</string>
+    <string name="not_implemented">Not implemented yet.</string>
+
+    <string name="profile_header">Profile Header</string>
+    <string name="profile_header_title">Client</string>
+    <string name="profile_header_desc">The profile header helps the user recognize and learn more about a person. It may also allow the user to quickly contact that person without needing to drill down into his/her contact details.</string>
+    <string name="profile_header_detail_image_desc">Alex Smith\'s Image</string>
+    <string name="profile_header_headline">Michael Adams</string>
+    <string name="profile_header_headline_long">Michael Adams Long Name Example</string>
+    <string name="profile_header_subheadline">Senior Consultant</string>
+    <string name="profile_header_description">Next 1:1 in 6 days\n3 Recent Updates, 1 Urgent</string>
+    <string name="profile_header_description_one">One line of description</string>
+    <string name="profile_header_action_start">Start 1:1</string>
+    <string name="profile_header_action_end">End 1:1</string>
+    <string name="profile_header_action_desc">Profile Action</string>
+    <string name="pref_profile_header_image">Profile Image</string>
+    <string name="pref_profile_header_image_on">Show profile image. Highly recommended.</string>
+    <string name="pref_profile_header_image_off">Profile image placeholder.</string>
+    <string name="pref_profile_header_name">Profile Name</string>
+    <string name="pref_profile_header_name_long">Long name will wrap into 2 lines if necessary.</string>
+    <string name="pref_profile_header_name_short">Short name</string>
+    <string name="pref_profile_header_title">Profile Title</string>
+    <string name="pref_profile_header_title_on">Show profile title</string>
+    <string name="pref_profile_header_title_off">Do not show profile title</string>
+    <string name="pref_profile_header_actions">Contact Action Icons</string>
+    <string name="profile_header_actions_summary">Number of contact action icons: %s</string>
+    <string name="pref_profile_header_actions_2">2 (Minimum value)</string>
+    <string name="pref_profile_header_actions_5">5 (Maximum value)</string>
+    <string name="pref_profile_header_action">Profile Action</string>
+    <string name="pref_profile_header_action_on">Show profile action. (Hides contact action icons)</string>
+    <string name="pref_profile_header_action_off">Do not show profile action</string>
+    <string name="pref_profile_header_action_button_off">START 1:1</string>
+    <string name="pref_profile_header_action_button_on">END 1:1</string>
+    <string name="pref_profile_header_description">Profile Description</string>
+    <string name="pref_profile_header_description_short">One line of description</string>
+    <string name="pref_profile_header_description_long">Two line of description</string>
+
+    <!-- =============================== -->
+    <!--  KeyValueCell strings  -->
+    <!-- =============================== -->
+    <string name="key_value">Key/Value Cell</string>
+    <string name="key_value_desc">A list item that shows a label and a value.</string>
+    <string name="key_value_3_lines">3-line Key/Value Cell</string>
+    <string name="key_value_3_lines_desc">3 lines of value text.</string>
+    <string name="key_value_2_lines">2-line Key/Value Cell</string>
+    <string name="key_value_2_lines_desc">2 lines of value text.</string>
+    <string name="key_value_1_line">1-line Key/Value Cell</string>
+    <string name="key_value_1_line_desc">1 line of value text.</string>
+    <string name="key_value_2_columns">1 to 2 lines 2-column(tablet) Key/Value Cell</string>
+    <string name="key_value_2_columns_desc">On tablet 2 columns of Key/Value Cells. On phone 1 column. Non-expandable.</string>
+    <string name="key_value_0_lines">Dynamic Key/Value Cell</string>
+    <string name="key_value_0_lines_desc">1 to 6 lines of collapsed value text.</string>
+    <string name="key_value_action">Key/Value Cell with actionable value</string>
+    <string name="key_value_action_desc">Phone number as the value.</string>
+
+    <!-- =============================== -->
+    <!--  GridTable strings  -->
+    <!-- =============================== -->
+    <string name="grid_table_column_image">Image</string>
+    <string name="grid_table_column_sub_headline">Sub Headline</string>
+    <string name="grid_table_column_headline">Headline</string>
+    <string name="grid_table_column_description">Description</string>
+    <string name="grid_table_column_footnote">Footnote</string>
+    <string name="grid_table_column_status">Status</string>
+    <string name="grid_table_column_priority">Priority</string>
+    <string name="grid_table_column_price">Price(USD)</string>
+
+    <!-- =============================== -->
+    <!--  feedback examples strings  -->
+    <!-- =============================== -->
+    <string name="title_basic_component">Fiori Basic Component</string>
+    <string name="title_basic_component_desc">Fiori Basic Component</string>
+
+    <string name="title_feedback_indicator">Feedback Indicators</string>
+    <string name="title_feedback_indicator_desc">Fiori feedback indicators</string>
+
+    <string name="title_buttons">Buttons</string>
+    <string name="title_buttons_desc">Fiori buttons demo</string>
+
+    <string name="title_selection">Selections</string>
+    <string name="title_selection_desc">Fiori selections demo</string>
+
+    <string name="title_snackbar">Snackbar</string>
+    <string name="title_snackbar_desc">Fiori snackbar demo</string>
+
+    <!-- =============================== -->
+    <!--  timeline examples strings  -->
+    <!-- =============================== -->
+    <string name="activity_basic_timeline_test">Basic Timeline View</string>
+    <string name="activity_basic_timeline_test_desc">Chronological order of events expressed using Timeline view</string>
+
+    <string name="title_activity_timeline_basic_test">Basic Timeline Test</string>
+    <string name="title_activity_timeline_basic_test_desc">Basic Timeline Test</string>
+
+    <string name="title_activity_timeline_preview_example">Timeline Preview</string>
+    <string name="title_activity_timeline_preview_example_desc">Horizontal brief Timeline</string>
+
+    <string name="title_activity_timeline_mapping_example">Mapping User data to Timeline</string>
+    <string name="title_activity_timeline_mapping_example_desc">An example demonstrating how to map user data to
+    TimelineCell</string>
+
+    <string name="title_activity_timeline_node_status_example">Node Status</string>
+    <string name="title_activity_timeline_node_status_example_desc">An app demonstrating all possible states of
+    Timeline Cell</string>
+
+    <string name="title_activity_timeline_long_text_example">Long strings in timeline cells</string>
+    <string name="title_activity_timeline_long_text_example_desc">Example demonstrating long strings inTimeline Cell</string>
+
+    <!-- =============================== -->
+    <!--  onboarding examples strings  -->
+    <!-- =============================== -->
+    <string name="title_onboarding_test">Onboarding</string>
+    <string name="title_onboarding_test_desc">Onboarding process with welcome screen and passcode creation</string>
+
+    <string name="title_activity_welcome_test">Welcome Onboarding Screen</string>
+    <string name="title_activity_welcome_test_desc">Onboarding process with welcome screen</string>
+
+    <string name="title_activity_enter_passcode_test">Enter passcode Screen</string>
+    <string name="title_activity_enter_reset_button_text">Enter passcode reset button text</string>
+    <string name="title_activity_error_message_text">Enter error message text</string>
+    <string name="title_activity_alert_dialog_header_text">Enter Alert Dialog header text</string>
+    <string name="title_activity_alert_dialog_body_text">Enter Alert Dialog body text</string>
+    <string name="title_activity_alert_dialog_button_text">Enter Alert Dialog button text</string>
+    <string name="title_activity_null_policy_alert_dialog_header_text">Null Policy Alert Dialog header</string>
+    <string name="title_activity_null_policy_alert_dialog_desc_text">Null Policy Alert Dialog description</string>
+    <string name="title_activity_null_policy_alert_dialog_retry_button_text">Null Policy Alert Dialog retry button</string>
+    <string name="title_activity_null_policy_alert_dialog_cancel_button_text">Null Policy Alert Dialog cancel button</string>
+    <string name="title_activity_enter_passcode_test_desc">Onboarding process with enter passcode screen</string>
+    <string name="title_activity_set_passcode_test">Create passcode Screen</string>
+    <string name="title_activity_confirm_passcode_test">Confirm passcode Screen</string>
+    <string name="title_activity_set_passcode_test_desc">Onboarding process with create passcode screen</string>
+    <string name="title_activity_fingerprint_test">Fingerprint Screen</string>
+    <string name="title_activity_fingerprint_test_desc">Onboarding process with fingerprint</string>
+    <string name="title_activity_enable_fingerprint_test">Enable fingerprint Screen</string>
+    <string name="title_activity_enable_fingerprint_test_desc">Screen for setting up fingerprint</string>
+    <string name="title_activity_fingerprint_error_test">Fingerprint error Screen</string>
+    <string name="title_activity_fingerprint_error_test_desc">Error screen for fingerprint feature</string>
+    <string name="title_activity_eula">EULA Screen</string>
+    <string name="title_activity_eula_desc">Screen for the End User Licence Agreement</string>
+    <string name="title_activity_qrconfirm">QR Code Confirm Screen</string>
+    <string name="title_activity_qrconfirm_desc">Screen for QR Code Confirm Screen</string>
+
+    <string name="title_activity_launchscreen">Launch Screen</string>
+    <string name="title_activity_launchscreen_desc">Screen for launch application</string>
+
+    <!-- =============================== -->
+    <!--  attachment examples strings  -->
+    <!-- =============================== -->
+    <string name="activity_attachment_test">Attachment test</string>
+    <string name="activity_attachment_test_desc">Attachment tests</string>
+
+    <string name="activity_attachment_programmatically_test">Programmatic Attachment Activity</string>
+    <string name="activity_attachment_programmatically_test_desc">Programmatically attachment</string>
+
+    <string name="activity_attachment_formcell_test">Attachment form cell</string>
+    <string name="activity_attachment_formcell_test_desc">Attachment form cell</string>
+
+    <!-- =============================== -->
+    <!--  form cells example strings -->
+    <!-- =============================== -->
+
+    <string name="formcell"> Filter Patterns</string>
+    <string name="formcell_desc">Demo for different ways of using FormCell</string>
+
+    <string name="activity_choice_control_test">Choice Control</string>
+    <string name="activity_choice_control_test_desc">An example usage of Choice controls</string>
+    <string name="object_header_detail_time">10h 59m</string>
+    <string name="object_header_detail_time_desc">Label Example Showing the Maximum Width and Wrapping Ñagçyfox</string>
+
+    <string name="activity_filter_fragment"> Demo App for filter </string>
+    <string name="activity_filter_fragment_desc"> Demo for using FormCell with Filter Activity and Filter Fragment</string>
+    <string name="activity_separator"> Demo App for separator</string>
+    <string name="activity_separator_desc"> Demo for using separator</string>
+    <string name="high_temperature">79 °F</string>
+    <string name="temperature">Temperature</string>
+    <string name="time_frame">3 hours ago</string>
+    <string name="temperature_up">Temperature rising up</string>
+    <string name="settings">Settings</string>
+    <string name="setting_description">Setting description</string>
+    <string name="setting_name">Setting name</string>
+    <string name="settings_rotate">(On tablet, different orientation will have different layout)</string>
+
+    <string name="activity_filter_xml_binding"> Filter Patterns using XML Layout and Attributes </string>
+    <string name="activity_filter_xml_binding_desc">Demo usage for Filter Patterns using XML attributes </string>
+
+    <string name="activity_filter_databinding"> Filter Patterns using DataBinding in XML Layout  </string>
+    <string name="activity_filter_databinding_desc">Demo usage for Filter Patterns using XML attributes with fioribindingadapters </string>
+    <string name="title_activity_date_time_picker_test">Demo for Date Time Pickers</string>
+    <string name="title_activity_date_time_picker_test_desc">Demo usage of Date Time Picker</string>
+
+    <string name="title_activity_note_form_cell">NoteFormCell Demo </string>
+    <string name="title_activity_note_form_cell_desc">Demo usage of NoteFormCell</string>
+    <string name="title_activity_simple_property_form_cell">SimplePropertyFormCell Demo </string>
+    <string name="title_activity_simple_property_form_cell_desc">Demo usage of SimplePropertyFormCell</string>
+    <!--Example for button formCell -->
+    <string name="title_activity_button_form_cell">ButtonFormCell Demo </string>
+    <string name="title_activity_button_form_cell_desc">Demo usage of ButtonFormCell</string>
+
+    <string name="simple_property_form_cell_hint">Custom hint from string resource</string>
+    <string name="filter_form_cell_dynamically_bounded_with_values">Filter FormCell</string>
+    <string name="filter_form_cell_dynamically_bounded_with_values_desc">Filter FormCell</string>
+
+    <string name="title_activity_sectioned_recycler_demo">SectionedRecyclerDemoActivity</string>
+    <string name="title_activity_sectioned_recycler_demo_desc">SectionedRecyclerDemoActivity</string>
+
+    <string-array name="sports_array">
+        <item>Shuttle Badminton</item>
+        <item>Tennis</item>
+        <item>Table Tennis</item>
+        <item>Basket Ball</item>
+        <item>Foot Ball</item>
+        <item>Volley Ball</item>
+        <item>Hockey</item>
+        <item>Swimming</item>
+        <item>Cricket</item>
+        <item>Baseball</item>
+        <item>Kabaddi</item>
+        <item>Wrestling</item>
+        <item>Chess</item>
+    </string-array>
+    <string-array name="gridSortValueOptions">
+        <item>Distance</item>
+        <item>Price</item>
+        <item>Ratings</item>
+        <item>Availability</item>
+    </string-array>
+    <string name="title_activity_onboarding_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_delay">API Delay</string>
+    <string-array name="pref_general_delay_titles">
+        <item>No delay</item>
+        <item>1 sec</item>
+        <item>2 sec</item>
+        <item>10 sec</item>
+        <item>1 min</item>
+        <item>Never returns</item>
+    </string-array>
+    <string-array name="pref_general_delay_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+    <string name="pref_default_passcode">1234</string>
+    <string name="pref_title_passcode">Current passcode for enter passcode screen</string>
+
+    <string name="pref_general_action_handler_title">General action handler</string>
+    <string name="pref_general_action_handler_default_value">Default value of action Handler</string>
+
+    <string name="pref_title_external_activity_flag">ActionHandler call external Activity</string>
+
+    <string name="pref_title_enable_passcode_cancellation">Enable cancellation of passcode screen</string>
+    <string name="pref_description_enable_passcode_cancellation">Enter passcode or Set passcode screen can be cancelled via Back button
+  </string>
+    <!-- Example settings for Welcome Screen -->
+    <string name="pref_header_welcome_screen">Welcome screen</string>
+
+    <string name="pref_title_headline_label">Headline label</string>
+    <string name="pref_default_headline_label">@string/welcome_headline_label</string>
+
+    <string name="pref_title_detail_label">Detail label</string>
+    <string name="pref_default_detail_label">@string/activation_detail_label</string>
+
+    <string name="pref_title_footnote_label">Footnote label</string>
+    <string name="pref_default_footnote_label">@string/welcome_demo_label</string>
+
+    <string name="pref_title_welcome_screen_type">Welcome screen type</string>
+    <string-array name="pref_welcome_type_list_titles">
+        <item>STANDARD_ONBOARDING</item>
+        <item>ACTIVATION_MAIL_ONBOARDING</item>
+        <item>BARCODE_OR_DISCOVERY_SERVICE_ONBOARDING</item>
+        <item>DISCOVERY_SERVICE_ONBOARDING</item>
+        <item>BARCODE_ONBOARDING</item>
+    </string-array>
+    <string-array name="pref_welcome_type_list_values">
+        <item>STANDARD_ONBOARDING</item>
+        <item>ACTIVATION_MAIL_ONBOARDING</item>
+        <item>BARCODE_OR_DISCOVERY_SERVICE_ONBOARDING</item>
+        <item>DISCOVERY_SERVICE_ONBOARDING</item>
+        <item>BARCODE_ONBOARDING</item>
+    </string-array>
+
+    <string-array name="pref_reader_barcode_format_list_titles">
+        <item>CODE_128</item>
+        <item>CODE_39</item>
+        <item>CODE_93</item>
+        <item>CODABAR</item>
+        <item>DATA_MATRIX</item>
+        <item>EAN_13</item>
+        <item>EAN_8</item>
+        <item>ITF</item>
+        <item>QR_CODE</item>
+        <item>UPC_A</item>
+        <item>UPC_E</item>
+        <item>PDF417</item>
+        <item>AZTEC</item>
+    </string-array>
+
+    <string-array name="pref_reader_barcode_format_list_values">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
+        <item>64</item>
+        <item>128</item>
+        <item>256</item>
+        <item>512</item>
+        <item>1024</item>
+        <item>2048</item>
+        <item>4096</item>
+    </string-array>
+
+    <string name="pref_default_reader_barcode_format_list_value">256</string>
+    <string name="pref_title_reader_barcode_format_list">Barcode formats</string>
+    <string name="pref_key_reader_barcode_format_list_value">QR_CODE</string>
+
+    <string name="pref_title_enable_demo">Enable demo</string>
+    <string name="pref_description_enable_demo">Demo mode available</string>
+
+    <string name="pref_title_hide_EULA">Hide EULA</string>
+    <string name="pref_description_hide_EULA">Hide EULA screen</string>
+
+    <string name="pref_title_welcome_qr_reader_class">QR code reader class</string>
+    <string name="pref_default_welcome_qr_reader_class">@string/welcome_default_qr_reader</string>
+
+    <string name="pref_title_activation_qr_reader_class">QR code reader class</string>
+    <string name="pref_default_activation_qr_reader_class">@string/activation_default_qr_reader</string>
+
+    <!-- Example settings for Activation Screen -->
+    <string name="pref_header_activation_screen">Activation screen</string>
+
+    <string name="pref_title_activation_headline_label">Headline label</string>
+    <string name="pref_default_activation_headline_label">@string/activation_headline_label</string>
+
+    <string name="pref_title_activation_detail_label">Detail label</string>
+    <string name="pref_default_activation_detail_label">@string/activation_detail_label</string>
+
+    <string name="pref_title_activation_subheadline_label">Subheadline label</string>
+    <string name="pref_default_activation_subheadline_label">@string/activation_subheadline_label</string>
+
+    <string name="pref_title_activation_next_title">Next button title</string>
+    <string name="pref_default_activation_next_title">@string/activation_action_next</string>
+
+    <string name="pref_title_activation_scan_title">Scan button title</string>
+    <string name="pref_default_activation_scan_title">@string/activation_action_scan</string>
+
+    <!-- Example settings for Passcode -->
+    <string name="pref_header_passcode_process">Passcode</string>
+
+    <string name="pref_title_passcode_reset_enabled">Reset enabled</string>
+    <string name="pref_title_passcode_final_disabled">Final disabled</string>
+    <string name="pref_title_fingerprint_enabled">Fingerprint enabled</string>
+
+    <string name="pref_title_change_passcode">Change passcode</string>
+    <string name="pref_title_change_passcode_fingerprint">Change passcode with fingerprint</string>
+    <string name="pref_title_passcode_create_title">@string/passcode_create_button_text</string>
+    <string name="pref_title_passcode_create_button_skip_text">Create passcode skip button text</string>
+    <string name="pref_title_passcode_create_headline_text">Create passcode headline label</string>
+    <string name="pref_title_passcode_create_action_handler_text">Action handler</string>
+    <string name="pref_title_passcode_create_instruction_text">Create passcode instruction text</string>
+
+    <string name="pref_action_handler_create_passcode_defaul_value">com.sap.cloud.mobile.fiori.demo.onboarding.PasscodeValidationActionHandlerImpl</string>
+
+    <string name="pref_title_passcode_lowercase_label">Lower case constraint label</string>
+    <string name="pref_title_passcode_uppercase_label">Upper case constraint label</string>
+    <string name="pref_title_passcode_digit_label">Digits constraint label</string>
+    <string name="pref_title_passcode_symbol_label">Symbols constraint label</string>
+    <string name="pref_title_passcode_create_button_done_text">Create Passcode done button text</string>
+    <string name="pref_title_passcode_reset_button">Reset button label</string>
+
+    <string name="pref_title_passcode_enter_title">Enter passcode headline label</string>
+    <string name="pref_title_passcode_button_text">Enter passcode done button text</string>
+    <string name="pref_title_passcode_enter_instruction_text">Enter passcode detail label</string>
+    <string name="pref_title_passcode_change_title">Enter your current passcode headline label</string>
+    <string name="pref_title_passcode_change_instruction_text">Enter your current passcode detail label</string>
+
+    <string name="passcode_confirm_title">Confirm passcode title</string>
+    <string name="passcode_confirm_done_button_text">Confirm passcode done button text</string>
+    <string name="passcode_confirm_instruction_text">Confirm passcode instruction text</string>
+    <string name="passcode_confirm_mismatch_text">Confirm passcode missmatch text</string>
+    <string name="passcode_confirm_button_cancel_text">Confirm cancel button text </string>
+    <!--secondDone and skip-->
+    <string name="passcode_change_secondDone_button_text">Change passcode secondDone button text </string>
+    <string name="passcode_change_skip_button_text">Change passcode skip button text </string>
+    <!-- Example settings for Passcode Policy  -->
+    <string name="pref_title_null_policy_enabled">Null Policy</string>
+    <string name="pref_title_skip_passcode_enabled">Skip enabled</string>
+    <string name="pref_header_passcode_policy">Passcode policy</string>
+    <string name="pref_title_min_length">Minimal length</string>
+    <string name="pref_description_min_length">The minimum number of characters the passcode has to contain</string>
+    <string name="pref_title_min_unique">Minimal unique</string>
+    <string name="pref_description_min_unique">The minimum number of unique characters the passcode has to contain</string>
+    <string name="pref_title_has_digit">Mandatory number character</string>
+    <string name="pref_description_has_digit">The passcode has to contain at least one number</string>
+    <string name="pref_title_has_lower">Mandatory lowercase letter</string>
+    <string name="pref_description_has_lower">The passcode has to contain at least one lowercase letter</string>
+    <string name="pref_title_has_upper">Mandatory uppercase letter</string>
+    <string name="pref_description_has_upper">The passcode has to contain at least one uppercase letter</string>
+    <string name="pref_title_has_special">Mandatory special character</string>
+    <string name="pref_description_has_special">The passcode has to contain at least one special character</string>
+    <string name="pref_title_retry_limit">Retry limit</string>
+    <string name="pref_description_retry_limit">The maximum number of invalid passcodes</string>
+    <string name="pref_title_is_digit_only">Passcode consisting only from digits</string>
+    <string name="pref_description_is_digit_only">The passcode should contain only decimal numbers</string>
+    <string name="see_all">SEE ALL (300)</string>
+
+    <!--settings for QR code-->
+    <string name="pref_header_qrcode_confirm">QR code confirm</string>
+    <string name="pref_header_qrcode_read">QR code read</string>
+
+    <string name="pref_title_qr_confirm_headline">Enter the confirmation screen headline</string>
+    <string name="pref_default_qr_confirm_headline">@string/qr_confirm_detailed_msg_label</string>
+
+    <string name="pref_title_qr_confirm_detail">Enter the confirmation screen detail message</string>
+    <string name="pref_default_qr_confirm_detail">@string/qr_confirm_redirecturl_label</string>
+
+    <string name="pref_title_qr_confirm_continue">Enter the confirmation screen continue button label</string>
+    <string name="pref_default_qr_confirm_continue">@string/qr_confirm_continue_title</string>
+
+    <string name="pref_title_qr_read_failure_title">Enter the title if the qr code is invalid</string>
+    <string name="pref_default_qr_read_failure_title">@string/qr_confirm_failure_title</string>
+
+    <string name="pref_title_qr_read_failure_message">Enter the message if the qr code is invalid</string>
+    <string name="pref_default_qr_read_failure_message">@string/qr_confirm_failure_detailed_message</string>
+
+    <string name="pref_title_qr_read_action_handler">QR Code Reader action handler</string>
+    <string name="pref_default_qr_read_action_handler">com.sap.cloud.mobile.fiori.demo.onboarding.QRCodeReaderActionHandlerImpl</string>
+
+    <string name="pref_title_qr_read_confirm_activity">QR Code Reader Custom Confirm Activity</string>
+
+    <string name="pref_title_qr_read_failure_continue">Enter name of the continue button</string>
+    <string name="pref_default_qr_read_failure_continue">@string/qr_confirm_continue_title</string>
+
+    <string name="pref_title_qr_read_autofocus">Toggle to use the camera autofocus</string>
+    <string name="pref_title_qr_read_skip_confirm">Skip confirm screen</string>
+
+    <string name="pref_title_qr_read_wait_for_barcode_detector">Wait for detector in sec</string>
+    <string name="pref_description_qr_read_wait_for_barcode_detector">Enter the amount of wait for barcode detector in seconds</string>
+    <string name="pref_default_qr_read_wait_for_barcode_detector">20</string>
+
+
+    <!-- Example settings for Fingerprint  -->
+    <string name="pref_header_fingerprint">Fingerprint</string>
+    <string name="pref_header_fingerprint_ui">Fingerprint UI</string>
+    <string name="pref_title_fingerprint_enable_headline_label">Enable fingerprint headline label</string>
+    <string name="pref_title_fingerprint_enable_detail_label">Enable fingerprint detail label</string>
+    <string name="pref_title_fingerprint_enable_more_detail_label">Enable fingerprint more detail</string>
+    <string name="pref_title_fingerprint_enable_button_title">Enable fingerprint button title</string>
+    <string name="pref_title_fingerprint_confirm_headline_label">Confirm fingerprint headline label</string>
+    <string name="pref_title_fingerprint_confirm_detail_label">Confirm fingerprint detail label</string>
+    <string name="pref_title_fingerprint_confirm_more_detail_label">Confirm fingerprint more detail</string>
+    <string name="pref_title_fingerprint_confirm_try_password_button">Confirm fingerprint try password button title</string>
+    <string name="pref_title_fingerprint_confirm_skip_button">Confirm fingerprint skip button title</string>
+    <string name="pref_title_fingerprint_error_headline_label">Error fingerprint headline label</string>
+    <string name="pref_title_fingerprint_error_detail_label">Error fingerprint detail label</string>
+    <string name="pref_title_fingerprint_error_reset_button">Error fingerprint reset button title</string>
+    <string name="pref_default_fingerprint_generate_random_passcode">Generate random passcode with fingerprint</string>
+    <string name="pref_title_fingerprint_is_fallback_enabled">Enable fallback</string>
+    <string name="pref_title_fingerprint_is_reset_enabled">Enable reset</string>
+    <string name="pref_title_fingerprint_key_algorithm">Fingerprint Key Algorithm</string>
+    <string name="pref_title_enable_fingerprint_alert_title">Alert Dialog Title</string>
+    <string name="pref_title_enable_fingerprint_alert_message">Alert Dialog Message</string>
+    <string name="pref_title_enable_fingerprint_alert_cancel_text">Alert Dialog Cancel Text</string>
+    <string name="pref_title_enable_fingerprint_alert_settings_text">Alert Dialog Settings Text</string>
+    <string-array name="pref_fingerprint_key_algorithm_titles">
+        <item>KEY_ALGORITHM_AES</item>
+        <item>KEY_ALGORITHM_EC</item>
+        <item>KEY_ALGORITHM_HMAC_SHA1</item>
+        <item>KEY_ALGORITHM_HMAC_SHA224</item>
+        <item>KEY_ALGORITHM_HMAC_SHA256</item>
+        <item>KEY_ALGORITHM_HMAC_SHA384</item>
+        <item>KEY_ALGORITHM_HMAC_SHA512</item>
+        <item>KEY_ALGORITHM_RSA</item>
+    </string-array>
+    <string-array name="pref_fingerprint_key_algorithm_values">
+        <item>AES</item>
+        <item>EC</item>
+        <item>HMAC_SHA1</item>
+        <item>HMAC_SHA224</item>
+        <item>HMAC_SHA256</item>
+        <item>HMAC_SHA384</item>
+        <item>HMAC_SHA512</item>
+        <item>RSA</item>
+    </string-array>
+    <string name="pref_title_fingerprint_block_mode">Fingerprint Block Mode</string>
+    <string-array name="pref_fingerprint_block_mode_titles">
+        <item>BLOCK_MODE_CBC</item>
+        <item>BLOCK_MODE_CTR</item>
+        <item>BLOCK_MODE_ECB</item>
+        <item>BLOCK_MODE_GCM</item>
+    </string-array>
+    <string-array name="pref_fingerprint_block_mode_values">
+        <item>CBC</item>
+        <item>CTR</item>
+        <item>ECB</item>
+        <item>GCM</item>
+    </string-array>
+    <string name="pref_title_fingerprint_encryption_padding">Fingerprint Encryption Padding</string>
+    <string-array name="pref_fingerprint_encryption_padding_titles">
+        <item>ENCRYPTION_PADDING_NONE</item>
+        <item>ENCRYPTION_PADDING_PKCS7</item>
+        <item>ENCRYPTION_PADDING_RSA_OAEP</item>
+        <item>ENCRYPTION_PADDING_RSA_PKCS1</item>
+    </string-array>
+    <string-array name="pref_fingerprint_encryption_padding_values">
+        <item>NoPadding</item>
+        <item>PKCS7Padding</item>
+        <item>OAEPPadding</item>
+        <item>PKCS1Padding</item>
+    </string-array>
+
+    <!--settings icon-->
+    <string name="settings_icon_title">Settings Icon</string>
+
+    <!--settings for EULA screen-->
+    <string name="pref_header_eula_screen">EULA screen settings</string>
+
+    <string name="pref_title_eula">Enter the EULA screen headline</string>
+    <string name="pref_default_title_eula">@string/eula_title_text</string>
+    <string name="pref_button_confirm_eula">Enter the EULA screen agree button label</string>
+    <string name="pref_default_button_confirm_eula">@string/eula_button_confirm</string>
+    <string name="pref_button_reject_eula">Enter the EULA screen disagree button label</string>
+    <string name="pref_default_button_reject_eula">@string/eula_button_reject</string>
+    <string name="pref_url_eula">Enter the destinaton of the EULA url</string>
+    <string name="pref_default_url_eula">file:///android_asset/eula.html</string>
+
+    <!-- Settings for Launch screen -->
+    <string name="pref_header_launchscreen">Launch screen settings</string>
+
+    <string name="pref_headline_launchscreen">Enter the Launch screen headline</string>
+    <string name="pref_default_headline_launchscreen">Project Companion \n for Managers</string>
+    <string name="pref_images_launchscreen">Feature images (separate with semicolon / use 0 to hide picture)</string>
+    <string name="pref_default_images_launchscreen">graphic_cloud_3x;graphic_key_3x;0;0</string>
+    <string name="pref_titles_launchscreen">Feature titles (separate with semicolon)</string>
+    <string name="pref_default_titles_launchscreen">Unlimited Storage;Premium Access;Premium Access;Send feedback</string>
+    <string name="pref_descriptions_launchscreen">Feature descriptions (separate with semicolon)</string>
+    <string name="pref_default_descriptions_launchscreen">Production Manager provides you unlimited data storage to manage all of your data which is growing everyday!;It gives you an unlimited access to the SAP cloud system which allows you to access countless data and to download to your local devices. It can sync to maximum 3 different devices with fully functioned features.;It gives you an unlimited access to the SAP cloud system which allows you to access countless data and to download to your local devices. It can sync to maximum 3 different devices with fully functioned features. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English.;Customers ideas and feedback help us improve our current offerings and shape future software and services.</string>
+    <string name="pref_button_primary_launchscreen">Launch screen primary button label</string>
+    <string name="pref_default_button_primary_launchscreen">@string/launchscreen_button_primary</string>
+    <string name="pref_button_demo_launchscreen">Launch screen demo button label</string>
+    <string name="pref_default_button_demo_launchscreen">@string/launchscreen_button_demo</string>
+    <string name="pref_url_termsofservice_launchscreen">Footnote "Terms of Service" URL</string>
+    <string name="pref_default_url_termsofservice_launchscreen">https://cloudplatform.sap.com/</string>
+    <string name="pref_url_privacy_launchscreen">Footnote "Privacy policy" URL</string>
+    <string name="pref_default_url_privacy_launchscreen">http://sap.com</string>
+    <string name="pref_animation_interval_launchscreen">Animation Interval (millisec)</string>
+
+    <!-- Settings for Activation screen -->
+    <string name="pref_header_activation_email">Activation (email) settings</string>
+    <string name="pref_header_activation_choose">Activation (choose an option) settings</string>
+    <string name="pref_header_activation_discovery">Activation (discovery service) settings</string>
+    <string name="pref_header_activation_barcode">Activation (qr code scanner) settings</string>
+
+    <string name="pref_activation_title">Title</string>
+    <string name="pref_activation_instruction">Instruction</string>
+    <string name="pref_activation_graphic_element">Graphic element</string>
+    <string name="pref_activation_email_address">Email</string>
+
+    <string name="pref_default_activation_image">graphic_cloud_3x</string>
+
+    <string name="pref_activation_primary_button">Primary button title</string>
+    <string name="pref_activation_secondary_button">Secondary button title</string>
+    <string name="pref_activation_email_hint">Email address hint</string>
+    <string name="pref_activation_discovery_service">Prefilled discovery service address</string>
+    <string name="pref_activation_barcode_button">QR Code Scan button title</string>
+
+    <!-- =============================== -->
+    <!--  search examples strings  -->
+    <!-- =============================== -->
+    <string name="search_hint">Search…</string>
+    <string name="search_title">Search</string>
+    <string name="action_clear_searches">Clear Searches</string>
+
+    <string name="activity_basic_search">Search View</string>
+    <string name="activity_basic_search_desc">Demonstration of FioriSearchView and FioriSimpleSearchView</string>
+
+    <string name="activity_basic_search_test">Search View</string>
+    <string name="activity_basic_search_test_desc">An example demonstrating FioriSearch view in action with a content provider</string>
+
+    <string name="activity_timeline_search_test">Timeline Search View</string>
+    <string name="activity_timeline_search_test_desc">An example demonstrating FioriSearch view in action with timeline view</string>
+
+    <string name="activity_objectcell_search_test">Object Cell Search </string>
+    <string name="activity_objectcell_search_test_desc">An example demonstrating FioriSearch view in action with recycler view containing ObjectCell</string>
+
+    <string name="activity_map_search_test">Map Search View</string>
+    <string name="activity_map_search_test_desc">An example demonstrating FioriSearch view in action with Google maps</string>
+
+    <string name="activity_no_suggestion_search">Fiori Search No Suggestions</string>
+    <string name="activity_no_suggestion_search_desc">Fiori Search No Suggestions</string>
+
+    <string name="activity_serchable_dictionary">Searchable dictionary example</string>
+    <string name="activity_serchable_dictionary_desc">Searchable dictionary example</string>
+
+    <!-- The description that will show up in the search settings for this source.  -->
+    <string name="settings_description">Definitions of words</string>
+
+    <!-- Shown above search results when we receive a search request. -->
+    <plurals name="search_results">
+        <item quantity="one">%1$d result for \"%2$s\": </item>
+        <item quantity="other">%1$d results for \"%2$s\": </item>
+    </plurals>
+
+    <!-- Search failure message. -->
+    <string name="no_results">No results found for \"%s\"</string>
+    <string name="title_activity_timeline_search">TimelineSearchActivity</string>
+
+    <!-- Title Cell demo -->
+    <string name="title_activity_title_form_cell">Title Cell Demo </string>
+    <string name="title_activity_title_form_cell_desc">Demo usage of Title Cell</string>
+
+
+    <!-- =============================== -->
+    <!--  map examples strings  -->
+    <!-- =============================== -->
+    <string name="activity_basic_map">Map View</string>
+    <string name="activity_basic_map_desc">Demonstration of Fiori Map API</string>
+
+    <string name="activity_basic_map_test">Map View</string>
+    <string name="activity_basic_map_test_desc">An example demonstrating Fiori Map API with Google maps</string>
+    <string name="title_activity_dummy_login">Sign in</string>
+    <string name="title_activity_dummy_external">External developers Activity</string>
+    <string name="title_activity_after_onboarding">After Onboarding Activity</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    !-- Activity Fragment Test -->
+    <string name="clear_all">Clear All</string>
+
+    <string name="passcode_create_button_text">Create passcode button text</string>
+
+    <!--Styles activity-->
+    <string name="title_styles">Fiori for Android Type System</string>
+    <string name="title_styles_desc">Showcases Fiori 72 font family</string>
+
+    <string name="header_style_name">Style Name\n(FioriTextStyle.xxx)</string>
+    <string name="header_style_example">Example</string>
+    <string name="style.h1">H1 Example</string>
+    <string name="style.h1.example">Welcome!</string>
+    <string name="style.h2">H2 Example</string>
+    <string name="style.h2.example">Sapphire 2018</string>
+    <string name="style.h3">H3 Example</string>
+    <string name="style.h3.example">Building 8, 2nd floor</string>
+    <string name="style.h3l">H3L Example</string>
+    <string name="style.h3l.example">Building 8, 2nd floor</string>
+    <string name="style.h4">H4 Example</string>
+    <string name="style.h4.example">Asset Manager</string>
+    <string name="style.h4l">H4L Example</string>
+    <string name="style.h4l.example">Asset Manager</string>
+    <string name="style.h5">H5 Example</string>
+    <string name="style.h5.example">This is room #1004</string>
+    <string name="style.h6">H6 Example</string>
+    <string name="style.h6.example">Here is something you can ask me</string>
+    <string name="style.subtitle1">Subtitle 1 Example</string>
+    <string name="style.subtitle1.example">Production Companion Manager</string>
+    <string name="style.subtitle2">Subtitle 2 Example</string>
+    <string name="style.subtitle2.example">Senior Design Manager</string>
+    <string name="style.subtitle3">Subtitle 3 Example</string>
+    <string name="style.subtitle3.example">Analytics Section</string>
+    <string name="style.body1">Body 1</string>
+    <string name="style.body1.example">A New Message is Arrived</string>
+    <string name="style.body2">Body 2</string>
+    <string name="style.body2.example">3410 Hillview Ave, Palo Alto, CA 94304</string>
+    <string name="style.button">BUTTON</string>
+    <string name="style.button.example">COMPLETE JOB</string>
+    <string name="style.caption">Caption</string>
+    <string name="style.caption.example">Failed to login. Please input the correct password.</string>
+    <string name="style.overline">OVERLINE</string>
+    <string name="style.overline.example">NEW RELEASED</string>
+
+    <!--End of Styles activity-->
+
+</resources>

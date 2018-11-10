@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:inputType="textCapWords"
+        android:key="activation_discovery_title"
+        android:maxLines="2"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:title="@string/pref_activation_title"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:inputType="textCapWords"
+        android:key="activation_discovery_instruction"
+        android:maxLines="4"
+        android:selectAllOnFocus="true"
+        android:singleLine="false"
+        android:title="@string/pref_activation_instruction"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:inputType="textCapWords"
+        android:key="activation_discovery_button"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        android:title="@string/pref_activation_barcode_button"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:inputType="textCapWords"
+        android:key="activation_discovery_email_hint"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_activation_email_hint"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:inputType="textCapWords"
+        android:key="activation_discovery_service"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_activation_discovery_service"/>
+
+</PreferenceScreen>

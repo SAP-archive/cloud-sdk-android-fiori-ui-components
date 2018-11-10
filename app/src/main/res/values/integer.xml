@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="selected_values">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+    <integer name="radio_selected">1</integer>
+</resources>

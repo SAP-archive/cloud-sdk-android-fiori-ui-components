@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".formcell.SimplePropertyFormCellActivity">
+
+    <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
+        android:id="@+id/SimplePropertyFormCell1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:errorEnabled="true"
+        app:key="Key Cell 1"
+        app:value="##@@z444$$"
+        android:enabled="false"
+        tools:layout_height="32dp" />
+
+    <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
+        android:id="@+id/SimplePropertyFormCell2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/simple_property_form_cell_hint"
+        app:error="This is error message"
+        app:errorEnabled="false"
+        app:key="Key Cell 2"
+        app:value="##@@z444$$"
+        android:enabled="false"
+        tools:layout_height="32dp" />
+
+    <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
+        android:id="@+id/SimplePropertyFormCell3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Custom hint directly from view"
+        app:errorEnabled="true"
+        app:helperEnabled="true"
+        app:helperText="This is helper text"
+        app:key="Key Cell 3"
+        app:lines="2"
+        app:value="Cell Value"
+        android:enabled="false"
+        tools:layout_height="32dp" />
+
+    <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
+        android:id="@+id/SimplePropertyFormCell4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Custom hint directly from view"
+        app:helperEnabled="true"
+        app:helperText="Do not provide sensitive information!"
+        app:key="Key Cell 4"
+        app:lines="2"
+        app:value="Cell Value"
+        android:enabled="false"
+        tools:layout_height="32dp" />
+
+</LinearLayout>

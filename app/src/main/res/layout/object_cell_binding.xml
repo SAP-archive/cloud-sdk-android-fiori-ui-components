@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.sap.cloud.mobile.fiori.demo.object.ObjectCellBindingAdapter"/>
+        <variable
+            name="bo"
+            type="com.sap.cloud.mobile.fiori.demo.object.BizObject" />
+    </data>
+
+    <com.sap.cloud.mobile.fiori.object.ObjectCell
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lines="3"
+        app:descriptionWidthPercent=".60"
+        app:statusWidth="@dimen/demo_object_cell_status_width"
+        app:headlineTextAppearance="@style/TextAppearance.Fiori.Subtitle1"
+        app:subheadlineTextAppearance="@style/Test.ObjectCell.Subheadline"
+        app:footnoteTextAppearance="@style/Test.ObjectCell.Footnote"
+        app:descriptionTextAppearance="@style/Test.ObjectCell.Description"
+        app:headline="@{bo.headline}"
+        app:subheadline="@{bo.subHeadline}"
+        app:footnote="@{bo.footnote}"
+        app:description="@{bo.description}"
+        app:detailImage="@{bo}"
+        app:detailImageShape="oval"
+        app:preserveDetailImageSpacing="true"
+        app:secondaryActionIcon="@drawable/ic_more_vert_black_24dp"
+        app:secondaryActionDescription="@string/more"
+        app:actionTopAlign="true"
+        app:onActionClick="@{(theView) -> ObjectCellBindingAdapter.showInfo(theView, bo)}"
+        app:asyncRendering="true"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_group="ICON_STACK"
+            android:textColor="@color/sap_ui_content_label_color"
+            android:text='@{""+bo.pendingTasks}'/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_group="ICON_STACK"
+            android:tint="@color/sap_ui_content_non_interactive_icon_color"
+            android:src="@{bo.protected ? @drawable/ic_lock_outline_black_24dp : @drawable/ic_lock_open_black_24dp}"
+            android:contentDescription='@{"Protected: " + bo.protected}'/>
+
+        <!--Note app:src and app:contentDescription is handled by ObjectCellBindingAdapter-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_group="STATUS"
+            app:src="@{bo.statusId}"
+            android:tint="@color/sap_ui_neutral_text"
+            app:contentDescription="@{bo.statusId}"/>
+        <!--When there is secondary action, only one status view would appear.
+        To show 2 statuses, comment out secondaryAction.-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{bo.priority}"
+            android:textColor="@color/sap_ui_neutral_text"
+            app:layout_group="STATUS"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Should not see me because layout_group is not set!"/>
+    </com.sap.cloud.mobile.fiori.object.ObjectCell>
+</layout>

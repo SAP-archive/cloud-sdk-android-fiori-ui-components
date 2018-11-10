@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+        android:id="@+id/test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/test2"
+        app:key="ApportionsChoice set to default(False)" />
+
+    <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/test3"
+        app:key="Is Editable is set to False"
+        app:isEditable="false" />
+
+</LinearLayout>

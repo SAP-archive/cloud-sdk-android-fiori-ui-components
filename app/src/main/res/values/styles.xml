@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="FioriTheme">
+        <!-- Customize your theme here. -->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+        <item name="android:dropDownListViewStyle">@style/fiori_drop_down</item>
+    </style>
+
+    <style name="fiori_drop_down" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:background">@color/white</item>
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.PaddedButtons" parent="FioriTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:actionButtonStyle">@style/ActionButton</item>
+    </style>
+
+    <style name="ActionButton" parent="@android:style/Widget.ActionButton">
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="FioriTheme.AppBarOverlay" />
+
+    <style name="AppTheme.PopupOverlay" parent="FioriTheme.PopupOverlay" />
+
+    <style name="Test.ObjectCell.Headline" parent="TextAppearance.Fiori.ObjectCell.Headline">
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Test.ObjectCell.Subheadline" parent="TextAppearance.Fiori.ObjectCell.Subheadline">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Test.ObjectCell.Footnote" parent="TextAppearance.Fiori.ObjectCell.Footnote">
+        <item name="android:textColor">@color/sap_ui_base_text</item>
+    </style>
+
+    <style name="Test.ObjectCell.Description" parent="TextAppearance.Fiori.ObjectCell.Description">
+        <item name="android:textColor">@color/sap_ui_content_label_color</item>
+    </style>
+    <style name="Test.FilterPatterns.CircularProgress" parent="Theme.AppCompat.Light"/>
+    <style name="Test.FormCell.CircularProgress" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="SimplePropertyFormKeyTextAppearance">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ColumnKeyValueCell" parent="KeyValueCell">
+        <!--Use negative padding to reduce space between cells in the middle-->
+        <item name="android:paddingStart">-12dp</item>
+        <item name="android:paddingEnd">-12dp</item>
+    </style>
+
+    <style name="ObjectCellToolBarStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="searchViewStyle">@style/FioriSearchView.ActionBar</item>
+    </style>
+
+</resources>

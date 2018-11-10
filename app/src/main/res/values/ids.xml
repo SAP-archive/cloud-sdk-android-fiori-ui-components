@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="grid_header_row" />
+    <item type="id" name="row_image" />
+    <item type="id" name="row_headline" />
+    <item type="id" name="row_sub_headline" />
+    <item type="id" name="row_footnote" />
+    <item type="id" name="row_description" />
+    <item type="id" name="row_priority" />
+    <item type="id" name="row_price" />
+    <item type="id" name="row_status" />
+</resources>
