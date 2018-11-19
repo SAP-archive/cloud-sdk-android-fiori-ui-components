@@ -42,7 +42,7 @@ Run the project to deploy it onto an emulator or device.
 ## How to obtain support
 
 If you have questions/comments/suggestions regarding this app please
-post them using the tag [SAP Cloud Platform SDK for Android](https://www.sap.com/community/tag.html?id=73555000100800001281&tag=type:question).
+post them using the tag [SAP Cloud Platform SDK for Android](https://www.sap.com/community/tag.html?id=73555000100800001281&tag=type:question) or if you encounter an issue, you can [create a ticket](https://github.com/SAP/cloud-sdk-android-fiori-ui-components/issues/new).
 
 ## License
 
