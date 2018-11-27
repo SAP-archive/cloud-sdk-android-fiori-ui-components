@@ -41,6 +41,8 @@ Run the project to deploy it onto an emulator or device.
 
 ## Known Issues
 
+There are no known issues at this time.
+
 ## How to obtain support
 
 If you have questions/comments/suggestions regarding this app please
@@ -49,4 +51,4 @@ post them using the tag [SAP Cloud Platform SDK for Android](https://www.sap.com
 ## License
 
 Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the SAP Sample Code License except as noted otherwise in the LICENSE file [LICENSE](LICENSE).
+This file is licensed under the SAP Sample Code License except as noted otherwise in the [LICENSE file](LICENSE).
