@@ -71,6 +71,8 @@ public class DataBindingTestActivity extends AbstractDemoActivity {
         });
 
         SliderFormCell mSliderFormCell = findViewById(R.id.testSlider);
+        mSliderFormCell.setStartLabelText("" + dataClass.getSliderMinValue());
+        mSliderFormCell.setEndLabelText("" + dataClass.getSliderMaxValue());
         mSliderFormCell.setCellValueChangeListener(new FormCell.CellValueChangeListener<Integer>() {
             @Override
             public void cellChangeHandler(@NonNull Integer value) {
@@ -85,7 +87,7 @@ public class DataBindingTestActivity extends AbstractDemoActivity {
 
             @Override
             public CharSequence updatedDisplayText(@NonNull Integer value) {
-                return value.toString();
+                return value.toString() + " miles";
             }
         });
 

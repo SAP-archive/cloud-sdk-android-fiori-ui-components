@@ -27,6 +27,7 @@ import com.bumptech.glide.request.target.Target;
 import com.sap.cloud.mobile.fiori.contact.ContactCell;
 import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
 import com.sap.cloud.mobile.fiori.demo.R;
+import com.sap.cloud.mobile.fiori.object.KeylineDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,8 @@ public class BaseContactCellActivity extends AbstractDemoActivity implements
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.addItemDecoration(
+                new KeylineDividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     @NonNull

@@ -9,86 +9,67 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.SwitchCompat
-            android:id="@+id/enableDisableSwitch"
-            android:layout_width="wrap_content"
+        <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
+            android:id="@+id/noteWithoutBorderCell"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:checked="true"
-            android:padding="8dp"
-            android:text="Enable" />
-
+            android:hint="A text box hint that is selectable"
+            android:textIsSelectable="true" />
 
         <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
             android:id="@+id/noteWithBorderCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="Description2"
+            android:hint="A text box hint that isn't selectable"
             android:textIsSelectable="false" />
-
-        <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
-            android:id="@+id/noteWithoutBorderCell"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="Description1"
-            android:textIsSelectable="true" />
 
         <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
             android:id="@+id/notNoneEditableCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
+            android:enabled="true"
             android:hint="Description3"
             android:textIsSelectable="false"
-            app:isEditable="false"
-            app:value="Non Editable text" />
+            app:isEditable="true"
+            app:value="Some Editable Text" />
 
         <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
             android:id="@+id/notNoneEditableSelectableCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
+            android:enabled="true"
             android:hint="Description2"
             android:textIsSelectable="true"
             app:error="Really? not editable but possible selection?"
             app:isEditable="false"
-            app:value="This is non editable but selectable text" />
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="Add To Read Only" />
+            app:value="Some selectable, uneditable text" />
 
         <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
-            android:id="@+id/startEditable"
+            android:id="@+id/keyCellReadOnly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:enabled="false"
-            android:hint="Started editable"
-            android:textIsSelectable="true"
-            app:isEditable="true"
-            app:value="Started editable and selectable" />
-
-        <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
-            android:id="@+id/startReadonly"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:hint="Started read only and not selectable"
+            android:hint="Disabled and uneditable"
             android:textIsSelectable="false"
             app:isEditable="false"
-            app:value="Started read only and not selectable" />
+            app:value="Disabled and uneditable" />
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/switchButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="false"
-            android:text="Switch readability" />
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:text="Add Filler Text" />
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </ScrollView>

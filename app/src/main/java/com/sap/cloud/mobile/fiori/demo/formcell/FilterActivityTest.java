@@ -24,9 +24,10 @@ public class FilterActivityTest extends AbstractDemoActivity {
             @Override
             public void onApply() {
                 JSONObject filterValues = filterDialogFragment.getChangedValues();
-
+                String population = filterValues.optString("population");
                 Intent result = new Intent("CHANGED_CELLS");
                 result.putExtra("CHANGED_CELLS",filterValues.toString());
+                result.putExtra("population", population);
 
                 setResult(Activity.RESULT_OK, result);
                 finish();

@@ -41,6 +41,7 @@
                 app:maximumValue="@{filterData.sliderMaxValue}"
                 app:minimumValue="@{filterData.sliderMinValue}"
                 app:value="@{filterData.sliderValue}"
+                app:endLabelEditControl="false"
                 app:setDisplayValue="@{filterData.sliderDisplayText}" />
 
             <com.sap.cloud.mobile.fiori.formcell.FilterFormCell

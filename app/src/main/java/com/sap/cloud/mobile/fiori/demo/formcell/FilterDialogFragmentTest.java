@@ -17,6 +17,7 @@ import com.sap.cloud.mobile.fiori.formcell.SliderFormCell;
 import com.sap.cloud.mobile.fiori.formcell.SupportsKey;
 import com.sap.cloud.mobile.fiori.formcell.SwitchFormCell;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -42,7 +43,6 @@ public class FilterDialogFragmentTest extends FilterDialogFragment {
             mFilter.setFilterFormCellSelectedValue(getResources().getIntArray(R.array.selected_values));
             mFilter.setGridValueOptions(
                     getResources().getStringArray(R.array.gridSortValueOptions));
-
         }
         return super.onCreateView(inflater, container, savedInstanceState);
     }
@@ -71,7 +71,6 @@ public class FilterDialogFragmentTest extends FilterDialogFragment {
             case 0:
                 switch (row) {
                     case 0:
-
                         view.setCellValueChangeListener(new FormCell.CellValueChangeListener<ArrayList<Integer>>() {
                             @Override
                             public void cellChangeHandler(ArrayList<Integer> value) {
@@ -105,6 +104,12 @@ public class FilterDialogFragmentTest extends FilterDialogFragment {
                             @Override
                             public void cellChangeHandler(Integer value) {
                                 mFilter.setSliderValue(value);
+                                changedValues = new JSONObject();
+                                try {
+                                    changedValues.put("population", value);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                                 if (getActivity() instanceof FilterDemoMainActivity) {
                                     FilterOptionSelectedCallBack listener =
                                             (FilterOptionSelectedCallBack) getActivity();

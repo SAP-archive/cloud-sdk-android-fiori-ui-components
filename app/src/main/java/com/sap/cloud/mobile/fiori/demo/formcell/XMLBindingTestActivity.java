@@ -15,6 +15,8 @@ import com.sap.cloud.mobile.fiori.formcell.SliderFormCell;
 import com.sap.cloud.mobile.fiori.formcell.SwitchFormCell;
 import com.sap.cloud.mobile.fiori.object.ObjectCell;
 
+import java.util.Collections;
+
 public class XMLBindingTestActivity extends AbstractDemoActivity {
 
     private SliderFormCell mSliderFormCell;
@@ -51,22 +53,6 @@ public class XMLBindingTestActivity extends AbstractDemoActivity {
             }
         });
 
-        ChoiceFormCell choiceFormCell3 = findViewById(R.id.choiceCell3);
-        ToggleButton singleLineToggleButton = findViewById(R.id.singleLineToggleButton);
-        ToggleButton outlinedToggleButton = findViewById(R.id.outlinedToggleButton);
-
-        singleLineToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                choiceFormCell3.setSingleLine(isChecked);
-            }
-        });
-
-        outlinedToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                choiceFormCell3.setOutlined(isChecked);
-            }
-        });
-
         mSliderFormCell = findViewById(R.id.testSlider1);
 
         mSliderFormCell.setCellValueChangeListener(new FormCell.CellValueChangeListener<Integer>() {
@@ -83,7 +69,7 @@ public class XMLBindingTestActivity extends AbstractDemoActivity {
 
             @Override
             public CharSequence updatedDisplayText(Integer value) {
-                return mSliderFormCell.getDisplayValue() + " " + value + " miles";
+                return value + " miles";
             }
         });
 
@@ -103,6 +89,7 @@ public class XMLBindingTestActivity extends AbstractDemoActivity {
         GenericListPickerFormCell<TextView, Long> genericTextPickerLongIdDemo = findViewById(R.id.genericTextPickerLongIdDemo);
         GenericTextPickerLongIdActivity myFuiListFilter = new GenericTextPickerLongIdActivity();
         genericTextPickerLongIdDemo.setPickerActivity(myFuiListFilter);
+        genericTextPickerLongIdDemo.setValue(Collections.singletonList(2l));
         genericTextPickerLongIdDemo.setSingleSelectOnly(true);
 
         GenericListPickerFormCell<TextView, String> genericTextPickerStringIdDemo = findViewById(R.id.genericTextPickerStringId);
@@ -128,17 +115,6 @@ public class XMLBindingTestActivity extends AbstractDemoActivity {
             }
         });
         durationPickerFormCell.setError("This is validation message");
-
-        ToggleButton editableToggleButton = findViewById(R.id.editableToggleButton);
-        editableToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                choiceFormCell3.setEditable(isChecked);
-                genericTextPickerLongIdDemo.setEditable(isChecked);
-                durationPickerFormCell.setEditable(isChecked);
-                mSliderFormCell.setEditable(isChecked);
-                ((SwitchFormCell) findViewById(R.id.testSwitch)).setEditable(isChecked);
-            }
-        });
     }
 
     @Override

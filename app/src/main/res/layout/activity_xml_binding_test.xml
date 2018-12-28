@@ -61,7 +61,7 @@
             android:id="@+id/testSlider1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:displayValue="10"
+            app:displayValue="10 miles"
             app:endLabelEditControl="false"
             app:endLabelText="100"
             app:key="Estimated Distance"
@@ -75,8 +75,8 @@
             style="@style/TextAppearance.Fiori.Formcell.FormCellKey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/formcell_margin_std"
             android:layout_marginStart="@dimen/formcell_margin_std"
+            android:layout_marginEnd="@dimen/formcell_margin_std"
             android:gravity="bottom"
             android:minHeight="32dp"
             android:text="Color" />
@@ -136,9 +136,8 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             app:activityTitle="Choose Text"
-            app:key="Pick Text Options"
             app:bindViewById="true"
-            app:value="@array/selected_values" />
+            app:key="Pick Text Options" />
 
         <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
             android:id="@+id/genericObjectCellPickerDemo"
@@ -146,8 +145,7 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             app:activityTitle="Choose ObjectCell"
-            app:key="Pick ObjectCell Options"
-            app:value="@array/selected_values" />
+            app:key="Pick ObjectCell Options" />
 
         <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
             android:id="@+id/genericTextPickerStringId"
@@ -155,8 +153,7 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             app:activityTitle="No Selected Section"
-            app:key="No Selected Section"
-            app:value="@array/selected_values" />
+            app:key="No Selected Section" />
 
         <com.sap.cloud.mobile.fiori.formcell.DurationPickerFormCell
             android:id="@+id/testDuration"
@@ -166,17 +163,8 @@
             app:displayValue="Default"
             app:durationTextFormat="%d hh:%d mm"
             app:key="Duration Picker"
-            app:dialogTitle="Yoga Time!"
+            app:dialogTitle="Pick a time"
             app:minuteInterval="10" />
-
-        <com.sap.cloud.mobile.fiori.formcell.ButtonFormCell
-            android:id="@+id/buttonFormcell"
-            style="@style/FioriButton.Raised"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="Test XML Button" />
 
         <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
             android:id="@+id/choiceCell"
@@ -184,7 +172,6 @@
             android:layout_height="wrap_content"
             android:entries="@array/tabValuesArray"
             app:cellChangeListener="ChoiceFormCellChangeHandler"
-            app:key="Test ChoiceFormCell"
             app:outlined="false"
             app:singleLine="true"
             app:value="1" />
@@ -195,60 +182,11 @@
             android:layout_height="wrap_content"
             android:entries="@array/tabValuesArray"
             app:cellChangeListener="ChoiceFormCellChangeHandler"
-            app:key="Test ChoiceFormCell"
+            app:key="Some choices selected for you"
             app:outlined="true"
             app:singleLine="false"
             app:value="1" />
 
-        <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
-            android:id="@+id/choiceCell3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/tabValuesArray"
-            app:cellChangeListener="ChoiceFormCellChangeHandler"
-            app:key="Dynamic"
-            app:outlined="false"
-            app:singleLine="true"
-            app:value="1" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Single line:" />
-
-            <ToggleButton
-                android:id="@+id/singleLineToggleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Outlined:" />
-
-            <ToggleButton
-                android:id="@+id/outlinedToggleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="false" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Editable:" />
-
-            <ToggleButton
-                android:id="@+id/editableToggleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true" />
-        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

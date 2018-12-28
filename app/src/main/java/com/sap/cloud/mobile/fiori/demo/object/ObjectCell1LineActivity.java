@@ -8,12 +8,13 @@ public class ObjectCell1LineActivity extends BaseObjectCellActivity {
     @Override
     protected ObjectCellSpec getObjectCellSpec() {
         if (mObjectCellSpec == null){
-            mObjectCellSpec = new ObjectCellSpec(R.layout.object_cell_1, 20, 1, 1,
+            mObjectCellSpec = new ObjectCellSpec(R.layout.object_cell_1, 200, 1, 1,
                     false,
                     true, false, true,
                     true, true, true);
             mObjectCellSpec.setShuffleIconStack(false);
             mObjectCellSpec.setShuffleStatus(true);
+            mObjectCellSpec.setHideEmptyDescription(true);
         }
         return mObjectCellSpec;
 

@@ -28,8 +28,9 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.SearchRecentSuggestions;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
@@ -60,6 +61,22 @@ public class SearchableDictionary extends AbstractDemoActivity {
         mFioriSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         mFioriSearchView.setIconifiedByDefault(false);
         mFioriSearchView.setScanEnabled(true);
+        mFioriSearchView.setOnCollapseBtnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFioriSearchView.clearFocus();
+            }
+        });
+        mFioriSearchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    ((ImageView) findViewById(R.id.search_mag_icon)).setImageResource(R.drawable.ic_arrow_back_black_24dp);
+                } else {
+                    ((ImageView) findViewById(R.id.search_mag_icon)).setImageResource(R.drawable.ic_search);
+                }
+            }
+        });
         handleIntent(getIntent());
     }
 

@@ -4,9 +4,14 @@ import static com.sap.cloud.mobile.fiori.demo.formcell.CustomFormCell1.CUSTOM_FO
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
@@ -28,6 +33,7 @@ import com.sap.cloud.mobile.fiori.formcell.NoteFormCell;
 import com.sap.cloud.mobile.fiori.formcell.SectionedRecyclerViewAdapter;
 import com.sap.cloud.mobile.fiori.formcell.SeparatorFormCell;
 import com.sap.cloud.mobile.fiori.formcell.SliderFormCell;
+import com.sap.cloud.mobile.fiori.object.KeylineDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,6 +52,7 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
         setContentView(R.layout.activity_sectioned_recycler_demo);
         RecyclerView recyclerView = findViewById(R.id.sectionedRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        int px = (int) (16 * getResources().getDisplayMetrics().density + 0.5f);
 
         SectionedRecyclerViewAdapter adapter = new SectionedRecyclerViewAdapter() {
 
@@ -82,7 +89,7 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                     case 6:
                         return 2;
                     default:
-                        return 30;
+                        return 3;
                 }
             }
 
@@ -105,7 +112,12 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                                                 selectedAttachment1.add(attachment);
                                             }
                                         }
-                                        mAttachmentFormCell.setKey(String.format(getString(R.string.attachment_default_key), mAttachmentFormCell.getValue().size()));
+                                    }
+
+                                    @Nullable
+                                    @Override
+                                    public CharSequence updatedDisplayText(@Nullable List<Attachment> value) {
+                                        return String.format(getString(R.string.attachment_default_key), mAttachmentFormCell.getValue().size());
                                     }
                                 });
                                 if (!mAttachmentFormCell.getAttachmentItemClickListeners().isEmpty()) {
@@ -142,6 +154,12 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                                             }
                                         }
                                         mAttachmentFormCell2.setKey(String.format(getString(R.string.attachment_default_key), mAttachmentFormCell2.getValue().size()));
+                                    }
+
+                                    @Nullable
+                                    @Override
+                                    public CharSequence updatedDisplayText(@Nullable List<Attachment> value) {
+                                        return String.format(getString(R.string.attachment_default_key), mAttachmentFormCell2.getValue().size());
                                     }
                                 });
                                 if (!mAttachmentFormCell2.getAttachmentItemClickListeners().isEmpty()) {
@@ -219,7 +237,7 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
 
             @Override
             public int getNumberOfSections() {
-                return 8;
+                return 80;
             }
 
             @Override
@@ -241,6 +259,16 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                 separatorFormCell.setTextColor(getResources().getColor(R.color.white, getBaseContext().getTheme()));
             }
             */
+
+            @Override
+            protected boolean hasFooter(int section) {
+                return section % 3 == 0;
+            }
+
+            @Override
+            protected boolean hasHeader(int section) {
+                return section % 2 == 0;
+            }
         };
 
         adapter.registerCellCreator(CUSTOM_FORM_CELL_1, new FormCellCreator() {
@@ -250,20 +278,13 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                 return new CustomFormCell1(parent.getContext());
             }
         });
-        adapter.registerCellCreator(FormCell.WidgetType.Separator.ordinal(), new FormCellCreator() {
-            @NonNull
-            @Override
-            public View onCreateCell(@NonNull ViewGroup parent) {
-                return new CustomSeparator(parent.getContext());
-            }
-        });
 
         adapter.setFooterEnabled(true);
         adapter.setHeaderEnabled(true);
         adapter.setSeparatorEnabled(true);
 
-
         recyclerView.setAdapter(adapter);
+        recyclerView.addItemDecoration(new CustomDivider(recyclerView.getContext(), DividerItemDecoration.VERTICAL, px));
     }
 
     @Override
@@ -295,16 +316,56 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
 }
 
 
-class CustomSeparator extends SeparatorFormCell {
+class CustomDivider extends KeylineDividerItemDecoration {
 
-    public CustomSeparator(Context context) {
-        this(context, null);
+    private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
+    private final int px;
+    private Drawable mDivider;
+
+    public CustomDivider(Context context, int orientation, int px) {
+        super(context, orientation);
+        this.px = px;
+        final TypedArray a = context.obtainStyledAttributes(ATTRS);
+        mDivider = a.getDrawable(0);
+        a.recycle();
     }
 
-    public CustomSeparator(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-        int padding = (int) getResources().getDimension(R.dimen.demo_separator_margin);
-        setPadding(2 * padding, padding, 2 * padding, padding);
-        setBackgroundColor(getResources().getColor(R.color.sap_ui_base_color, getContext().getTheme()));
+    @Override
+    public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+        if (parent.getLayoutManager() == null) {
+            return;
+        }
+
+        int left = px;
+        int right = parent.getWidth() - px;
+
+        int childCount = parent.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View child = parent.getChildAt(i);
+
+            if (child instanceof SectionedRecyclerViewAdapter.SectionHeaderFooter && ((SectionedRecyclerViewAdapter.SectionHeaderFooter) child).getValue().toString().contains("Footer")
+                    || child instanceof SeparatorFormCell) continue;
+            else if (i < childCount - 1) {
+                View nextChild = parent.getChildAt(i + 1);
+                if (nextChild instanceof SectionedRecyclerViewAdapter.SectionHeaderFooter && ((SectionedRecyclerViewAdapter.SectionHeaderFooter) nextChild).getValue().toString().contains("Footer")
+                        || nextChild instanceof SeparatorFormCell) continue;
+            }
+
+            RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+
+            int top = child.getBottom() + params.bottomMargin;
+            int bottom = top + mDivider.getIntrinsicHeight();
+
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    @Override
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent,
+                               RecyclerView.State state) {
+        if (parent.getChildAdapterPosition(view) != parent.getAdapter().getItemCount() - 1) {
+            outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
+        }
     }
 }

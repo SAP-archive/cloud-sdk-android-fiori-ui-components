@@ -1,25 +1,25 @@
 package com.sap.cloud.mobile.fiori.demo.formcell;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.CompoundButton;
-import android.widget.Switch;
+import android.widget.Toast;
 
 import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
 import com.sap.cloud.mobile.fiori.demo.R;
+import com.sap.cloud.mobile.fiori.demo.search.DemoSearchBarcodeValidator;
 import com.sap.cloud.mobile.fiori.formcell.FormCell;
 import com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell;
 
+import static com.sap.cloud.mobile.onboarding.qrcodereader.google.QRCodeReaderActivity.REQ_CAMERA;
+
 public class SimplePropertyFormCellActivity extends AbstractDemoActivity {
-    private SimplePropertyFormCell mSimplePropertyFormCell1, mSimplePropertyFormCell2, mSimplePropertyFormCell3, mSimplePropertyFormCell4;
-    @Nullable
-    private MenuItem mItem;
+    private SimplePropertyFormCell mSimplePropertyFormCell1, mSimplePropertyFormCell2,
+            mSimplePropertyFormCell3, mSimplePropertyFormCell4,
+            mSimplePropertyFormCell5, mSimplePropertyFormCell6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +29,15 @@ public class SimplePropertyFormCellActivity extends AbstractDemoActivity {
         mSimplePropertyFormCell2 = findViewById(R.id.SimplePropertyFormCell2);
         mSimplePropertyFormCell3 = findViewById(R.id.SimplePropertyFormCell3);
         mSimplePropertyFormCell4 = findViewById(R.id.SimplePropertyFormCell4);
+        mSimplePropertyFormCell5 = findViewById(R.id.SimplePropertyFormCell5);
+        mSimplePropertyFormCell6 = findViewById(R.id.SimplePropertyFormCell6);
         mSimplePropertyFormCell1.setError("Not a valid value");
         mSimplePropertyFormCell1.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         mSimplePropertyFormCell2.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         mSimplePropertyFormCell3.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
         mSimplePropertyFormCell4.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        mSimplePropertyFormCell5.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        mSimplePropertyFormCell6.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
 
         mSimplePropertyFormCell1.setCellValueChangeListener(new FormCell.CellValueChangeListener<CharSequence>() {
             @Override
@@ -80,43 +84,20 @@ public class SimplePropertyFormCellActivity extends AbstractDemoActivity {
                 }
             }
         });
+
+//        mSimplePropertyFormCell6.setSecondaryActionOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(mSimplePropertyFormCell6.getContext(), "Custom secondary action", Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.attachment_menu, menu);
-        mItem = menu.findItem(R.id.attachment_edit_menu);
-        if (mItem != null) {
-            if (mSimplePropertyFormCell1.isEnabled()) {
-                mItem.setTitle("Save");
-            } else {
-                mItem.setTitle("Edit");
-            }
-        }
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.attachment_edit_menu:
-                if (mSimplePropertyFormCell1.isEnabled()) {
-                    mSimplePropertyFormCell1.setEnabled(false);
-                    mSimplePropertyFormCell2.setEnabled(false);
-                    mSimplePropertyFormCell3.setEnabled(false);
-                    mSimplePropertyFormCell4.setEnabled(false);
-                    item.setTitle("Edit");
-                } else {
-                    mSimplePropertyFormCell1.setEnabled(true);
-                    mSimplePropertyFormCell2.setEnabled(true);
-                    mSimplePropertyFormCell3.setEnabled(true);
-                    mSimplePropertyFormCell4.setEnabled(true);
-                    item.setTitle("Save");
-                }
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQ_CAMERA && resultCode == Activity.RESULT_OK && DemoSearchBarcodeValidator.getBarcode() != null) {
+            // Set value from barcode scan.
+            mSimplePropertyFormCell5.setValue(DemoSearchBarcodeValidator.getBarcode().displayValue);
         }
     }
 }

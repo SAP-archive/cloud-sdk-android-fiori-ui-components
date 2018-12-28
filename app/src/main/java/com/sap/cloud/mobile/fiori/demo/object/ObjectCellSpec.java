@@ -21,6 +21,9 @@ public class ObjectCellSpec {
     private boolean mHasIconStack;
     private boolean mShuffleIconStack;
     private boolean mShuffleStatus;
+    private boolean mHasContainerLayout;
+    private boolean mHideEmptyDescription;
+    private boolean mDynamicStatus;
 
     public ObjectCellSpec(){}
 
@@ -151,5 +154,29 @@ public class ObjectCellSpec {
 
     public void setLanguage(BizObject.LANGUAGE language) {
         mLanguage = language;
+    }
+
+    public boolean hasContainerLayout() {
+        return mHasContainerLayout;
+    }
+
+    public void setHasContainerLayout(boolean hasContainerLayout) {
+        mHasContainerLayout = hasContainerLayout;
+    }
+
+    public boolean getHideEmptyDescription() {
+        return mHideEmptyDescription;
+    }
+
+    public void setHideEmptyDescription(boolean hideEmptyDescription) {
+        mHideEmptyDescription = hideEmptyDescription;
+    }
+
+    public boolean isDynamicStatus() {
+        return mDynamicStatus;
+    }
+
+    public void setDynamicStatus(boolean dynamicStatus) {
+        mDynamicStatus = dynamicStatus;
     }
 }

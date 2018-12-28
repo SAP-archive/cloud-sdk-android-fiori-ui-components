@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:asyncRendering="true"
-    app:descriptionWidthPercent=".60"
     app:lines="3"
     app:statusWidth="@dimen/demo_object_cell_status_width"
     tools:detailImage="@drawable/ic_android_color_24dp"

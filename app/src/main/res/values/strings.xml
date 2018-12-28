@@ -39,8 +39,11 @@
     <string name="title_activity_grid_table_object_cell">Grid Table/Object Cell Auto Conversion</string>
     <string name="title_activity_grid_table_object_cell_desc">Grid Table on tablet and Object Cell on phone using single layout and adapter.</string>
 
+    <string name="object_cell_container">Object Cell Icon/Image Container</string>
+    <string name="object_cell_container_desc">Icon and detail image are put into a container that remains the same width.</string>
+
     <string name="object_cell_1_line">1-line Object Cell</string>
-    <string name="object_cell_1_line_desc">1-line height/1 status/no action.</string>
+    <string name="object_cell_1_line_desc">1-line height/1 status/no action/do not preserve description spacing.</string>
 
     <string name="object_cell_1_line_text">1-line Object Cell Without Detail Image</string>
     <string name="object_cell_1_line_text_desc">1-line height/1 status/no action/no detail image.</string>
@@ -50,6 +53,9 @@
 
     <string name="object_cell_display">Object Cell Display Variant</string>
     <string name="object_cell_display_desc">3-line headline and description/ONLY makes sense for tablet.</string>
+
+    <string name="object_cell_dynamic_status">Object Cell Dynamic Status Width</string>
+    <string name="object_cell_dynamic_status_desc">Status width varies from cell to cell.</string>
 
     <string name="object_cell_chinese">Object Cell With Chinese Character</string>
     <string name="object_cell_chinese_desc">No xml layout/Chinese characters.</string>
@@ -305,7 +311,7 @@
 
     <string name="title_activity_note_form_cell">NoteFormCell Demo </string>
     <string name="title_activity_note_form_cell_desc">Demo usage of NoteFormCell</string>
-    <string name="title_activity_simple_property_form_cell">SimplePropertyFormCell Demo </string>
+    <string name="title_activity_simple_property_form_cell">Simple Property Form Cell Demo </string>
     <string name="title_activity_simple_property_form_cell_desc">Demo usage of SimplePropertyFormCell</string>
     <!--Example for button formCell -->
     <string name="title_activity_button_form_cell">ButtonFormCell Demo </string>

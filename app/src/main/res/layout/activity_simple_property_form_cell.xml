@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:errorEnabled="true"
         app:key="Key Cell 1"
-        app:value="##@@z444$$"
+        app:value="Disabled"
         android:enabled="false"
+        app:isEditable="false"
         tools:layout_height="32dp" />
 
     <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
@@ -24,10 +24,9 @@
         android:layout_height="wrap_content"
         android:hint="@string/simple_property_form_cell_hint"
         app:error="This is error message"
-        app:errorEnabled="false"
+        app:errorEnabled="true"
         app:key="Key Cell 2"
         app:value="##@@z444$$"
-        android:enabled="false"
         tools:layout_height="32dp" />
 
     <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
@@ -41,7 +40,6 @@
         app:key="Key Cell 3"
         app:lines="2"
         app:value="Cell Value"
-        android:enabled="false"
         tools:layout_height="32dp" />
 
     <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
@@ -54,7 +52,32 @@
         app:key="Key Cell 4"
         app:lines="2"
         app:value="Cell Value"
-        android:enabled="false"
         tools:layout_height="32dp" />
 
+    <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
+        android:id="@+id/SimplePropertyFormCell5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Scan a barcode to get a value"
+        app:helperEnabled="true"
+        app:helperText="Scan a barcode to get a value"
+        app:key="Barcode Cell"
+        app:lines="1"
+        app:value=""
+        tools:layout_height="32dp" />
+    <!--app:secondaryActionType="BARCODE"-->
+
+    <com.sap.cloud.mobile.fiori.formcell.SimplePropertyFormCell
+        android:id="@+id/SimplePropertyFormCell6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Scan a barcode with a custom action"
+        app:helperEnabled="true"
+        app:helperText="Scan a barcode with a custom action"
+        app:key="Barcode Cell"
+        app:lines="1"
+        app:value="Custom action"
+
+        tools:layout_height="32dp" />
+    <!--app:secondaryActionType="BARCODE"-->
 </LinearLayout>

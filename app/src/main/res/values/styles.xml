@@ -59,6 +59,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="TextAppearance.Fiori.Formcell.Success.SuccessTooltip">
+        <item name="android:textColor">@color/sap_ui_positive_text</item>
+    </style>
+
     <style name="ColumnKeyValueCell" parent="KeyValueCell">
         <!--Use negative padding to reduce space between cells in the middle-->
         <item name="android:paddingStart">-12dp</item>
@@ -67,6 +71,7 @@
 
     <style name="ObjectCellToolBarStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="searchViewStyle">@style/FioriSearchView.ActionBar</item>
+        <item name="android:drawableTint">@color/white</item>
     </style>
 
 </resources>

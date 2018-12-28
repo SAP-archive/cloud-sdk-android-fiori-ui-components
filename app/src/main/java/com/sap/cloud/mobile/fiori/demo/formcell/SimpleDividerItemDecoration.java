@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.sap.cloud.mobile.fiori.demo.R;
 
-
 public class SimpleDividerItemDecoration extends RecyclerView.ItemDecoration {
     private Drawable mDivider;
 

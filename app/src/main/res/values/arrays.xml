@@ -24,17 +24,40 @@
         <item>SHORT</item>
         <item>LONG</item>
     </string-array>
+    <string-array name="tabValuesArraySize8">
+        <item>Not started</item>
+        <item>On hold</item>
+        <item>Assigned</item>
+        <item>In progress</item>
+        <item>Completed</item>
+        <item>Cancelled</item>
+        <item>Tested</item>
+        <item>Reviewed</item>
+    </string-array>
     <string-array name="tabValuesArray">
         <item>Not started</item>
-        <item>In progress</item>
         <item>On hold</item>
+        <item>Assigned</item>
+        <item>In progress</item>
         <item>Completed</item>
-        <item>Completed</item>
-        <item>Completed</item>
+        <item>Cancelled</item>
+        <item>Deleted</item>
+        <item>Tested</item>
+        <item>Under Review</item>
+        <item>Reviewed</item>
+    </string-array>
+    <string-array name="validationArray">
         <item>Not started</item>
+        <item>On hold</item>
+        <item>Assigned</item>
+        <item>In progress</item>
         <item>Completed</item>
-        <item>Completed</item>
-        <item>Completed</item>
+        <item>Cancelled</item>
+        <item>Deleted</item>
+        <item>Tested</item>
+        <item>Under Review</item>
+        <item>Reviewed</item>
+        <item>Deployed</item>
     </string-array>
 
     <integer-array name="filter_for_cell_values_1">

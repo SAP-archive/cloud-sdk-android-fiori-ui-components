@@ -25,10 +25,12 @@ import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
 import com.sap.cloud.mobile.fiori.demo.R;
+import com.sap.cloud.mobile.fiori.object.KeylineDividerItemDecoration;
 import com.sap.cloud.mobile.fiori.object.ObjectCell;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class BaseObjectCellActivity extends AbstractDemoActivity implements
         LoaderManager.LoaderCallbacks<List<BizObject>> {
@@ -72,6 +74,8 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.addItemDecoration(
+                new KeylineDividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     @NonNull
@@ -184,6 +188,8 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
             if (view.getHeadlineLines() != mObjectCellSpec.getHeadlineLines()) {
                 view.setHeadlineLines(mObjectCellSpec.getHeadlineLines());
             }
+            view.setPreserveIconImageContainer(mObjectCellSpec.hasContainerLayout());
+//            view.setPreserveDescriptionSpacing(!mObjectCellSpec.getHideEmptyDescription());
             //only use async rendering when we need to recycle ObjectCells
             //view.setAsyncRendering(mObjectCellSpec.getCounts() >20);
             return new ViewHolder(view);
@@ -199,7 +205,8 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
             //for espresso testing
             cell.setContentDescription("ObjectCell#" + obj.getId());
 
-            if (mObjectCellSpec.hasIconStack()) {
+            Random random = new Random();
+            if (mObjectCellSpec.hasIconStack() && (!mObjectCellSpec.hasContainerLayout() || random.nextBoolean())){
                 cell.clearIcons();
                 int baseIndex = 0;
                 if (mObjectCellSpec.shouldShuffleIconStack()) {
@@ -227,7 +234,7 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
                 }
             }
 
-            if (mObjectCellSpec.hasDetailImage()) {
+            if (mObjectCellSpec.hasDetailImage() && (!mObjectCellSpec.hasContainerLayout() || random.nextBoolean())) {
 
                 if (obj.getDetailImageResId() != 0) {
                     cell.setDetailImageCharacter(null);
@@ -265,6 +272,7 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
             if (mObjectCellSpec.hasFootnote()) {
                 cell.setFootnote(obj.getFootnote());
             }
+
             cell.setDescription(obj.getDescription());
             cell.clearStatuses();
             boolean shuffleStatus = mObjectCellSpec.isShuffleStatus() && position % 2 == 1;
@@ -286,21 +294,35 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
                     index++;
                 }
                 if (mObjectCellSpec.hasFirstStatus()) {
-                    cell.setStatus(obj.getPriority().toString(), index);
-                    if (obj.getPriority() == Priority.HIGH) {
-                        cell.setStatusColor(BaseObjectCellActivity.sSapUiNegativeText, index);
-                    } else {
-                        cell.setStatusColor(cell.getDefaultStatusColor(), index);
+                    if (mObjectCellSpec.isDynamicStatus()){
+//                        cell.setDynamicStatusWidth(true);
+                        cell.setStatus(obj.getInfo(), index);
+                    }else {
+                        cell.setStatus(obj.getPriority().toString(), index);
+                        if (obj.getPriority() == Priority.HIGH) {
+                            cell.setStatusColor(BaseObjectCellActivity.sSapUiNegativeText, index);
+                        } else {
+                            cell.setStatusColor(cell.getDefaultStatusColor(), index);
+                        }
                     }
                 }
 
             } else {
                 if (mObjectCellSpec.hasFirstStatus()) {
-                    cell.setStatus(obj.getPriority().toString(), 0);
-                    if (obj.getPriority() == Priority.HIGH) {
-                        cell.setStatusColor(BaseObjectCellActivity.sSapUiNegativeText, 0);
-                    } else {
-                        cell.setStatusColor(cell.getDefaultStatusColor(), 0);
+                    if (mObjectCellSpec.isDynamicStatus()){
+//                        cell.setDynamicStatusWidth(true);
+                        cell.setStatus(obj.getInfo(), 0);
+                    }else {
+                        if (obj.getPriority() == Priority.NORM) {
+                            cell.setStatus("", 0);
+                        } else {
+                            cell.setStatus(obj.getPriority().toString(), 0);
+                        }
+                        if (obj.getPriority() == Priority.HIGH) {
+                            cell.setStatusColor(BaseObjectCellActivity.sSapUiNegativeText, 0);
+                        } else {
+                            cell.setStatusColor(cell.getDefaultStatusColor(), 0);
+                        }
                     }
                 }
                 if (mObjectCellSpec.hasSecondStatus()) {

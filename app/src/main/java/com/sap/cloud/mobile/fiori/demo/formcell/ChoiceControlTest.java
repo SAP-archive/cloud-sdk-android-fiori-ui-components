@@ -15,7 +15,7 @@ public class ChoiceControlTest extends AbstractDemoActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choice_control_test);
         final ChoiceFormCell cell1 = findViewById(R.id.test1);
-        cell1.setKey("ApportionsChoice set to true");
+        cell1.setKey("A choice is pre-made for you");
         cell1.setValue(2);
         cell1.setValueOptions(new String[]{"First", "Second", "Third"});
         cell1.setCellValueChangeListener(new FormCell.CellValueChangeListener<Integer>() {
@@ -34,7 +34,7 @@ public class ChoiceControlTest extends AbstractDemoActivity {
         });
 
         final ChoiceFormCell cell2 = findViewById(R.id.test2);
-        cell2.setValueOptions(new String[]{"Tab 1", "Tab 2", "Tab 3", "Tab 4", "Tab 5", "Tab 6", "Tab 7"});
+        cell2.setValueOptions(new String[]{"Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6", "Option 7"});
         cell2.setCellValueChangeListener(new FormCell.CellValueChangeListener<Integer>() {
             @Override
             public void cellChangeHandler(Integer value) {

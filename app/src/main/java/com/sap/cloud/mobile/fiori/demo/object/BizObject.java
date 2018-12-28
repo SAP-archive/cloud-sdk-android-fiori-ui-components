@@ -2,6 +2,7 @@ package com.sap.cloud.mobile.fiori.demo.object;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
 
 import com.sap.cloud.mobile.fiori.demo.R;
 import com.thedeanda.lorem.Lorem;
@@ -38,6 +39,7 @@ public class BizObject {
     private boolean mNeedsAttention;
     private boolean mProtected;
     private int mPrice;
+    private String mInfo;
 
     public String getDetailImageUri() {
         return mDetailImageUri;
@@ -143,6 +145,14 @@ public class BizObject {
         mPrice = price;
     }
 
+    public String getInfo() {
+        return mInfo;
+    }
+
+    public void setInfo(String info) {
+        mInfo = info;
+    }
+
     @NonNull
     public static List<BizObject> createBizObjectsList(int numBizObjects) {
         return createBizObjectsList(numBizObjects, LANGUAGE.ENGLISH);
@@ -161,10 +171,14 @@ public class BizObject {
         Random r = new Random();
         for (int i = 1; i <= numBizObjects; i++) {
             BizObject obj = new BizObject(i);
-            obj.setHeadline(i + " " + cap(lorem.getWords(2, 8)));
+            obj.setHeadline(i + " " + cap(lorem.getWords(2, 10)));
             obj.setSubHeadline(cap(lorem.getWords(2,10)));
             obj.setFootnote(cap(lorem.getWords(2,10)));
-            obj.setDescription(cap(lorem.getWords(4,26)));
+            if (r.nextInt(10)>=8){
+                obj.setDescription(null);
+            }else {
+                obj.setDescription(cap(lorem.getWords(2, 26)));
+            }
             int mod = i % 7;
             if (mod == 0){
                 int mod4 = i % 4;
@@ -212,6 +226,7 @@ public class BizObject {
                 obj.setStatusId(R.drawable.ic_check_circle_black_24dp);
             }
 
+            obj.setInfo(lorem.getTitle(i % 4));
             obj.setPendingTasks(r.nextInt(250));
             obj.setNeedsAttention(r.nextBoolean());
             obj.setProtected(r.nextBoolean());
@@ -225,6 +240,7 @@ public class BizObject {
     }
 
     private static String cap(String input){
+        if (TextUtils.isEmpty(input)) return input;
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 

@@ -78,7 +78,8 @@ dependencies {
     implementation 'android.arch.lifecycle:common-java8:1.1.1'
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'com.github.tony19:logback-android:1.1.1-11'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    //debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
     implementation group: 'com.sap.cloud.android', name: 'google-vision', version:sdkVersion
     implementation group: 'com.sap.cloud.android', name: 'common-ui-tools', version:sdkVersion

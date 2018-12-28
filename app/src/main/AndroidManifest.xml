@@ -198,6 +198,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".object.ObjectCellContainerActivity"
+            android:label="objectcell/object_cell_container">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".object.ObjectCell1LineActivity"
             android:label="objectcell/object_cell_1_line">
             <intent-filter>
@@ -227,6 +236,15 @@
         <activity
             android:name=".object.ObjectCellDisplayActivity"
             android:label="objectcell/object_cell_display">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".object.ObjectCellDynamicStatusActivity"
+            android:label="objectcell/object_cell_dynamic_status">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
