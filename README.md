@@ -2,7 +2,7 @@
 
 ## Description
 
-This application demonstrates the available components in the Fiori UI library. It organizes the samples using an easy-to-navigate table. The app is intended to simply provide example implementation of each control, so that users can take the samples and expand their own applications to use the Fiori library. Each table cell represents a type of Fiori control, and the user can tap a table cell to see more detail on a specific control.
+This application demonstrates the available components in the Fiori UI library.  The app is intended to provide an example implementation of each control, so that users can take the samples and expand their own applications to use the Fiori library.
 
 If you are new to the SAP Cloud Platform SDK for Android, [SAP Cloud Platform SDK for Android Learning Journey](https://help.sap.com/doc/221f8f84afef43d29ad37ef2af0c4adf/HP_2.0/en-US/747d6d2ea0534ba99612920c7402631a.html) and the [Step by Step with the SAP Cloud Platform SDK for Android](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/) series is a great place to start.
 
@@ -12,7 +12,7 @@ The app lists the available Fiori components.
 
 ![The finished application](images/app-home-screen.png)
 
-Tapping a component type brings the user to more options related to that specific control. 
+Tapping a component type brings the user to more options related to that specific control.
 
 ![Tapping the Fiori Basic Components](images/basic-components-tap.png)
 
@@ -22,8 +22,8 @@ Tapping a component type brings the user to more options related to that specifi
 
 ## Requirements
 
-* [Android Studio](https://developer.android.com/studio/index.html) version 3.2.1
-* [SAP Cloud Platform SDK for Android from Trial Downloads](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html) or [SAP Cloud Platform SDK for Android from Software Downloads](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800001281&V=MAINT&TA=ACTUAL/SAP%20CP%20SDK%20FOR%20AND) version 1.1.4 (1.0 SP00 PL04)
+* [Android Studio](https://developer.android.com/studio/index.html) version 3.3.1
+* [SAP Cloud Platform SDK for Android from Trial Downloads](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html) or [SAP Cloud Platform SDK for Android from Software Downloads](https://launchpad.support.sap.com/#/softwarecenter/template/products/_APP=00200682500000001943&_EVENT=NEXT&HEADER=Y&FUNCTIONBAR=Y&EVENT=TREE&NE=NAVIGATE&ENR=73555000100800001281&V=MAINT&TA=ACTUAL/SAP%20CP%20SDK%20FOR%20AND) version 2.0
 
 The blog [Step by Step with the SAP Cloud Platform SDK for Android](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/) contains additional details on how to setup and install the SDK.
 
@@ -33,7 +33,7 @@ There is extensive documentation at [SAP Experience](https://experience.sap.com/
 
 Open the project in Android Studio.
 
-To successfully run the application, the `sdkVersion` variable in the `gradle.properties` file needs to be set correctly. Depending on which version of the SDK you have installed (ex. `1.1.4`), change the variable as shown in the screenshot below.
+To successfully run the application, the `sdkVersion` variable in the `gradle.properties` file needs to be set correctly. Depending on which version of the SDK you have installed (ex. `2.0.0`), change the variable as shown in the screenshot below.
 
 ![sdkVersion variable in gradle.properties](images/sdk-version-gradle-property.png)
 
@@ -46,9 +46,9 @@ There are no known issues at this time.
 ## How to obtain support
 
 If you have questions/comments/suggestions regarding this app please
-post them using the tag [SAP Cloud Platform SDK for Android](https://www.sap.com/community/tag.html?id=73555000100800001281&tag=type:question) or if you encounter an issue, you can [create a ticket](https://github.com/SAP/cloud-sdk-android-fiori-ui-components/issues/new).
+post them using the tag [SAP Cloud Platform SDK for Android](https://answers.sap.com/tags/73555000100800001281) or if you encounter an issue, you can [create a ticket](https://github.com/SAP/cloud-sdk-android-fiori-ui-components/issues/new).
 
 ## License
 
-Copyright (c) 2018 SAP SE or an SAP affiliate company. All rights reserved.
+Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
 This file is licensed under the SAP Sample Code License except as noted otherwise in the [LICENSE file](LICENSE).

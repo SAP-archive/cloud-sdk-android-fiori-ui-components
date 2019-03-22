@@ -1,5 +1,8 @@
 package com.sap.cloud.mobile.fiori.demo.formcell;
 
+import static android.view.View.OVER_SCROLL_ALWAYS;
+import static android.view.View.SCROLLBARS_INSIDE_INSET;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -22,7 +25,6 @@ public class NoteFormCellActivity extends AbstractDemoActivity {
     @Nullable
     private MenuItem mItem;
     private Button button;
-    private NoteFormCell note;
     private NoteFormCell note1;
     private NoteFormCell note3;
     private NoteFormCell note4;
@@ -32,14 +34,9 @@ public class NoteFormCellActivity extends AbstractDemoActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_form_cell);
 
-        note = findViewById(R.id.noteWithoutBorderCell);
-        note.setCellValueChangeListener(new FormCell.CellValueChangeListener<CharSequence>() {
-            @Override
-            public void cellChangeHandler(CharSequence value) {
-                Log.i("New text ", String.valueOf(value));
-            }
-        });
         note1 = findViewById(R.id.noteWithBorderCell);
+        note1.setScrollBarStyle(SCROLLBARS_INSIDE_INSET);
+        note1.setValueOverScrollMode(OVER_SCROLL_ALWAYS);
         note1.setCellValueChangeListener(new FormCell.CellValueChangeListener<CharSequence>() {
             @Override
             public void cellChangeHandler(CharSequence value) {
@@ -52,6 +49,7 @@ public class NoteFormCellActivity extends AbstractDemoActivity {
 
             }
         });
+        note1.enableVerticalScrollOnNoteFormCell();
 
         note3 = findViewById(R.id.notNoneEditableCell);
         note4 = findViewById(R.id.notNoneEditableSelectableCell);

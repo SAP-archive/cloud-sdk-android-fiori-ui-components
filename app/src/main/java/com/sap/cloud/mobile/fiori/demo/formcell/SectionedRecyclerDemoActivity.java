@@ -125,17 +125,17 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                                 }
                                 mAttachmentFormCell.addAttachmentTouchListener(new AttachmentItemClickListener() {
                                     @Override
-                                    public void onClick(View view, int position) {
+                                    public void onClick(@NonNull View view, int position) {
 
                                     }
 
                                     @Override
-                                    public void onLongClick(View view, int position) {
+                                    public void onLongClick(@NonNull View view, int position) {
 
                                     }
 
                                     @Override
-                                    public void onClickDelete(Attachment attachment) {
+                                    public void onClickDelete(@NonNull Attachment attachment) {
                                         selectedAttachment1.remove(attachment);
                                     }
                                 });
@@ -156,7 +156,7 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                                         mAttachmentFormCell2.setKey(String.format(getString(R.string.attachment_default_key), mAttachmentFormCell2.getValue().size()));
                                     }
 
-                                    @Nullable
+                                    @NonNull
                                     @Override
                                     public CharSequence updatedDisplayText(@Nullable List<Attachment> value) {
                                         return String.format(getString(R.string.attachment_default_key), mAttachmentFormCell2.getValue().size());
@@ -167,17 +167,17 @@ public class SectionedRecyclerDemoActivity extends AbstractDemoActivity {
                                 }
                                 mAttachmentFormCell2.addAttachmentTouchListener(new AttachmentItemClickListener() {
                                     @Override
-                                    public void onClick(View view, int position) {
+                                    public void onClick(@NonNull View view, int position) {
 
                                     }
 
                                     @Override
-                                    public void onLongClick(View view, int position) {
+                                    public void onLongClick(@NonNull View view, int position) {
 
                                     }
 
                                     @Override
-                                    public void onClickDelete(Attachment attachment) {
+                                    public void onClickDelete(@NonNull Attachment attachment) {
                                         selectedAttachment2.remove(attachment);
                                     }
                                 });

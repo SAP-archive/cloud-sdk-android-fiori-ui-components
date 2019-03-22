@@ -10,18 +10,10 @@
         android:orientation="vertical">
 
         <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
-            android:id="@+id/noteWithoutBorderCell"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="A text box hint that is selectable"
-            android:textIsSelectable="true" />
-
-        <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
             android:id="@+id/noteWithBorderCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="A text box hint that isn't selectable"
-            android:textIsSelectable="false" />
+            android:hint="A vertically scrollable Note Form Cell" />
 
         <com.sap.cloud.mobile.fiori.formcell.NoteFormCell
             android:id="@+id/notNoneEditableCell"
@@ -29,7 +21,6 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:hint="Description3"
-            android:textIsSelectable="false"
             app:isEditable="true"
             app:value="Some Editable Text" />
 
@@ -39,7 +30,6 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:hint="Description2"
-            android:textIsSelectable="true"
             app:error="Really? not editable but possible selection?"
             app:isEditable="false"
             app:value="Some selectable, uneditable text" />
@@ -50,7 +40,6 @@
             android:layout_height="wrap_content"
             android:enabled="false"
             android:hint="Disabled and uneditable"
-            android:textIsSelectable="false"
             app:isEditable="false"
             app:value="Disabled and uneditable" />
 

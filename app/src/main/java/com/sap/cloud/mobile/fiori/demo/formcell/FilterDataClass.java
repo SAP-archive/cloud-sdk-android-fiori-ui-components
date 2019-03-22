@@ -282,7 +282,7 @@ public class FilterDataClass implements Serializable {
 
     void setListPickerItemList() {
         ArrayList<MyListItems> itemList = new ArrayList<>();
-        ArrayList<String> list = setupData();
+        ArrayList<String> list = setupData(false);
         for (int i = 0; i < list.size(); ++i) {
             MyListItems item = new MyListItems();
             item.setFuiItemSelected(false);
@@ -396,7 +396,7 @@ public class FilterDataClass implements Serializable {
     }
 
     void setItemList() {
-        ArrayList<String> itemList = setupData();
+        ArrayList<String> itemList = setupData(false);
         ArrayList<MyListItems> ItemList = new ArrayList<>();
         for (int it = 0; it < itemList.size(); ++it) {
             MyListItems item = new MyListItems();
@@ -497,17 +497,22 @@ public class FilterDataClass implements Serializable {
     }
 
     @NonNull
-    ArrayList<String> setupData() {
+    ArrayList<String> setupData(boolean singleLine) {
+        String msg = "- This is a very long message created for testing different UI elements in Fiori demo app. You can visualize this as a text view in"
+                + "your layout where the message can take multiple lies depending on the width of layout.";
+        if (singleLine) {
+            msg = "- Item ";
+        }
         ArrayList<String> itemList = new ArrayList<>();
         for (int it = 0; it < 1000; ++it) {
-            String text = "Item" + it;
+            String text = it + msg;
             itemList.add(text);
         }
         return itemList;
     }
 
     String setDescriptionOfSelected(@NonNull int[] selected,
-                                    @NonNull ArrayList<MyListItems> listPickerItemList) {
+            @NonNull ArrayList<MyListItems> listPickerItemList) {
         String selectedText = "";
         for (int i = 0; i < selected.length; ++i) {
             if (Objects.equals(selectedText, "")) {
@@ -529,7 +534,7 @@ public class FilterDataClass implements Serializable {
     }
 
     String setDescriptionOfSelectedForStringList(@NonNull int[] newValue,
-                                                 @NonNull ArrayList<String> stringItemList) {
+            @NonNull ArrayList<String> stringItemList) {
         String selectedText = "";
         for (int i = 0; i < newValue.length; ++i) {
             if (Objects.equals(selectedText, "")) {
@@ -556,6 +561,7 @@ public class FilterDataClass implements Serializable {
     public void setTitleIsEditable(Boolean titleIsEditable) {
         mTitleIsEditable = titleIsEditable;
     }
+
     public CharSequence getTitleHint() {
         return mTitleHint;
     }

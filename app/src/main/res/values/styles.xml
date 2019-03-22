@@ -74,4 +74,12 @@
         <item name="android:drawableTint">@color/white</item>
     </style>
 
+    <style name="NegativeTextAppearance" parent="@style/TextAppearance.Fiori.Body2">
+        <item name="android:textColor">@color/sap_ui_negative_text</item>
+    </style>
+
+    <style name="PositiveTextAppearance" parent="@style/TextAppearance.Fiori.Body2">
+        <item name="android:textColor">@color/sap_ui_positive_text</item>
+    </style>
+
 </resources>

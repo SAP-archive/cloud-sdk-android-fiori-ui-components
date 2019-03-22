@@ -1,6 +1,9 @@
 package com.sap.cloud.mobile.fiori.demo.formcell;
 
+import static com.sap.cloud.mobile.fiori.common.Utility.getSpacingAdd;
+
 import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -29,7 +32,7 @@ public class GenericTextPickerLongIdActivity extends GenericListPickerFormCellAc
     public GenericTextPickerLongIdActivity() {
         mItemList = new ArrayList<>();
         backup = new ArrayList<>();
-        setItemList(new FilterDataClass().setupData());
+        setItemList(new FilterDataClass().setupData(false));
     }
 
     public void setItemList(@NonNull List<String> itemList) {
@@ -54,13 +57,23 @@ public class GenericTextPickerLongIdActivity extends GenericListPickerFormCellAc
         Objects.requireNonNull(context, "Context was null in TextViewFormCellFilterActivity.onCreateView");
         TextView view = new TextView(getApplicationContext());
         view.setTextAppearance(com.sap.cloud.mobile.fiori.R.style.TextAppearance_Fiori_Body1);
+        if (Build.VERSION.SDK_INT >= 28) {
+            view.setLineHeight((int) getResources().getDimension(com.sap.cloud.mobile.fiori.R.dimen.body1_line_height));
+        } else {
+            view.setLineSpacing(getSpacingAdd(view.getPaint(), (int) getResources().getDimension(com.sap.cloud.mobile.fiori.R.dimen.body1_line_height)), 1);
+        }
         view.setTextColor(getResources().getColor(com.sap.cloud.mobile.fiori.R.color.sap_ui_base_text, context.getTheme()));
+        view.setPadding(view.getPaddingStart(), 0, view.getPaddingEnd(), 0);
         return view;
     }
 
     @Override
     protected void onBindView(@NonNull TextView view, Long id) {
-        view.setText(backup.get(Integer.valueOf(Long.toString(id))));
+        if (id % 2 != 0) {
+            view.setText(backup.get(Integer.valueOf(Long.toString(id))).substring(0, 9));
+        } else {
+            view.setText(backup.get(Integer.valueOf(Long.toString(id))));
+        }
     }
 
     @Override
@@ -142,6 +155,6 @@ public class GenericTextPickerLongIdActivity extends GenericListPickerFormCellAc
 
     @Override
     public Long getId(int position) {
-        return Long.valueOf(mItemList.get(position).substring("Item".length()));
+        return Long.valueOf(mItemList.get(position).substring(0, mItemList.get(position).indexOf("-")));
     }
 }

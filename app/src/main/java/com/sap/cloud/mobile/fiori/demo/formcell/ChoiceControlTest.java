@@ -1,6 +1,8 @@
 package com.sap.cloud.mobile.fiori.demo.formcell;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
@@ -59,6 +61,14 @@ public class ChoiceControlTest extends AbstractDemoActivity {
                 } else {
                     cell1.setErrorEnabled(false);
                 }
+            }
+        });
+
+        Button resetBtn = findViewById(R.id.reset_button);
+        resetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cell2.setValue(-1);
             }
         });
     }

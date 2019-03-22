@@ -29,7 +29,7 @@ public class GenericTextPickerStringIdActivity extends GenericListPickerFormCell
     public GenericTextPickerStringIdActivity() {
         mItemList = new ArrayList<>();
         backup = new ArrayList<>();
-        setItemList(new FilterDataClass().setupData());
+        setItemList(new FilterDataClass().setupData(false));
     }
 
     public void setItemList(@NonNull List<String> itemList) {
@@ -56,6 +56,7 @@ public class GenericTextPickerStringIdActivity extends GenericListPickerFormCell
         TextView view = new TextView(getApplicationContext());
         view.setTextAppearance(com.sap.cloud.mobile.fiori.R.style.TextAppearance_Fiori_Body1);
         view.setTextColor(getResources().getColor(com.sap.cloud.mobile.fiori.R.color.sap_ui_base_text, context.getTheme()));
+        view.setPadding(view.getPaddingStart(), 0, view.getPaddingEnd(), 0);
         return view;
     }
 

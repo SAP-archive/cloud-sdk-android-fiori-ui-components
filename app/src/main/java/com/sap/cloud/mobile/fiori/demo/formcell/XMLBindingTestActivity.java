@@ -1,9 +1,7 @@
 package com.sap.cloud.mobile.fiori.demo.formcell;
 
 import android.os.Bundle;
-import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
 import com.sap.cloud.mobile.fiori.demo.R;
@@ -101,7 +99,7 @@ public class XMLBindingTestActivity extends AbstractDemoActivity {
         GenericListPickerFormCell<ObjectCell, Integer> genericObjectCellPickerDemo = findViewById(R.id.genericObjectCellPickerDemo);
         genericObjectCellPickerDemo.setPickerActivity(new GenericObjectCellPickerActivity());
         genericObjectCellPickerDemo.setSingleSelectOnly(false);
-        genericObjectCellPickerDemo.setLeftToRight(true);
+        genericObjectCellPickerDemo.setLeftToRight(false);
 
         SwitchFormCell cell = findViewById(R.id.testSwitch);
         cell.setCellValueChangeListener(new FormCell.CellValueChangeListener<Boolean>() {

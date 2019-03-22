@@ -21,6 +21,7 @@ import com.sap.cloud.mobile.fiori.object.GridTableRow;
 
 import java.text.NumberFormat;
 
+
 public class GridTableActivity extends BaseObjectCellActivity {
     public static final String GRID_TABLE_ROW = "GridTableRow#";
     public static int COUNT = 300;
@@ -58,13 +59,7 @@ public class GridTableActivity extends BaseObjectCellActivity {
         }
     }
 
-    /*
-     * If you want to use StickyHeaders in your project, here is a link to the github
-     * repository: https://github.com/Doist/RecyclerViewExtensions/tree/master/StickyHeaders,
-     * implement the StickyHeaders and StickyHeaders.ViewSetup interfaces in the below class header,
-     * and uncomment the 3 interface methods
-     */
-    public static class GridTableRecyclerAdapter extends ObjectCellRecyclerAdapter {
+    public static class GridTableRecyclerAdapter extends ObjectCellRecyclerAdapter{
 
         private AbstractDemoActivity mActivity;
         static final int HEADER_TYPE = -1;
@@ -226,25 +221,7 @@ public class GridTableActivity extends BaseObjectCellActivity {
                 row.requestLayout();
             }
         }
-        /*
-         * If you want to use StickyHeaders in your project, here is a link to the github
-         * repository: https://github.com/Doist/RecyclerViewExtensions/tree/master/StickyHeaders
-         * and uncomment the below 3 interface methods
-         */
-//        @Override
-//        public boolean isStickyHeader(int position) {
-//            return position == 0;//use view holder type if there are multiple headers
-//        }
-//
-//        @Override
-//        public void setupStickyHeaderView(@NonNull View stickyHeader) {
-//            stickyHeader.setTranslationZ(stuckHeaderElevation);
-//        }
-//
-//        @Override
-//        public void teardownStickyHeaderView(@NonNull View stickyHeader) {
-//            stickyHeader.setTranslationZ(0f);
-//        }
+
 
         public static class HeaderViewHolder extends ViewHolder {
             public HeaderViewHolder(View itemView) {

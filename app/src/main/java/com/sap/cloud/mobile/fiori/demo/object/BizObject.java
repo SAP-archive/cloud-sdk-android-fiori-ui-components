@@ -2,6 +2,7 @@ package com.sap.cloud.mobile.fiori.demo.object;
 
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.sap.cloud.mobile.fiori.demo.R;
@@ -157,11 +158,20 @@ public class BizObject {
     public static List<BizObject> createBizObjectsList(int numBizObjects) {
         return createBizObjectsList(numBizObjects, LANGUAGE.ENGLISH);
     }
-
     @NonNull
     public static List<BizObject> createBizObjectsList(int numBizObjects, LANGUAGE lang) {
+        ObjectCellSpec objectCellSpec = new ObjectCellSpec(R.layout.object_cell_1, numBizObjects, 3, 1,
+                true,
+                true, true, true,
+                false, true, true);
+        objectCellSpec.setLanguage(lang);
+        return createBizObjectsList(objectCellSpec);
+    }
+
+    @NonNull
+    public static List<BizObject> createBizObjectsList(@NonNull  ObjectCellSpec spec) {
         Lorem lorem;
-        if (lang == LANGUAGE.CHINSE){
+        if (spec.getLanguage() == LANGUAGE.CHINSE){
             lorem = sChineseLorem;
         }else{
             lorem = sLorem;
@@ -169,11 +179,22 @@ public class BizObject {
 
         List<BizObject> BizObjects = new ArrayList<>();
         Random r = new Random();
-        for (int i = 1; i <= numBizObjects; i++) {
+        for (int i = 1; i <= spec.getCounts(); i++) {
             BizObject obj = new BizObject(i);
             obj.setHeadline(i + " " + cap(lorem.getWords(2, 10)));
-            obj.setSubHeadline(cap(lorem.getWords(2,10)));
-            obj.setFootnote(cap(lorem.getWords(2,10)));
+
+            if (spec.getLines() == 0 && r.nextBoolean()){
+                obj.setSubHeadline(null);
+            }else {
+                obj.setSubHeadline(cap(lorem.getWords(2, 10)));
+            }
+
+            if (spec.getLines() == 0 && r.nextBoolean()){
+                obj.setFootnote(null);
+            }else {
+                obj.setFootnote(cap(lorem.getWords(2, 10)));
+            }
+
             if (r.nextInt(10)>=8){
                 obj.setDescription(null);
             }else {

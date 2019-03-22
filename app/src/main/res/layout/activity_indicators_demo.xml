@@ -13,9 +13,9 @@
         style="@style/FioriProgressbar.Horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -25,9 +25,9 @@
         style="@style/FioriProgressbar.Horizontal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:indeterminate="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,24 +35,23 @@
 
     <com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
         android:id="@+id/horizontal_query_indeterminateDeterminate"
-        style="@style/FioriProgressbar.Horizontal"
+        style="@style/FioriProgressbar.QueryIndeterminateDeterminate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:type="queryIndeterminateDeterminate" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
         android:id="@+id/circular_indeterminate"
         style="@style/FioriProgressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_query_indeterminateDeterminate" />
 
@@ -61,8 +60,8 @@
         style="@style/FioriProgressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:indeterminate="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/circular_indeterminate" />
@@ -101,8 +100,8 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Fiori Circular Indeterminate"
         app:layout_constraintBottom_toBottomOf="@+id/circular_indeterminate"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,8 +111,8 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Fiori Circular Determinate Indicator"
         app:layout_constraintBottom_toBottomOf="@+id/circular_determinate"
         app:layout_constraintStart_toStartOf="parent"
@@ -123,8 +122,8 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Checkout Indicator"
         app:layout_constraintBottom_toBottomOf="@+id/checkoutIndicator"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,25 +145,23 @@
         style="@style/FioriProgressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/ic_account_circle_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/circular_determinate"
-        app:type="progress" />
+        app:layout_constraintTop_toBottomOf="@+id/circular_determinate" />
 
     <com.sap.cloud.mobile.fiori.indicator.FioriProgressBar
         android:id="@+id/checkoutIndicator"
         style="@style/FioriProgressbar.Checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress_indicator"
-        app:layout_constraintVertical_bias="0.0"
-        app:type="checkout" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

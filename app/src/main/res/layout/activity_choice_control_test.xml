@@ -22,4 +22,12 @@
         app:key="Is Editable is set to False"
         app:isEditable="false" />
 
+    <Button
+        android:id="@+id/reset_button"
+        style="@style/FioriButton.Raised"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Second Cell" />
+
 </LinearLayout>

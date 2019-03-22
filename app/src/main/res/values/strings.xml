@@ -42,6 +42,9 @@
     <string name="object_cell_container">Object Cell Icon/Image Container</string>
     <string name="object_cell_container_desc">Icon and detail image are put into a container that remains the same width.</string>
 
+    <string name="object_cell_0_line">Dynamic lines Object Cell</string>
+    <string name="object_cell_0_line_desc">Number of lines are determined by content dynamically.</string>
+
     <string name="object_cell_1_line">1-line Object Cell</string>
     <string name="object_cell_1_line_desc">1-line height/1 status/no action/do not preserve description spacing.</string>
 
@@ -63,6 +66,8 @@
     <string name="object_cell_databinding">Object Cell With Data Binding</string>
     <string name="object_cell_databinding_desc">Databinding/customized text appearance/round avatar.</string>
 
+    <string name="collection_view_item_activity">Collection View</string>
+    <string name="collection_view_item_activity_desc">Collection View </string>
 
     <string name="demo_app_list_empty_message">No demo apps available at this time</string>
 

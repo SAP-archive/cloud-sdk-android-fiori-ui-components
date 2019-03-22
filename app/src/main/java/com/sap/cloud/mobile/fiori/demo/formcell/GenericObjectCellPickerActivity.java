@@ -7,10 +7,13 @@ import android.content.Loader;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.sap.cloud.mobile.fiori.demo.R;
 import com.sap.cloud.mobile.fiori.demo.object.BizObject;
@@ -21,6 +24,7 @@ import com.sap.cloud.mobile.fiori.object.ObjectCell;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class GenericObjectCellPickerActivity extends GenericListPickerFormCellActivity<ObjectCell, Integer> implements
         LoaderManager.LoaderCallbacks<List<BizObject>> {
@@ -38,12 +42,13 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
      */
     protected ObjectCellSpec getObjectCellSpec() {
         if (mObjectCellSpec == null) {
-            mObjectCellSpec = new ObjectCellSpec(R.layout.object_cell_1, NUM_BIZ_OBJECTS, 1, 1,
+            mObjectCellSpec = new ObjectCellSpec(R.layout.object_cell_1, NUM_BIZ_OBJECTS, 2, 1,
                     false,
-                    true, false, true,
-                    true, true, true);
-            mObjectCellSpec.setShuffleIconStack(true);
+                    true, false, false,
+                    false, true, false);
+            mObjectCellSpec.setShuffleIconStack(false);
             mObjectCellSpec.setShuffleStatus(true);
+            mObjectCellSpec.setHideEmptyDescription(true);
         }
         return mObjectCellSpec;
 
@@ -74,6 +79,11 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
     }
 
     @Override
+    protected int getSelectorGravity() {
+        return Gravity.CENTER_VERTICAL;
+    }
+
+    @Override
     public void onLoaderReset(Loader<List<BizObject>> loader) {
         mData.clear();
     }
@@ -81,23 +91,34 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
     @NonNull
     @Override
     protected ObjectCell onCreateView(int viewType, @NonNull Context context) {
-        ObjectCell cell = new ObjectCell(getApplicationContext());
-        cell.setPadding(0, cell.getPaddingTop(), 0, cell.getPaddingBottom());
-        return cell;
+        ObjectCell view = new ObjectCell(context);
+        mObjectCellSpec = getObjectCellSpec();
+        if (view.getLines() != mObjectCellSpec.getLines()) {
+            view.setLines(mObjectCellSpec.getLines());
+        }
+        if (view.getHeadlineLines() != mObjectCellSpec.getHeadlineLines()) {
+            view.setHeadlineLines(mObjectCellSpec.getHeadlineLines());
+        }
+        view.setPreserveIconImageContainer(mObjectCellSpec.hasContainerLayout());
+        view.setPreserveDescriptionSpacing(!mObjectCellSpec.getHideEmptyDescription());
+        // Default top and bottom padding on ObjectCell are 4dp and 2dp respectively. Make sure that top padding is also 2dp
+        view.setPadding(0, view.getPaddingBottom(), 0, view.getPaddingBottom());
+        return view;
     }
 
     @Override
     protected void onBindView(@NonNull ObjectCell cell, Integer position) {
-        if (mObjectCellSpec == null) {
-            mObjectCellSpec = getObjectCellSpec();
-        }
-        if (mData.size() > 0) {
+        int sapUiNegativeText = cell.getContext().getColor(R.color.sap_ui_negative_text);
+        int sapUiPositiveText = cell.getContext().getColor(R.color.sap_ui_positive_text);
+        int sapUiCriticalText = cell.getContext().getColor(R.color.sap_ui_critical_text);
+        if (!mData.isEmpty()) {
             BizObject obj = mData.get(position);
 
             //for espresso testing
             cell.setContentDescription("ObjectCell#" + obj.getId());
 
-            if (mObjectCellSpec.hasIconStack()) {
+            Random random = new Random();
+            if (mObjectCellSpec.hasIconStack() && (!mObjectCellSpec.hasContainerLayout() || random.nextBoolean())) {
                 cell.clearIcons();
                 int baseIndex = 0;
                 if (mObjectCellSpec.shouldShuffleIconStack()) {
@@ -126,20 +147,30 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
                 }
             }
 
-            if (mObjectCellSpec.hasDetailImage()) {
+            if (mObjectCellSpec.hasDetailImage() && (!mObjectCellSpec.hasContainerLayout() || random.nextBoolean())) {
 
                 if (obj.getDetailImageResId() != 0) {
                     cell.setDetailImageCharacter(null);
+                    //Glide won't improve vector image performance. Basically it's the same as: cell
+                    // .setDetailImage(obj.getDetailImageResId()); Also circleCrop won't work.
+                    //This is just to demonstrate how to use local vector resource with Glide
+//                mGlide.load(null).apply(cropOptions.fallback(obj.getDetailImageResId())).into(
+//                        cell.prepareDetailImageView());
                     cell.setDetailImage(obj.getDetailImageResId());
                     cell.setDetailImageDescription(R.string.avatar);
                 } else if (obj.getDetailImageUri() != null) {
                     RequestOptions cropOptions = new RequestOptions().placeholder(
                             R.drawable.rectangle);
                     cell.setDetailImageCharacter(null);
+                    Glide.with(this).load(obj.getDetailImageUri()).apply(cropOptions).into(cell.prepareDetailImageView());
                     cell.setDetailImageDescription(R.string.avatar);
                 } else {
                     cell.setDetailImage(null);
-                    cell.setDetailImageCharacter(obj.getSubHeadline().substring(0, 1));
+                    if (TextUtils.isEmpty(obj.getSubHeadline())) {
+                        cell.setDetailImageCharacter("?");
+                    } else {
+                        cell.setDetailImageCharacter(obj.getSubHeadline().substring(0, 1));
+                    }
                 }
             } else {
                 cell.setPreserveDetailImageSpacing(false);
@@ -166,30 +197,42 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
 
                     if (obj.getStatusId() == R.drawable.ic_error_black_24dp) {
                         statusDescId = R.string.error;
-                        //colors of other 2 icons are set in drawable
-                        cell.setStatusColor(Color.RED, index);
+                        cell.setStatusColor(sapUiNegativeText, index);
                     } else if (obj.getStatusId() == R.drawable.ic_warning_black_24dp) {
                         statusDescId = R.string.warning;
+                        cell.setStatusColor(sapUiCriticalText, index);
+                    } else {
+                        cell.setStatusColor(sapUiPositiveText, index);
                     }
                     cell.setStatus(obj.getStatusId(), index, statusDescId);
                     index++;
                 }
                 if (mObjectCellSpec.hasFirstStatus()) {
-                    cell.setStatus(obj.getPriority().toString(), index);
-                    if (obj.getPriority() == Priority.HIGH) {
-                        cell.setStatusColor(Color.RED, index);
+                    if (mObjectCellSpec.isDynamicStatus()) {
+                        cell.setDynamicStatusWidth(true);
+                        cell.setStatus(obj.getInfo(), index);
                     } else {
-                        cell.setStatusColor(0, index);
+                        cell.setStatus(obj.getPriority().toString(), index);
+                        if (obj.getPriority() == Priority.HIGH) {
+                            cell.setStatusColor(sapUiNegativeText, index);
+                        } else {
+                            cell.setStatusColor(cell.getDefaultStatusColor(), index);
+                        }
                     }
                 }
 
             } else {
                 if (mObjectCellSpec.hasFirstStatus()) {
-                    cell.setStatus(obj.getPriority().toString(), 0);
-                    if (obj.getPriority() == Priority.HIGH) {
-                        cell.setStatusColor(Color.RED, 0);
+                    if (mObjectCellSpec.isDynamicStatus()) {
+                        cell.setDynamicStatusWidth(true);
+                        cell.setStatus(obj.getInfo(), 0);
                     } else {
-                        cell.setStatusColor(0, 0);
+                        cell.setStatus(obj.getPriority().toString(), 0);
+                        if (obj.getPriority() == Priority.HIGH) {
+                            cell.setStatusColor(sapUiNegativeText, 0);
+                        } else {
+                            cell.setStatusColor(cell.getDefaultStatusColor(), 0);
+                        }
                     }
                 }
                 if (mObjectCellSpec.hasSecondStatus()) {
@@ -198,9 +241,12 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
                     if (obj.getStatusId() == R.drawable.ic_error_black_24dp) {
                         statusDescId = R.string.error;
                         //colors of other 2 icons are set in drawable
-                        cell.setStatusColor(Color.RED, 1);
+                        cell.setStatusColor(sapUiNegativeText, 1);
                     } else if (obj.getStatusId() == R.drawable.ic_warning_black_24dp) {
                         statusDescId = R.string.warning;
+                        cell.setStatusColor(sapUiCriticalText, 1);
+                    } else {
+                        cell.setStatusColor(sapUiPositiveText, 1);
                     }
 
                     cell.setStatus(obj.getStatusId(), 1, statusDescId);
@@ -223,6 +269,16 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
         } else {
             cell.setHeadline("Content loading");
         }
+    }
+
+    @Override
+    protected int getItemTopMargin() {
+        return 0;
+    }
+
+    @Override
+    protected int getItemBottomMargin() {
+        return 0;
     }
 
     @Override

@@ -569,7 +569,7 @@ public class OnboardingView implements OnboardingPresenter.OnboardingView {
     final static protected String KEY_EULA_HEADLINE = "eula_screen_headline";
     final static protected String KEY_EULA_BUTTON_CONFIRM = "eula_screen_button_confirm";
     final static protected String KEY_EULA_BUTTON_REJECT = "eula_screen_button_reject";
-    final static protected String KEY_EULA_URL = "eula_screen_button_reject";
+    final static protected String KEY_EULA_URL = "eula_screen_url";
 
     /**
      * Starts an EULA screen activity with intent configured based on the shared preferences.

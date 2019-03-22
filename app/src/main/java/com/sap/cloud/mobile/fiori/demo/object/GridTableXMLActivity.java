@@ -14,6 +14,7 @@ import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
 import com.sap.cloud.mobile.fiori.demo.R;
 import com.sap.cloud.mobile.fiori.object.GridTableRow;
 
+
 public class GridTableXMLActivity extends GridTableActivity {
     private static final String TAG = "GridTableXMLActivity";
     private ObjectCellSpec mObjectCellSpec;
@@ -43,12 +44,6 @@ public class GridTableXMLActivity extends GridTableActivity {
         if (isTablet()) {
             mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-            /*
-             * If you want to use StickyHeaders in your project, here is a link to the github
-             * repository: https://github.com/Doist/RecyclerViewExtensions/tree/master/StickyHeaders
-             * and replace the LinearLayoutManager line above with the commented line below
-             */
-//            mRecyclerView.setLayoutManager(new StickyHeadersLinearLayoutManager<GridTableRecyclerAdapter>(this));
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.addItemDecoration(
                     new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));

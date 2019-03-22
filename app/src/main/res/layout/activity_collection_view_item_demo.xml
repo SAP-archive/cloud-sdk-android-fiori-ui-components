@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".object.CollectionViewDemo">
+
+        <com.sap.cloud.mobile.fiori.object.CollectionView
+            android:id="@+id/collectionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/md_keylines"
+            android:layout_marginEnd="@dimen/md_keylines"
+            tools:minHeight="200dp" />
+
+        <com.sap.cloud.mobile.fiori.formcell.FilterFormCell
+            android:id="@+id/filterFormCell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:key="Content Type"
+            app:singleLine="true" />
+    </LinearLayout>
+</ScrollView>

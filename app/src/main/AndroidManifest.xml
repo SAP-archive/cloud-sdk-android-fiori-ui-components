@@ -207,6 +207,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".object.ObjectCell0LineActivity"
+            android:label="objectcell/object_cell_0_line">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".object.ObjectCell1LineActivity"
             android:label="objectcell/object_cell_1_line">
             <intent-filter>
@@ -770,6 +779,16 @@
             android:label="formcell/activity_separator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".object.CollectionViewDemo"
+            android:label="objectcell/collection_view_item_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>

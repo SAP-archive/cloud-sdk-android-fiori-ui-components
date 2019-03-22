@@ -33,6 +33,7 @@ import com.sap.cloud.mobile.fiori.object.ObjectCell;
 
 import java.text.NumberFormat;
 
+
 public class GridObjectCellActivity extends BaseObjectCellActivity {
     private static final String TAG = "GridObjectCellActivity";
     private ObjectCellSpec mObjectCellSpec;
@@ -71,12 +72,6 @@ public class GridObjectCellActivity extends BaseObjectCellActivity {
         if (isTablet()) {
             mRecyclerView.setAdapter(mAdapter);
             mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-            /*
-             * If you want to use StickyHeaders in your project, here is a link to the github
-             * repository: https://github.com/Doist/RecyclerViewExtensions/tree/master/StickyHeaders
-             * and replace the LinearLayoutManager line above with the commented line below
-             */
-//            mRecyclerView.setLayoutManager(new StickyHeadersLinearLayoutManager<GridObjectCellRecyclerAdapter>(this));
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.addItemDecoration(
                     new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -86,13 +81,7 @@ public class GridObjectCellActivity extends BaseObjectCellActivity {
         }
     }
 
-    /*
-     * If you want to use StickyHeaders in your project, here is a link to the github
-     * repository: https://github.com/Doist/RecyclerViewExtensions/tree/master/StickyHeaders,
-     * implement StickyHeaders and StickyHeaders.ViewSetup in the below class header, and uncomment
-     * the three methods from those interfaces
-     */
-    public static class GridObjectCellRecyclerAdapter extends ObjectCellRecyclerAdapter {
+    public static class GridObjectCellRecyclerAdapter extends ObjectCellRecyclerAdapter{
 
         private AbstractDemoActivity mActivity;
         static final int HEADER_TYPE = -1;
@@ -309,25 +298,7 @@ public class GridObjectCellActivity extends BaseObjectCellActivity {
                 }
             }
         }
-        /*
-         * If you want to use StickyHeaders in your project, here is a link to the github
-         * repository: https://github.com/Doist/RecyclerViewExtensions/tree/master/StickyHeaders
-         * and uncomment these three methods.
-         */
-//        @Override
-//        public boolean isStickyHeader(int position) {
-//            return position == 0;//use view holder type if there are multiple headers
-//        }
-//
-//        @Override
-//        public void setupStickyHeaderView(@NonNull View stickyHeader) {
-//            stickyHeader.setTranslationZ(stuckHeaderElevation);
-//        }
-//
-//        @Override
-//        public void teardownStickyHeaderView(@NonNull View stickyHeader) {
-//            stickyHeader.setTranslationZ(0f);
-//        }
+
 
         public static class HeaderViewHolder extends ViewHolder {
             public HeaderViewHolder(@NonNull View itemView) {

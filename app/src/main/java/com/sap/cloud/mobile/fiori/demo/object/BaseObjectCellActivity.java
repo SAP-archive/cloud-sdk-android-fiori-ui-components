@@ -12,6 +12,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -142,7 +143,7 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
         @NonNull
         @Override
         public List<BizObject> loadInBackground() {
-            List<BizObject> objects = BizObject.createBizObjectsList(mObjectCellSpec.getCounts(), mObjectCellSpec.getLanguage());
+            List<BizObject> objects = BizObject.createBizObjectsList(mObjectCellSpec);
             return objects;
         }
     }
@@ -189,7 +190,7 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
                 view.setHeadlineLines(mObjectCellSpec.getHeadlineLines());
             }
             view.setPreserveIconImageContainer(mObjectCellSpec.hasContainerLayout());
-//            view.setPreserveDescriptionSpacing(!mObjectCellSpec.getHideEmptyDescription());
+            view.setPreserveDescriptionSpacing(!mObjectCellSpec.getHideEmptyDescription());
             //only use async rendering when we need to recycle ObjectCells
             //view.setAsyncRendering(mObjectCellSpec.getCounts() >20);
             return new ViewHolder(view);
@@ -254,7 +255,11 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
                     cell.setDetailImageDescription(R.string.avatar);
                 } else {
                     cell.setDetailImage(null);
-                    cell.setDetailImageCharacter(obj.getSubHeadline().substring(0, 1));
+                    if (TextUtils.isEmpty(obj.getSubHeadline())){
+                        cell.setDetailImageCharacter("?");
+                    }else{
+                        cell.setDetailImageCharacter(obj.getSubHeadline().substring(0, 1));
+                    }
                 }
             } else {
                 cell.setPreserveDetailImageSpacing(false);
@@ -295,7 +300,7 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
                 }
                 if (mObjectCellSpec.hasFirstStatus()) {
                     if (mObjectCellSpec.isDynamicStatus()){
-//                        cell.setDynamicStatusWidth(true);
+                        cell.setDynamicStatusWidth(true);
                         cell.setStatus(obj.getInfo(), index);
                     }else {
                         cell.setStatus(obj.getPriority().toString(), index);
@@ -310,14 +315,10 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
             } else {
                 if (mObjectCellSpec.hasFirstStatus()) {
                     if (mObjectCellSpec.isDynamicStatus()){
-//                        cell.setDynamicStatusWidth(true);
+                        cell.setDynamicStatusWidth(true);
                         cell.setStatus(obj.getInfo(), 0);
                     }else {
-                        if (obj.getPriority() == Priority.NORM) {
-                            cell.setStatus("", 0);
-                        } else {
-                            cell.setStatus(obj.getPriority().toString(), 0);
-                        }
+                        cell.setStatus(obj.getPriority().toString(), 0);
                         if (obj.getPriority() == Priority.HIGH) {
                             cell.setStatusColor(BaseObjectCellActivity.sSapUiNegativeText, 0);
                         } else {

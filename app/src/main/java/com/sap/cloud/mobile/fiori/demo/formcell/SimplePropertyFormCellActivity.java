@@ -85,12 +85,12 @@ public class SimplePropertyFormCellActivity extends AbstractDemoActivity {
             }
         });
 
-//        mSimplePropertyFormCell6.setSecondaryActionOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(mSimplePropertyFormCell6.getContext(), "Custom secondary action", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        mSimplePropertyFormCell6.setSecondaryActionOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mSimplePropertyFormCell6.getContext(), "Custom secondary action", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

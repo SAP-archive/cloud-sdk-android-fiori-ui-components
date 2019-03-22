@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="kpi_padding_top">-4dp</dimen>
+    <dimen name="md_keylines">24dp</dimen>
+</resources>

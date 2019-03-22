@@ -64,7 +64,7 @@ public class AttachmentFormCellActivity extends AbstractDemoActivity {
              * @param position int
              */
             @Override
-            public void onClick(View view, int position) {
+            public void onClick(@NonNull View view, int position) {
                 Toast.makeText(getApplicationContext(), "Opening File", Toast.LENGTH_SHORT).show();
             }
 
@@ -75,12 +75,12 @@ public class AttachmentFormCellActivity extends AbstractDemoActivity {
              * @param position int
              */
             @Override
-            public void onLongClick(View view, int position) {
+            public void onLongClick(@NonNull View view, int position) {
 
             }
 
             @Override
-            public void onClickDelete(Attachment position) {
+            public void onClickDelete(@NonNull Attachment position) {
 
             }
         });
