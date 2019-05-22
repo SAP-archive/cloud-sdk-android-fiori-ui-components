@@ -14,7 +14,6 @@ import com.sap.cloud.mobile.fiori.demo.AbstractDemoActivity;
 import com.sap.cloud.mobile.fiori.demo.R;
 import com.sap.cloud.mobile.fiori.object.GridTableRow;
 
-
 public class GridTableXMLActivity extends GridTableActivity {
     private static final String TAG = "GridTableXMLActivity";
     private ObjectCellSpec mObjectCellSpec;

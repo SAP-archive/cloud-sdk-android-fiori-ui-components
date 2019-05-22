@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DialogOnTablet" parent="@style/FioriTheme.Dialog">
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+</resources>

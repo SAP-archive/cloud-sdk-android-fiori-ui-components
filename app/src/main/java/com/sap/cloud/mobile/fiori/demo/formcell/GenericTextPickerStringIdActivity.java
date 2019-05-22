@@ -93,6 +93,7 @@ public class GenericTextPickerStringIdActivity extends GenericListPickerFormCell
         inflater.inflate(R.menu.menu_main, menu);
         FioriSearchView mFioriSearchView = (FioriSearchView) menu.findItem(R.id.menu_search).getActionView();
         if (mFioriSearchView != null) {
+            mFioriSearchView.setMaxWidth(Integer.MAX_VALUE);
             mFioriSearchView.setIconifiedByDefault(true);
             mFioriSearchView.setBackgroundResource(com.sap.cloud.mobile.fiori.R.color.transparent);
             mFioriSearchView.setScanEnabled(true);
@@ -165,7 +166,7 @@ public class GenericTextPickerStringIdActivity extends GenericListPickerFormCell
     protected void onSelectionChanged(String id, boolean isSelected) {
         if (isSelected && !mSelection.contains(id)) {
             mSelection.add(id);
-        } else if (mSelection.contains(id)) {
+        } else {
             mSelection.remove(id);
         }
     }

@@ -7,6 +7,10 @@
         <item name="android:dropDownListViewStyle">@style/fiori_drop_down</item>
     </style>
 
+    <style name="DialogOnTablet" parent="AppTheme">
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+
     <style name="fiori_drop_down" parent="Widget.AppCompat.ListView.DropDown">
         <item name="android:background">@color/white</item>
     </style>

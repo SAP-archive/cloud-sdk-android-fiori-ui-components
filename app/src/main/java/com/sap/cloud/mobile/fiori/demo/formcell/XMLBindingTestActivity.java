@@ -11,6 +11,7 @@ import com.sap.cloud.mobile.fiori.formcell.FormCell;
 import com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell;
 import com.sap.cloud.mobile.fiori.formcell.SliderFormCell;
 import com.sap.cloud.mobile.fiori.formcell.SwitchFormCell;
+import com.sap.cloud.mobile.fiori.hierarchy.HierarchyObjectCell;
 import com.sap.cloud.mobile.fiori.object.ObjectCell;
 
 import java.util.Collections;
@@ -100,6 +101,13 @@ public class XMLBindingTestActivity extends AbstractDemoActivity {
         genericObjectCellPickerDemo.setPickerActivity(new GenericObjectCellPickerActivity());
         genericObjectCellPickerDemo.setSingleSelectOnly(false);
         genericObjectCellPickerDemo.setLeftToRight(false);
+        genericObjectCellPickerDemo.setLayoutRes(R.layout.activity_generic_listpicker_objectcell, R.id.filterList);
+//        genericObjectCellPickerDemo.setLeftToRight(false);
+
+        GenericListPickerFormCell<HierarchyObjectCell, String> genericHierarchyObjectCellPickerDemo = findViewById(R.id.genericHierarchyObjectCellPicker);
+        genericHierarchyObjectCellPickerDemo.setPickerActivity(new GenericHierarchyObjectCellPickerActivity());
+        genericHierarchyObjectCellPickerDemo.setSingleSelectOnly(false);
+//        genericHierarchyObjectCellPickerDemo.setLeftToRight(false);
 
         SwitchFormCell cell = findViewById(R.id.testSwitch);
         cell.setCellValueChangeListener(new FormCell.CellValueChangeListener<Boolean>() {

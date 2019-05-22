@@ -7,10 +7,12 @@ import android.content.Loader;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -23,8 +25,10 @@ import com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCellActivity;
 import com.sap.cloud.mobile.fiori.object.ObjectCell;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class GenericObjectCellPickerActivity extends GenericListPickerFormCellActivity<ObjectCell, Integer> implements
         LoaderManager.LoaderCallbacks<List<BizObject>> {
@@ -32,10 +36,15 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
 
     public static final int NUM_BIZ_OBJECTS = 300;
 
-    private ObjectCellSpec mObjectCellSpec;
+    protected ObjectCellSpec mObjectCellSpec;
 
     @NonNull
-    private List<BizObject> mData = new ArrayList<>();
+    protected List<BizObject> mData = new ArrayList<>();
+
+
+    private Set<Integer> mSelections = new HashSet<>();
+
+    private TextView mFooter;
 
     /**
      * Subclasses need to override this method to specify how the object cells are to be rendered.
@@ -49,6 +58,7 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
             mObjectCellSpec.setShuffleIconStack(false);
             mObjectCellSpec.setShuffleStatus(true);
             mObjectCellSpec.setHideEmptyDescription(true);
+            mObjectCellSpec.setCounts(NUM_BIZ_OBJECTS);
         }
         return mObjectCellSpec;
 
@@ -57,7 +67,41 @@ public class GenericObjectCellPickerActivity extends GenericListPickerFormCellAc
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Toolbar myToolbar = findViewById(R.id.objectCellPickerToolbar);
+        // if there is no support action bar provided from theme then use one from the layout
+        if (getSupportActionBar() == null) {
+            setSupportActionBar(myToolbar);
+        } else {
+            // toolbar is already provided from theme so hide one from the layout
+            myToolbar.setVisibility(View.GONE);
+        }
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        mFooter = findViewById(R.id.footer);
+        mFooter.setText(R.string.object_cell_listpicker_formcell_select);
+        List<Integer> selections = (List<Integer>) getIntent().getSerializableExtra("IDS_FOR_SELECTED_ITEM");
+        if (selections != null && !selections.isEmpty()) {
+            mFooter.setVisibility(View.GONE);
+            mSelections.addAll(selections);
+        }
+
         getLoaderManager().initLoader(0, null, this);
+    }
+
+    @Override
+    protected void onSelectionChanged(Integer id, boolean isSelected) {
+        super.onSelectionChanged(id, isSelected);
+        if (isSelected) {
+            mSelections.add(id);
+        } else {
+            mSelections.remove(id);
+        }
+        if (mSelections.size() > 0) {
+            mFooter.setVisibility(View.GONE);
+        } else {
+            mFooter.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override

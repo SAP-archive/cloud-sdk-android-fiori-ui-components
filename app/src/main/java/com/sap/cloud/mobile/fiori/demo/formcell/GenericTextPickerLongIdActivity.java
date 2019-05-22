@@ -3,18 +3,24 @@ package com.sap.cloud.mobile.fiori.demo.formcell;
 import static com.sap.cloud.mobile.fiori.common.Utility.getSpacingAdd;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.TextView;
 
+import com.sap.cloud.mobile.fiori.common.FioriItemClickListener;
+import com.sap.cloud.mobile.fiori.common.FioriItemTouchListener;
 import com.sap.cloud.mobile.fiori.demo.R;
+import com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell;
 import com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCellActivity;
 import com.sap.cloud.mobile.fiori.search.FioriSearchView;
 
@@ -49,6 +55,25 @@ public class GenericTextPickerLongIdActivity extends GenericListPickerFormCellAc
             ab.setDisplayShowTitleEnabled(true);
             ab.setTitle("Choose Text");
         }
+
+        RecyclerView recyclerView = findViewById(R.id.filterList);
+        recyclerView.addOnItemTouchListener(new FioriItemTouchListener(recyclerView, new FioriItemClickListener() {
+            @Override
+            public void onClick(@NonNull View view, int position) {
+                Long id = getId(position);
+                ArrayList<Long> selections = new ArrayList<>();
+                selections.add(id);
+                Intent intent = new Intent(ACTION_ITEMS_SELECTED);
+                intent.putExtra(GenericListPickerFormCell.SELECTED_POS_OR_IDS, selections);
+                LocalBroadcastManager.getInstance(GenericTextPickerLongIdActivity.this).sendBroadcast(intent);
+                finish();
+            }
+
+            @Override
+            public void onLongClick(@NonNull View view, int position) {
+
+            }
+        }));
     }
 
     @NonNull
@@ -104,6 +129,7 @@ public class GenericTextPickerLongIdActivity extends GenericListPickerFormCellAc
         inflater.inflate(R.menu.menu_main, menu);
         FioriSearchView mFioriSearchView = (FioriSearchView) menu.findItem(R.id.menu_search).getActionView();
         if (mFioriSearchView != null) {
+            mFioriSearchView.setMaxWidth(Integer.MAX_VALUE);
             mFioriSearchView.setIconifiedByDefault(true);
             mFioriSearchView.setBackgroundResource(com.sap.cloud.mobile.fiori.R.color.transparent);
             mFioriSearchView.setScanEnabled(true);

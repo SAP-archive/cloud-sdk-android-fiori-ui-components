@@ -21,7 +21,6 @@ import com.sap.cloud.mobile.fiori.object.GridTableRow;
 
 import java.text.NumberFormat;
 
-
 public class GridTableActivity extends BaseObjectCellActivity {
     public static final String GRID_TABLE_ROW = "GridTableRow#";
     public static int COUNT = 300;
@@ -59,7 +58,7 @@ public class GridTableActivity extends BaseObjectCellActivity {
         }
     }
 
-    public static class GridTableRecyclerAdapter extends ObjectCellRecyclerAdapter{
+    public static class GridTableRecyclerAdapter extends ObjectCellRecyclerAdapter {
 
         private AbstractDemoActivity mActivity;
         static final int HEADER_TYPE = -1;
@@ -221,7 +220,6 @@ public class GridTableActivity extends BaseObjectCellActivity {
                 row.requestLayout();
             }
         }
-
 
         public static class HeaderViewHolder extends ViewHolder {
             public HeaderViewHolder(View itemView) {

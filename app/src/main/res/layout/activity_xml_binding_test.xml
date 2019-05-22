@@ -153,19 +153,29 @@
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
             app:activityTitle="No Selected Section"
-            app:key="No Selected Section"
-            android:enabled="false"
-            app:displayValueHint="None" />
+            android:enabled="true"
+            app:displayValueHint="None"
+            app:key="No Selected Section" />
+
+        <com.sap.cloud.mobile.fiori.formcell.GenericListPickerFormCell
+            android:id="@+id/genericHierarchyObjectCellPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:enabled="true"
+            app:activityTitle="No Selected Section"
+            app:displayValueHint="None"
+            app:key="Hierarchy ObjectCell Picker Demo" />
 
         <com.sap.cloud.mobile.fiori.formcell.DurationPickerFormCell
             android:id="@+id/testDuration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
+            app:dialogTitle="Pick a time"
             app:displayValue="Default"
             app:durationTextFormat="%d hh:%d mm"
             app:key="Duration Picker"
-            app:dialogTitle="Pick a time"
             app:minuteInterval="10" />
 
         <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell

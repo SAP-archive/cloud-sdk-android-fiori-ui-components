@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:minHeight="1000dp"
+    tools:context=".hierarchy.HierarchyViewDemo">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/pickerToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/FioriTheme.FioriAppBar" />
+
+
+    <com.sap.cloud.mobile.fiori.formcell.ChoiceFormCell
+        android:id="@+id/choice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:key="No choice is pre-made for you"
+        android:visibility="gone"
+        app:keyEnabled="false" />
+
+    <com.sap.cloud.mobile.fiori.hierarchy.HierarchyView
+        android:id="@+id/hierarchyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

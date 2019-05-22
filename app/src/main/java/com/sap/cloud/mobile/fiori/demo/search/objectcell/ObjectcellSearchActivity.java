@@ -130,6 +130,7 @@ public class ObjectcellSearchActivity extends AbstractDemoActivity implements Lo
             mFioriSearchView.setFullScreenSuggestion(true);
             mFioriSearchView.setBackgroundResource(R.color.transparent);
             mFioriSearchView.setScanEnabled(true);
+            mFioriSearchView.setMaxWidth(Integer.MAX_VALUE);
         }
         return true;
     }

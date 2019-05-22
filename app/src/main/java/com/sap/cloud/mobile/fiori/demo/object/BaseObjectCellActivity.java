@@ -366,6 +366,15 @@ public class BaseObjectCellActivity extends AbstractDemoActivity implements
             if (holder.target != null) {
                 mGlide.clear(holder.target);
             }
+            // Set the cell back to its default state... for test purposes; this isn't really needed
+            // in our demo app, but we keep it here for the purposes of performance testing. Uncomment
+            // to check that the resetCell() operation isn't degrading performance.
+
+            if (holder.objectCell != null)
+            {
+//                holder.objectCell.resetCell();
+            }
+
             super.onViewRecycled(holder);
         }
 

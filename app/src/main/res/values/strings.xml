@@ -9,6 +9,10 @@
     <string name="avatar">Avatar</string>
     <string name="none">None</string>
     <string name="app_name">Demo</string>
+    <string name="medium">Medium</string>
+    <string name="low">Low</string>
+    <string name="high">High</string>
+    <string name="star">Star</string>
 
     <!-- =============================== -->
     <!--  views examples strings  -->
@@ -209,6 +213,7 @@
     <string name="title_snackbar">Snackbar</string>
     <string name="title_snackbar_desc">Fiori snackbar demo</string>
 
+    <string name="object_cell_listpicker_formcell_select">Please make a selection</string>
     <!-- =============================== -->
     <!--  timeline examples strings  -->
     <!-- =============================== -->
@@ -328,6 +333,13 @@
 
     <string name="title_activity_sectioned_recycler_demo">SectionedRecyclerDemoActivity</string>
     <string name="title_activity_sectioned_recycler_demo_desc">SectionedRecyclerDemoActivity</string>
+
+    <string name="hierarchy"> Hierarchy View Demo</string>
+    <string name="hierarchy_desc">Demo for how to use HierarchyView</string>
+    <string name="hierarchy_object_cell_sectioned_recycler_demo">Hierarchy Object Cell Sectioned</string>
+    <string name="hierarchy_object_cell_sectioned_recycler_demo_desc">Hierarchy Object Cell Sectioned Demo</string>
+    <string name="hierarchy_static_data_demo">Hierarchy View</string>
+    <string name="hierarchy_static_data_demo_desc">Hierarchy View with Randomly generated data</string>
 
     <string-array name="sports_array">
         <item>Shuttle Badminton</item>

@@ -694,6 +694,7 @@
                 <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".formcell.XMLBindingTestActivity"
             android:label="formcell/activity_filter_xml_binding">
@@ -718,19 +719,28 @@
             android:name=".formcell.MyListFormCellFilterActivity"
             android:parentActivityName=".formcell.FilterActivityTest"></activity>
         <activity
+            android:theme="@style/DialogOnTablet"
             android:name=".formcell.GenericObjectCellPickerActivity"
             android:label="Object Cell Picker"
             android:parentActivityName=".formcell.FilterActivityTest" />
 
         <activity
-            android:name=".formcell.GenericTextPickerStringIdActivity"
             android:label="TextPicker with String Id "
-            android:parentActivityName=".formcell.FilterActivityTest" />
+            android:parentActivityName=".formcell.XMLBindingTestActivity"
+            android:name=".formcell.GenericTextPickerStringIdActivity"
+            android:theme="@style/DialogOnTablet" />
 
         <activity
-            android:name=".formcell.GenericTextPickerLongIdActivity"
             android:label="TextPicker with Long Id "
-            android:parentActivityName=".formcell.FilterActivityTest" />
+            android:parentActivityName=".formcell.XMLBindingTestActivity"
+            android:name=".formcell.GenericTextPickerLongIdActivity"
+            android:theme="@style/DialogOnTablet" />
+
+        <activity
+            android:name=".formcell.GenericHierarchyObjectCellPickerActivity"
+            android:label="Object Cell Picker"
+            android:parentActivityName=".formcell.XMLBindingTestActivity"
+            android:theme="@style/DialogOnTablet" />
 
         <activity
             android:name=".formcell.DateTimeAndDurationPickerTestActivity"
@@ -786,6 +796,16 @@
         <activity
             android:name=".object.CollectionViewDemo"
             android:label="objectcell/collection_view_item_activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="sap.fiori.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".hierarchy.HierarchyViewDemo"
+            android:label="hierarchy/hierarchy_static_data_demo/">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
