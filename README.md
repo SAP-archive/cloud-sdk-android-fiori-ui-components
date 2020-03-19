@@ -1,15 +1,15 @@
-# FioriUI Demo Application
+# SAP Fiori UI Demo Application
 
 ## Description
 
-This application demonstrates the available components in the Fiori UI library.  The app is intended to provide an example implementation of each control, so that users can take the samples and expand their own applications to use the Fiori library.
+This application demonstrates the available components in the SAP Fiori UI library. The app is intended to provide an example implementation of each control, so that users can take the samples and expand their own applications to use the SAP Fiori library.
 
 If you are new to the SAP Cloud Platform SDK for Android, [Get Started with SAP Cloud Platform SDK for Android](https://developers.sap.com/mission.sdk-android-get-started.html), [Step by Step with the SAP Cloud Platform SDK for Android](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/) series, and the [SAP Cloud Platform SDK for Android Learning Journey](https://help.sap.com/doc/221f8f84afef43d29ad37ef2af0c4adf/HP_2.0/en-US/747d6d2ea0534ba99612920c7402631a.html) are great places to start.
 
 
 ## The Finished Product
 
-The app lists the available Fiori components.
+The app lists the available SAP Fiori components.
 
 Tapping a component type brings the user to more options related to that specific control.
 
@@ -49,5 +49,4 @@ post them using the tag [SAP Cloud Platform SDK for Android](https://answers.sap
 
 ## License
 
-Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
-This file is licensed under the SAP Sample Code License except as noted otherwise in the [LICENSE file](LICENSE).
+Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, v. 2 except as noted otherwise in the [LICENSE file](LICENSE).
