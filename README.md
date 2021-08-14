@@ -1,3 +1,4 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-sdk-android-fiori-ui-components)](https://api.reuse.software/info/github.com/SAP-samples/cloud-sdk-android-fiori-ui-components)
 # SAP Fiori UI Demo Application
 
 ## Description
